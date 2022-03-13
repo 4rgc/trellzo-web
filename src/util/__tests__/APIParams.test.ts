@@ -214,4 +214,30 @@ describe('APIParams', () => {
 			expect(params.getMethod()).toBe('post');
 		});
 	});
+
+	describe('Route', () => {
+		it('defaults the route to undefined', () => {
+			const params = new APIRequestParams();
+
+			expect(params.getRoute()).toBeUndefined();
+		});
+
+		it('stores and allows to retrieve the route', () => {
+			const params = new APIRequestParams();
+
+			params.setRoute('/home');
+
+			expect(params.getRoute()).toBe('/home');
+		});
+
+		it('resets the route if empty string is passed', () => {
+			const params = new APIRequestParams();
+
+			params.setRoute('/home');
+
+			params.setRoute('');
+
+			expect(params.getRoute()).toBeUndefined();
+		});
+	});
 });

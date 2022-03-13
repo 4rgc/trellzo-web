@@ -5,7 +5,8 @@ type MethodType = 'get' | 'post' | 'delete' | 'patch';
 export default class APIRequestParams {
 	#method: MethodType = 'get';
 	#urlParams: Record<string, string> = {};
-	#bodyParams: Record<string, any> | undefined;
+	#bodyParams?: Record<string, any>;
+	#route?: string;
 
 	setUrlParam(key: string, value: string) {
 		if (value === '') delete this.#urlParams[key];
@@ -81,5 +82,14 @@ export default class APIRequestParams {
 
 	getMethod() {
 		return this.#method;
+	}
+
+	setRoute(route: string) {
+		if (route === '') this.#route = undefined;
+		else this.#route = route;
+	}
+
+	getRoute() {
+		return this.#route;
 	}
 }
