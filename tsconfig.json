@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "rootDir": ".",
+    "outDir": "build",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -9,6 +11,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "importHelpers": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -18,7 +21,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true
   },
   "include": [
     "src"
