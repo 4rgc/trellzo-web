@@ -1,73 +1,35 @@
-import IPropsWithChildren from '../../interfaces/IPropsWithChildren';
-import IPropsWithClassGenerator from '../../interfaces/IPropsWithClassGenerator';
-import ClassGenerator from '../../types/ClassGenerator';
-import './Button.css';
+import './Button.scss';
 
-interface IButtonProps
-	extends IPropsWithClassGenerator<'button'>,
-		IPropsWithChildren<'button'>,
-		React.ComponentPropsWithoutRef<'button'> {
+interface IButtonProps extends React.ComponentPropsWithoutRef<'button'> {
 	size?: 'square' | 'small' | 'medium' | 'large';
 	kind?: 'primary' | 'secondary';
 	disabled?: boolean;
 	onClick?: () => void;
-	classGenerator?: ClassGenerator<IButtonProps>;
 	children?: React.ReactChild | React.ReactChild[];
 }
 
-export type ButtonProps = IButtonProps;
-
-const defaultButtonClassGenerator: ClassGenerator<IButtonProps> = (props) => {
-	const {
-		size = 'medium',
-		kind = 'primary',
-		disabled = false,
-		className,
-	} = props;
-	let buttonClass = 'btn-base';
-
-	switch (kind) {
-		case 'primary':
-			buttonClass += ' btn-prm';
-			break;
-		case 'secondary':
-			buttonClass += ' btn-sec';
-			break;
-	}
-
-	switch (size) {
-		case 'square':
-			buttonClass += ' btn-sq';
-			break;
-		case 'small':
-			buttonClass += ' btn-sm';
-			break;
-		case 'medium':
-			buttonClass += ' btn-md';
-			break;
-		case 'large':
-			buttonClass += ' btn-lg';
-			break;
-	}
-
-	if (disabled) {
-		buttonClass += ' btn-dis';
-	}
-
-	buttonClass += className ? ` ${className}` : '';
-
-	return buttonClass;
-};
-
-export const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<IButtonProps> = (props) => {
 	const {
 		disabled = false,
 		children,
 		onClick,
-		classGenerator = defaultButtonClassGenerator,
+		kind = 'primary',
+		size = 'medium',
+		className,
 	} = props;
 
-	let buttonClass = classGenerator(props);
+	const kindToClass = { primary: 'prm', secondary: 'sec' };
+	const disabledToClass = '-dis';
+	const sizeToClass = {
+		square: 'sq',
+		small: 'sm',
+		medium: 'md',
+		large: 'lg',
+	};
+
+	const buttonClass = `btn-${kindToClass[kind]}${
+		disabled ? disabledToClass : ''
+	}-${sizeToClass[size]} ${className || ''}`;
 
 	return (
 		<button

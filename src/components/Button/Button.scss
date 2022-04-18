@@ -1,4 +1,4 @@
-.btn-base {
+%btn-base {
 	text-align: center;
 	border: none;
 	padding: 5px;
@@ -11,42 +11,56 @@
 	cursor: pointer;
 }
 
-.btn-base.btn-dis {
+%btn-dis {
 	cursor: default;
 }
 
-.btn-prm {
+%btn-prm {
 	color: #fbfffe;
 	background-color: seagreen;
 }
 
-.btn-sec {
+%btn-sec {
 	color: rgb(64, 182, 115);
 	background-color: rgba(251, 255, 254, 0.2);
 }
 
-.btn-prm.btn-dis {
+%btn-prm-dis {
+	@extend %btn-dis;
 	background-color: rgba(64, 182, 115, 0.2);
 	color: grey;
 }
 
-.btn-sec.btn-dis {
+%btn-sec-dis {
 	background-color: rgba(251, 255, 254, 0.2);
 	color: rgba(64, 182, 115, 0.4);
 }
 
-.btn-sq {
+%btn-sq {
 	min-width: 40px;
 }
 
-.btn-sm {
+%btn-sm {
 	min-width: 80px;
 }
 
-.btn-md {
+%btn-md {
 	min-width: 140px;
 }
 
-.btn-lg {
+%btn-lg {
 	min-width: 200px;
+}
+
+$sizes: ('sq', 'sm', 'md', 'lg');
+$kinds: ('prm', 'prm-dis', 'sec', 'sec-dis');
+
+@each $size in $sizes {
+	@each $kind in $kinds {
+		.btn-#{$kind}-#{$size} {
+			@extend %btn-base;
+			@extend %btn-#{$size};
+			@extend %btn-#{$kind};
+		}
+	}
 }

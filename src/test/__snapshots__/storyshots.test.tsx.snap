@@ -2,7 +2,7 @@
 
 exports[`Storyshots Components/Button Custom Class 1`] = `
 <button
-  className="btn-base btn-prm btn-md btn-dis"
+  className="btn-prm-md btn-dis"
 >
   fake disabled
 </button>
@@ -10,13 +10,13 @@ exports[`Storyshots Components/Button Custom Class 1`] = `
 
 exports[`Storyshots Components/Button Default 1`] = `
 <button
-  className="btn-base btn-prm btn-md"
+  className="btn-prm-md "
 />
 `;
 
 exports[`Storyshots Components/Button Disabled 1`] = `
 <button
-  className="btn-base btn-prm btn-md btn-dis"
+  className="btn-prm-dis-md "
 >
   disabled
 </button>
@@ -24,7 +24,7 @@ exports[`Storyshots Components/Button Disabled 1`] = `
 
 exports[`Storyshots Components/Button Large 1`] = `
 <button
-  className="btn-base btn-prm btn-lg"
+  className="btn-prm-lg "
 >
   Large Button !!!
 </button>
@@ -32,7 +32,7 @@ exports[`Storyshots Components/Button Large 1`] = `
 
 exports[`Storyshots Components/Button Medium 1`] = `
 <button
-  className="btn-base btn-prm btn-md"
+  className="btn-prm-md "
 >
   Medium Btn
 </button>
@@ -40,7 +40,7 @@ exports[`Storyshots Components/Button Medium 1`] = `
 
 exports[`Storyshots Components/Button Primary 1`] = `
 <button
-  className="btn-base btn-prm btn-md"
+  className="btn-prm-md "
 >
   Primary
 </button>
@@ -48,7 +48,7 @@ exports[`Storyshots Components/Button Primary 1`] = `
 
 exports[`Storyshots Components/Button Secondary 1`] = `
 <button
-  className="btn-base btn-sec btn-md"
+  className="btn-sec-md "
 >
   Secondary
 </button>
@@ -56,7 +56,7 @@ exports[`Storyshots Components/Button Secondary 1`] = `
 
 exports[`Storyshots Components/Button Small 1`] = `
 <button
-  className="btn-base btn-prm btn-sm"
+  className="btn-prm-sm "
 >
   Small
 </button>
@@ -64,7 +64,7 @@ exports[`Storyshots Components/Button Small 1`] = `
 
 exports[`Storyshots Components/Button Square 1`] = `
 <button
-  className="btn-base btn-prm btn-sq"
+  className="btn-prm-sq "
 >
   OK
 </button>
