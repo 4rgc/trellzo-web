@@ -1,6 +1,14 @@
 import APIRequestParams from '../APIParams';
 
 describe('APIParams', () => {
+	describe('Constructor', () => {
+		it('creates params with a specific method', () => {
+			const params = new APIRequestParams('post');
+
+			expect(params.getMethod()).toBe('post');
+		});
+	});
+
 	describe('Body params', () => {
 		it('stores and allows to retrieve the body params', () => {
 			const params = new APIRequestParams();

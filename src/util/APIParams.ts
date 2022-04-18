@@ -8,6 +8,10 @@ export default class APIRequestParams {
 	#bodyParams?: Record<string, any>;
 	#route?: string;
 
+	constructor(method?: MethodType) {
+		if (method) this.#method = method;
+	}
+
 	setUrlParam(key: string, value: string) {
 		if (value === '') delete this.#urlParams[key];
 		else this.#urlParams[key] = value;
