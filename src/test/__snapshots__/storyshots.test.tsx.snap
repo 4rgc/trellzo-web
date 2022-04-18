@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Button Custom Class 1`] = `
+<button
+  className="btn-base btn-prm btn-md btn-dis"
+>
+  fake disabled
+</button>
+`;
+
+exports[`Storyshots Components/Button Default 1`] = `
+<button
+  className="btn-base btn-prm btn-md"
+/>
+`;
+
+exports[`Storyshots Components/Button Disabled 1`] = `
+<button
+  className="btn-base btn-prm btn-md btn-dis"
+>
+  disabled
+</button>
+`;
+
+exports[`Storyshots Components/Button Large 1`] = `
+<button
+  className="btn-base btn-prm btn-lg"
+>
+  Large Button !!!
+</button>
+`;
+
+exports[`Storyshots Components/Button Medium 1`] = `
+<button
+  className="btn-base btn-prm btn-md"
+>
+  Medium Btn
+</button>
+`;
+
+exports[`Storyshots Components/Button Primary 1`] = `
+<button
+  className="btn-base btn-prm btn-md"
+>
+  Primary
+</button>
+`;
+
+exports[`Storyshots Components/Button Secondary 1`] = `
+<button
+  className="btn-base btn-sec btn-md"
+>
+  Secondary
+</button>
+`;
+
+exports[`Storyshots Components/Button Small 1`] = `
+<button
+  className="btn-base btn-prm btn-sm"
+>
+  Small
+</button>
+`;
+
+exports[`Storyshots Components/Button Square 1`] = `
+<button
+  className="btn-base btn-prm btn-sq"
+>
+  OK
+</button>
+`;
