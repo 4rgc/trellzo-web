@@ -1,5 +1,5 @@
 import { useEffect, useState, FC } from 'react';
-import './App.css';
+import './App.scss';
 import { Button } from './components/Button/Button';
 import useTrellzoAPI from './hooks/useTrellzoAPI/useTrellzoAPI';
 import APIRequestParams from './util/APIParams';
