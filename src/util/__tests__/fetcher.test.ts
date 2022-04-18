@@ -11,7 +11,7 @@ describe('fetcher', () => {
 		const params = new APIRequestParams();
 		const url = '';
 
-		expect(await fetcher([url, params])).toBeUndefined();
+		expect(await fetcher(url, params)).toBeUndefined();
 	});
 
 	it('calls fetch with correct url', async () => {
@@ -20,7 +20,7 @@ describe('fetcher', () => {
 
 		fetchMock.once(url, 200);
 
-		const response = await fetcher([url, params]);
+		const response = await fetcher(url, params);
 		const status = response?.status;
 
 		expect(status).toBe(200);
@@ -34,7 +34,7 @@ describe('fetcher', () => {
 
 		fetchMock.once({ url, body: { a: 'b' }, method: 'post' }, 200);
 
-		const response = await fetcher([url, params]);
+		const response = await fetcher(url, params);
 		const status = response?.status;
 
 		expect(status).toBe(200);
