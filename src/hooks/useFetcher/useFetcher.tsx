@@ -1,4 +1,10 @@
-import { Dispatch, MutableRefObject, useRef, useState } from 'react';
+import {
+	Dispatch,
+	MutableRefObject,
+	useCallback,
+	useRef,
+	useState,
+} from 'react';
 import APIRequestParams from '../../util/APIParams';
 import fetcher from '../../util/fetcher';
 
@@ -38,7 +44,7 @@ const useFetcher = (
 	const [paramsState, setParamsState] =
 		useAsyncReference<APIRequestParams>(initialParams);
 
-	const reload = async () => {
+	const reload = useCallback(async () => {
 		try {
 			const res = await fetcher(urlState.current, paramsState.current);
 			if (customHandler) await customHandler(res, setData, setError);
@@ -52,18 +58,21 @@ const useFetcher = (
 			else if (typeof err === 'string') setError(new Error(err));
 			else setError(new Error(`Fetcher error: ${JSON.stringify(err)}`));
 		}
-	};
+	}, [customHandler, paramsState, urlState]);
 
-	const changeParams = ({
-		url: newUrl,
-		params: newParams,
-	}: {
-		url?: string;
-		params?: APIRequestParams;
-	}) => {
-		if (newUrl) setUrlState(newUrl);
-		if (newParams) setParamsState(newParams);
-	};
+	const changeParams = useCallback(
+		({
+			url: newUrl,
+			params: newParams,
+		}: {
+			url?: string;
+			params?: APIRequestParams;
+		}) => {
+			if (newUrl) setUrlState(newUrl);
+			if (newParams) setParamsState(newParams);
+		},
+		[setParamsState, setUrlState]
+	);
 
 	return [data, error, reload, changeParams];
 };
