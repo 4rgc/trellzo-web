@@ -2,6 +2,7 @@ import useTrellzoAPI from '../useTrellzoAPI';
 import APIRequestParams from '../../../util/APIParams';
 import useFetcher from '../../useFetcher/useFetcher';
 import { Dispatch } from 'react';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 const BASE_URL = 'http://localhost:3000';
 
@@ -42,7 +43,7 @@ describe('useTrellzoAPI', () => {
 
 		mockUseFetcher();
 
-		useTrellzoAPI(params);
+		renderHook(() => useTrellzoAPI(params));
 
 		expect(useFetcher).toHaveBeenCalledWith(
 			'',
@@ -57,7 +58,7 @@ describe('useTrellzoAPI', () => {
 
 		mockUseFetcher();
 
-		useTrellzoAPI(params);
+		renderHook(() => useTrellzoAPI(params));
 
 		expect(useFetcher).toHaveBeenCalledWith(
 			`${BASE_URL}/`,
@@ -73,7 +74,7 @@ describe('useTrellzoAPI', () => {
 
 		mockUseFetcher();
 
-		useTrellzoAPI(params);
+		renderHook(() => useTrellzoAPI(params));
 
 		expect(useFetcher).toHaveBeenCalledWith(
 			expect.anything(),
@@ -88,9 +89,9 @@ describe('useTrellzoAPI', () => {
 		const error = new Error('error');
 		mockUseFetcher({ data: 'data' }, error);
 
-		const result = useTrellzoAPI(params);
+		const { result } = renderHook(() => useTrellzoAPI(params));
 
-		expect(result).toStrictEqual([
+		expect(result.current).toStrictEqual([
 			{ data: 'data' },
 			error,
 			expect.any(Function),
@@ -109,7 +110,9 @@ describe('useTrellzoAPI', () => {
 			setErrorMock,
 		]);
 
-		const [data, error, login, changeParams] = useTrellzoAPI(params);
+		const { result } = renderHook(() => useTrellzoAPI(params));
+
+		const [data, error, login, changeParams] = result.current;
 
 		await login();
 
@@ -127,7 +130,9 @@ describe('useTrellzoAPI', () => {
 
 		mockUseFetcher(undefined, undefined, [res, setDataMock, setErrorMock]);
 
-		const [data, error, login, changeParams] = useTrellzoAPI(params);
+		const { result } = renderHook(() => useTrellzoAPI(params));
+
+		const [data, error, login, changeParams] = result.current;
 
 		await login();
 
@@ -150,8 +155,9 @@ describe('useTrellzoAPI', () => {
 				setErrorMock,
 			]);
 
-			//eslint-disable-next-line react-hooks/rules-of-hooks
-			const [data, error, login, changeParams] = useTrellzoAPI(params);
+			const { result } = renderHook(() => useTrellzoAPI(params));
+
+			const [data, error, login, changeParams] = result.current;
 
 			await login();
 
@@ -175,8 +181,9 @@ describe('useTrellzoAPI', () => {
 				setErrorMock,
 			]);
 
-			//eslint-disable-next-line react-hooks/rules-of-hooks
-			const [data, error, login, changeParams] = useTrellzoAPI(params);
+			const { result } = renderHook(() => useTrellzoAPI(params));
+
+			const [data, error, login, changeParams] = result.current;
 
 			await login();
 
