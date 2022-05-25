@@ -1,4 +1,4 @@
-import { Dispatch } from 'react';
+import { Dispatch, useCallback } from 'react';
 import APIRequestParams from '../../util/APIParams';
 import useFetcher from '../useFetcher/useFetcher';
 
@@ -7,36 +7,46 @@ const buildUrl = (baseUrl: string, params?: APIRequestParams) =>
 		? `${baseUrl}${params.getRoute()}${params.getUrlParamsString()}`
 		: '';
 
-const useTrellzoAPI = (initialParams: APIRequestParams) => {
+const useTrellzoAPI = function <T = any>(
+	initialParams: APIRequestParams
+): [
+	T,
+	Error | undefined,
+	() => Promise<void>,
+	(params?: APIRequestParams) => void
+] {
 	// TODO: use env variable
 	const baseUrl = 'http://localhost:3000';
 
 	const initialUrl = buildUrl(baseUrl, initialParams);
 
-	const customHandler = async (
-		res: Response | undefined,
-		setData: Dispatch<any>,
-		setError: Dispatch<Error | undefined>
-	) => {
-		if (!res) {
-			setError(new Error('API Error: Empty response'));
-			return;
-		}
+	const customHandler = useCallback(
+		async (
+			res: Response | undefined,
+			setData: Dispatch<any>,
+			setError: Dispatch<Error | undefined>
+		) => {
+			if (!res) {
+				setError(new Error('API Error: Empty response'));
+				return;
+			}
 
-		if ([200, 201].includes(res.status)) {
-			const data = await res.json();
-			setData(data);
-		} else if (res.status >= 400 && res.status < 600) {
-			const body = await res.json();
-			setError(new Error(`API Error: ${res.status} ${body.message}`));
-		} else {
-			setError(
-				new Error(
-					`API Error: ${res.status} – unimplemented or invalid response status`
-				)
-			);
-		}
-	};
+			if ([200, 201].includes(res.status)) {
+				const data = await res.json();
+				setData(data);
+			} else if (res.status >= 400 && res.status < 600) {
+				const body = await res.json();
+				setError(new Error(`API Error: ${res.status} ${body.message}`));
+			} else {
+				setError(
+					new Error(
+						`API Error: ${res.status} – unimplemented or invalid response status`
+					)
+				);
+			}
+		},
+		[]
+	);
 
 	const [data, error, reload, changeParams] = useFetcher(
 		initialUrl,
@@ -50,7 +60,7 @@ const useTrellzoAPI = (initialParams: APIRequestParams) => {
 			params,
 		});
 
-	return [data, error, reload, changeParamsWrapper];
+	return [data as T, error, reload, changeParamsWrapper];
 };
 
 export default useTrellzoAPI;
