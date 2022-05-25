@@ -11,6 +11,7 @@ const fetcher = (url: string, params: APIRequestParams) => {
 						? 'text/plain'
 						: 'application/json',
 			},
+			credentials: 'include',
 		});
 	else return Promise.resolve(undefined);
 };
