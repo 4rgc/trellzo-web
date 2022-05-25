@@ -9,7 +9,7 @@ export default class APIRequestParams {
 	#route?: string;
 
 	constructor(method?: MethodType) {
-		if (method) this.#method = method;
+		if (method) this.setMethod(method);
 	}
 
 	setUrlParam(key: string, value: string) {
@@ -72,7 +72,9 @@ export default class APIRequestParams {
 	}
 
 	getBodyParamsString() {
-		return this.#bodyParams ? JSON.stringify(this.#bodyParams) : '';
+		return this.#bodyParams !== undefined
+			? JSON.stringify(this.#bodyParams)
+			: undefined;
 	}
 
 	setMethod(method: MethodType) {

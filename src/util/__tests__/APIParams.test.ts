@@ -47,10 +47,10 @@ describe('APIParams', () => {
 			);
 		});
 
-		it('returns an empty body string if no params are set', () => {
+		it('returns undefined if no params are set', () => {
 			const params = new APIRequestParams();
 
-			expect(params.getBodyParamsString()).toBe('');
+			expect(params.getBodyParamsString()).toBeUndefined();
 		});
 
 		it('resets the body on method change', () => {
@@ -138,7 +138,7 @@ describe('APIParams', () => {
 				['c', undefined],
 			]);
 
-			expect(params.getBodyParamsString()).toBe('');
+			expect(params.getBodyParams()).toBe(undefined);
 		});
 	});
 
