@@ -3,6 +3,7 @@ import './Login.scss';
 import { Button } from '../../components/Button/Button';
 import useTrellzoAPI from '../../hooks/useTrellzoAPI/useTrellzoAPI';
 import APIRequestParams from '../../util/APIParams';
+import { useNavigate } from 'react-router-dom';
 
 const defaultRequestParams = new APIRequestParams('post');
 defaultRequestParams.setRoute('/login');
@@ -13,6 +14,7 @@ const Login: React.FC = () => {
 	);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const navigate = useNavigate();
 
 	const onLoginClick = () => {
 		const newParams = new APIRequestParams('post');
@@ -27,9 +29,9 @@ const Login: React.FC = () => {
 
 	useEffect(() => {
 		if (loginData) {
-			console.log(loginData);
+			navigate('/boards');
 		}
-	}, [loginData]);
+	}, [loginData, navigate]);
 
 	useEffect(() => {
 		if (loginError) {
@@ -41,25 +43,25 @@ const Login: React.FC = () => {
 	return (
 		<div className="login-container">
 			<h1 className="app-logo">trellzo</h1>
-			<input
-				type="email"
-				name="email"
-				className="email-input"
-				placeholder="E-mail"
-				onChange={(e) => setEmail(e.target.value)}
-				value={email}
-			/>
-			<input
-				type="password"
-				name="password"
-				className="password-input"
-				placeholder="Password"
-				onChange={(e) => setPassword(e.target.value)}
-				value={password}
-			/>
-			<Button kind="primary" onClick={onLoginClick}>
-				Login
-			</Button>
+				<input
+					type="email"
+					name="email"
+					className="email-input"
+					placeholder="E-mail"
+					onChange={(e) => setEmail(e.target.value)}
+					value={email}
+				/>
+				<input
+					type="password"
+					name="password"
+					className="password-input"
+					placeholder="Password"
+					onChange={(e) => setPassword(e.target.value)}
+					value={password}
+				/>
+				<Button kind="primary" onClick={onLoginClick}>
+					Login
+				</Button>
 		</div>
 	);
 };
