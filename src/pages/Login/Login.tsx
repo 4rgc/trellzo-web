@@ -43,25 +43,35 @@ const Login: React.FC = () => {
 	return (
 		<div className="login-container">
 			<h1 className="app-logo">trellzo</h1>
+			<form
+				onSubmit={(e) => {
+					e.preventDefault();
+				}}
+			>
 				<input
+					autoComplete="email"
 					type="email"
 					name="email"
 					className="email-input"
 					placeholder="E-mail"
 					onChange={(e) => setEmail(e.target.value)}
 					value={email}
+					tabIndex={1}
 				/>
 				<input
+					autoComplete="current-password"
 					type="password"
 					name="password"
 					className="password-input"
 					placeholder="Password"
 					onChange={(e) => setPassword(e.target.value)}
 					value={password}
+					tabIndex={2}
 				/>
 				<Button kind="primary" onClick={onLoginClick}>
 					Login
 				</Button>
+			</form>
 		</div>
 	);
 };
