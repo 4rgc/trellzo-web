@@ -6,12 +6,12 @@ import Login from './pages/Login';
 const App: React.FC = () => {
 	return (
 		<Router>
-		<div className="App">
+			<div className="App">
 				<Routes>
 					<Route index element={<Login />} />
 					<Route element={<Boards />} path="boards" />
 				</Routes>
-		</div>
+			</div>
 		</Router>
 	);
 };

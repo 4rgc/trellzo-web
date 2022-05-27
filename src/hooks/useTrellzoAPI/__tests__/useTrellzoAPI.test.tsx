@@ -1,15 +1,15 @@
+import * as UseFetcher from '../../useFetcher/useFetcher';
 import useTrellzoAPI from '../useTrellzoAPI';
 import APIRequestParams from '../../../util/APIParams';
-import useFetcher from '../../useFetcher/useFetcher';
 import { Dispatch } from 'react';
 import { act, renderHook } from '@testing-library/react-hooks';
+import fetchMock from 'fetch-mock';
 
 const BASE_URL = 'http://localhost:3000';
 
-jest.mock('../../useFetcher/useFetcher');
-jest.mock('../../../util/fetcher.ts');
-
 describe('useTrellzoAPI', () => {
+	let useFetcherMock = jest.spyOn(UseFetcher, 'default');
+
 	const mockUseFetcher = (
 		data: any = { success: true },
 		error: Error | undefined = undefined,
@@ -19,12 +19,13 @@ describe('useTrellzoAPI', () => {
 			Dispatch<Error | undefined>
 		] = [undefined, () => {}, () => {}]
 	) => {
-		(useFetcher as jest.Mock).mockImplementationOnce(
+		useFetcherMock = jest.spyOn(UseFetcher, 'default');
+		useFetcherMock = useFetcherMock.mockImplementationOnce(
 			(initUrl, initParams, customHandler?) => {
 				return [
 					data,
 					error,
-					() => {
+					async () => {
 						if (customHandler)
 							customHandler(...customHandlerParams);
 					},
@@ -35,7 +36,8 @@ describe('useTrellzoAPI', () => {
 	};
 
 	afterEach(() => {
-		jest.clearAllMocks();
+		useFetcherMock.mockRestore();
+		fetchMock.restore();
 	});
 
 	it('passes empty string into fetcher when route is empty', () => {
@@ -45,7 +47,7 @@ describe('useTrellzoAPI', () => {
 
 		renderHook(() => useTrellzoAPI(params));
 
-		expect(useFetcher).toHaveBeenCalledWith(
+		expect(useFetcherMock).toHaveBeenCalledWith(
 			'',
 			expect.anything(),
 			expect.any(Function)
@@ -60,7 +62,7 @@ describe('useTrellzoAPI', () => {
 
 		renderHook(() => useTrellzoAPI(params));
 
-		expect(useFetcher).toHaveBeenCalledWith(
+		expect(useFetcherMock).toHaveBeenCalledWith(
 			`${BASE_URL}/`,
 			expect.anything(),
 			expect.any(Function)
@@ -76,7 +78,7 @@ describe('useTrellzoAPI', () => {
 
 		renderHook(() => useTrellzoAPI(params));
 
-		expect(useFetcher).toHaveBeenCalledWith(
+		expect(useFetcherMock).toHaveBeenCalledWith(
 			expect.anything(),
 			params,
 			expect.anything()
@@ -114,14 +116,41 @@ describe('useTrellzoAPI', () => {
 
 		const [data, error, login, changeParams] = result.current;
 
-		await login();
+		await act(() => login());
 
 		expect(setDataMock).not.toHaveBeenCalled();
 		expect(setErrorMock).toHaveBeenCalledWith(expect.any(Error));
 	});
 
+	it('rerenders the hook on params change', async () => {
+		useFetcherMock.mockRestore();
+
+		const params1 = new APIRequestParams();
+		params1.setRoute('/a');
+		const data1 = { a: 'data' };
+
+		const params2 = new APIRequestParams();
+		params2.setRoute('/b');
+		const data2 = { b: 'data' };
+
+		fetchMock.get(/\/a/, { body: data1 }).get(/\/b/, { body: data2 });
+
+		const { result } = renderHook(() => useTrellzoAPI(params1));
+		await act(() => result.current[2]());
+		const [data, error, reload, changeParams] = result.current;
+		expect(data).toStrictEqual(data1);
+
+		act(() => changeParams(params2));
+		await act(() => reload());
+		const [newData] = result.current;
+		expect(newData).toStrictEqual(data2);
+
+		fetchMock.restore();
+	});
+
 	it('sets data on 200, 201', async () => {
 		const params = new APIRequestParams();
+		params.setRoute('/a');
 		const setDataMock = jest.fn();
 		const setErrorMock = jest.fn();
 
@@ -134,7 +163,7 @@ describe('useTrellzoAPI', () => {
 
 		const [data, error, login, changeParams] = result.current;
 
-		await login();
+		await act(() => login());
 
 		expect(setErrorMock).not.toHaveBeenCalled();
 		expect(setDataMock).toBeCalledWith('data');
@@ -159,7 +188,7 @@ describe('useTrellzoAPI', () => {
 
 			const [data, error, login, changeParams] = result.current;
 
-			await login();
+			await act(() => login());
 
 			expect(setDataMock).not.toHaveBeenCalled();
 			expect(setErrorMock).toHaveBeenCalledWith(expect.any(Error));
@@ -185,7 +214,7 @@ describe('useTrellzoAPI', () => {
 
 			const [data, error, login, changeParams] = result.current;
 
-			await login();
+			await act(() => login());
 
 			expect(setDataMock).not.toHaveBeenCalled();
 			expect(setErrorMock).toHaveBeenCalledWith(expect.any(Error));
