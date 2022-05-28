@@ -1,0 +1,82 @@
+$sizes: (
+	'sm': 100px,
+	'md': 300px,
+	'lg': 500px,
+);
+
+$line-clamp: (
+	'sm': 2,
+	'md': 4,
+	'lg': 14,
+);
+
+$divider-display: (
+	'sm': none,
+	'md': initial,
+	'lg': initial,
+);
+
+.card-base {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba($color: white, $alpha: 0.9);
+	border-radius: 3px;
+	margin: 0;
+}
+
+.card-cover {
+	width: 100%;
+	object-fit: cover;
+}
+
+%card-cover-sm {
+	display: none;
+}
+
+%card-cover-md {
+	height: 50%;
+}
+
+%card-cover-lg {
+	height: 30%;
+}
+
+@each $size, $value in $sizes {
+	.card-#{$size} {
+		@extend .card-base;
+		height: $value;
+		.card-content-text {
+			display: -webkit-box;
+			-webkit-line-clamp: map-get($map: $line-clamp, $key: $size);
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+		.card-cover {
+			@extend %card-cover-#{$size};
+		}
+		.card-divider {
+			display: map-get($map: $divider-display, $key: $size);
+		}
+	}
+}
+
+.card-divider {
+	margin: 0 auto;
+	height: 0;
+	width: 90%;
+	border: 2px solid rgba(64, 182, 115, 0.7);
+	border-radius: 5px;
+}
+
+.card-container {
+	margin: 10px;
+	h3 {
+		margin: 4px 0;
+	}
+	font-size: medium;
+
+	&-no-text {
+		@extend .card-container;
+		overflow: hidden;
+	}
+}
