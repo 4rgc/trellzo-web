@@ -5,12 +5,12 @@ import Card from '../Card';
 export default {
 	title: 'Components/Card',
 	component: Card,
+	args: {
+		content: `Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.`,
+		title: 'Title',
+	},
 	argTypes: {
 		onClick: { action: 'clicked' },
-		title: { defaultValue: 'Title' },
-		content: {
-			defaultValue: `Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.`,
-		},
 	},
 } as ComponentMeta<typeof Card>;
 
