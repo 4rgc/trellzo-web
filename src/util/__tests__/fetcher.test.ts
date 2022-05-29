@@ -39,4 +39,19 @@ describe('fetcher', () => {
 
 		expect(status).toBe(200);
 	});
+
+	it('calls fetch with a content-type header', async () => {
+		const params = new APIRequestParams();
+		const url = 'fakeurl/';
+
+		fetchMock.getOnce(
+			{ url, headers: { 'Content-Type': 'application/json' } },
+			200
+		);
+
+		const response1 = await fetcher(url, params);
+		const status1 = response1?.status;
+
+		expect(status1).toBe(200);
+	});
 });

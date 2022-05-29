@@ -6,10 +6,7 @@ const fetcher = (url: string, params: APIRequestParams) => {
 			method: params.getMethod(),
 			body: params.getBodyParamsString(),
 			headers: {
-				'Content-Type':
-					params.getBodyParamsString() === ''
-						? 'text/plain'
-						: 'application/json',
+				'Content-Type': 'application/json',
 			},
 			credentials: 'include',
 		});
