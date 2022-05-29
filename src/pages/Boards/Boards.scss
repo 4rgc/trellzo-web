@@ -1,0 +1,20 @@
+.boards {
+	display: flex;
+	flex-grow: 1;
+	margin: 20px;
+}
+
+.boards-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	background-color: #666;
+	border-radius: 2px;
+	height: 100%;
+	flex-grow: 1;
+}
+
+.boards-container .card-md {
+	margin: 5px;
+	width: auto;
+}

@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
+import Card from '../../components/Card';
 import useTrellzoAPI from '../../hooks/useTrellzoAPI';
 import PartialBoard from '../../types/PartialBoard';
 import APIRequestParams from '../../util/APIParams';
+import './Boards.scss';
 
 const requestParams = new APIRequestParams('get');
 requestParams.setRoute('/board');
@@ -17,13 +19,17 @@ const Boards = () => {
 	const boards = response && response.boards;
 
 	return (
-		<div>
+		<div className="boards">
 			{boards && (
-				<ul>
+				<div className="boards-container">
 					{boards.map((b) => (
-						<li key={b._id}>{b.name}</li>
+						<Card
+							key={b._id}
+							title={b.name}
+							content={b.description}
+						/>
 					))}
-				</ul>
+				</div>
 			)}
 
 			{error && (
