@@ -1,13 +1,15 @@
 import './Card.scss';
-import { ReactComponent as Placeholder } from '../../assets/placeholder.svg';
+import CardContents, { ICardContentsProps } from './CardContents';
+import CardCover, { ICardCoverProps } from './CardCover';
+import CardDivider from './CardDivider';
 
 interface ICardProps extends React.ComponentPropsWithoutRef<'div'> {
 	onClick?: () => void;
-	children?: React.ReactChild | React.ReactChild[];
+	children?: ICardContentsProps['children'];
 	isDisabled?: boolean;
-	imageUrl?: string;
-	title?: string;
-	content?: string | React.ReactElement | React.ReactElement[];
+	imageUrl?: ICardCoverProps['src'];
+	title?: ICardContentsProps['title'];
+	content?: ICardContentsProps['content'];
 	size?: 'sm' | 'md' | 'lg';
 }
 
@@ -23,39 +25,19 @@ const Card: React.FC<ICardProps> = (props) => {
 		...otherProps
 	} = props;
 
+	const isActive = onClick && !isDisabled;
+
 	return (
-		<div className={`card-${size}`} onClick={onClick} {...otherProps}>
-			{imageUrl ? (
-				<img className="card-cover" src={imageUrl} alt="card img" />
-			) : (
-				<Placeholder
-					fill="black"
-					stroke="black"
-					className="card-cover"
-					preserveAspectRatio="xMinYMin slice"
-				/>
-			)}
-			<div className="card-divider"></div>
-			<div
-				className={`card-container${
-					typeof content !== 'string' ? '-no-text' : ''
-				}`}
-			>
-				{children ?? (
-					<>
-						<h3>{title}</h3>
-						<div
-							className={
-								typeof content === 'string'
-									? 'card-content-text'
-									: ''
-							}
-						>
-							{content}
-						</div>
-					</>
-				)}
-			</div>
+		<div
+			className={`card-${size}${isActive ? '-clickable' : ''}`}
+			onClick={onClick}
+			{...otherProps}
+		>
+			<CardCover src={imageUrl} />
+			<CardDivider />
+			<CardContents content={content} title={title}>
+				{children}
+			</CardContents>
 		</div>
 	);
 };

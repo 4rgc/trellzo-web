@@ -27,6 +27,7 @@ const Boards = () => {
 							key={b._id}
 							title={b.name}
 							content={b.description}
+							style={{ margin: '5px' }}
 						/>
 					))}
 				</div>
