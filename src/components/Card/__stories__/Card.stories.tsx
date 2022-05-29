@@ -21,3 +21,49 @@ const Template: ComponentStory<typeof Card> = ({ children, ...args }) => (
 );
 
 export const Default = Template.bind({});
+
+export const WithCover = Template.bind({});
+WithCover.args = { imageUrl: '/regular-cover.png' };
+
+export const WithVerticalCover = Template.bind({});
+WithVerticalCover.args = { imageUrl: '/vertical-cover.png' };
+
+export const WithHorizontalCover = Template.bind({});
+WithHorizontalCover.args = { imageUrl: '/horizontal-cover.png' };
+
+export const WithLongTitle = Template.bind({});
+WithLongTitle.args = { title: 'Hello this is long title' };
+
+export const WithCustomChildren: ComponentStory<typeof Card> = (args) => (
+	<Card {...args} style={{ width: '200px' }}>
+		<div
+			style={{
+				backgroundColor: 'blue',
+				color: 'white',
+				borderRadius: '10px',
+				textAlign: 'center',
+			}}
+		>
+			Custom stuff
+		</div>
+	</Card>
+);
+
+export const WithCustomContent: ComponentStory<typeof Card> = (args) => (
+	<Card
+		{...args}
+		style={{ width: '200px' }}
+		content={
+			<div
+				style={{
+					backgroundColor: 'blue',
+					color: 'white',
+					borderRadius: '10px',
+					textAlign: 'center',
+				}}
+			>
+				Custom content
+			</div>
+		}
+	/>
+);
