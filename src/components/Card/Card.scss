@@ -22,11 +22,13 @@ $divider-display: (
 	background-color: rgba($color: white, $alpha: 0.9);
 	border-radius: 3px;
 	margin: 0;
+	overflow: hidden;
 }
 
 .card-cover {
 	width: 100%;
 	object-fit: cover;
+	margin-bottom: 10px;
 }
 
 %card-cover-sm {
@@ -72,6 +74,9 @@ $divider-display: (
 	margin: 10px;
 	h3 {
 		margin: 4px 0;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	font-size: medium;
 
