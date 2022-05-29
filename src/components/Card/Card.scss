@@ -59,6 +59,16 @@ $divider-display: (
 		.card-divider {
 			display: map-get($map: $divider-display, $key: $size);
 		}
+		&-clickable {
+			@extend .card-#{$size};
+			transition: background-color 0.3s ease;
+
+			&:hover {
+				@extend .card-#{$size};
+				cursor: pointer;
+				background-color: rgba($color: #ddf, $alpha: 0.9);
+			}
+		}
 	}
 }
 
