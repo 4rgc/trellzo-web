@@ -1,5 +1,5 @@
 import './Card.scss';
-import { ReactComponent as Placeholder } from '../../../public/placeholder.svg';
+import { ReactComponent as Placeholder } from '../../assets/placeholder.svg';
 
 interface ICardProps extends React.ComponentPropsWithoutRef<'div'> {
 	onClick?: () => void;
