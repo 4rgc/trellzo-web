@@ -11,9 +11,12 @@ const App: React.FC = () => {
 	return (
 		<div className="App">
 			{location.pathname !== '/login' && (
-				<nav>
-					<Logo />
-				</nav>
+				<>
+					<nav>
+						<Logo />
+					</nav>
+					<div style={{ border: '0.5px solid black' }} />
+				</>
 			)}
 			<Routes>
 				<Route path="/" element={<Navigate to="/login" />} />
