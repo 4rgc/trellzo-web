@@ -11,7 +11,7 @@ describe('useTrellzoAPI', () => {
 	let useFetcherMock = jest.spyOn(UseFetcher, 'default');
 
 	const mockUseFetcher = (
-		data: any = { success: true },
+		data?: any,
 		error: Error | undefined = undefined,
 		customHandlerParams: [
 			Response | undefined,
@@ -20,18 +20,15 @@ describe('useTrellzoAPI', () => {
 		] = [undefined, () => {}, () => {}]
 	) => {
 		useFetcherMock = jest.spyOn(UseFetcher, 'default');
-		useFetcherMock = useFetcherMock.mockImplementationOnce(
-			(initUrl, initParams, customHandler?) => {
-				return [
-					data,
-					error,
-					async () => {
-						if (customHandler)
-							customHandler(...customHandlerParams);
-					},
-					() => {},
-				];
-			}
+		useFetcherMock = useFetcherMock.mockImplementation(
+			(initUrl, initParams, customHandler?) => [
+				data,
+				error,
+				async () => {
+					if (customHandler) customHandler(...customHandlerParams);
+				},
+				() => {},
+			]
 		);
 	};
 
@@ -89,12 +86,13 @@ describe('useTrellzoAPI', () => {
 		const params = new APIRequestParams();
 
 		const error = new Error('error');
-		mockUseFetcher({ data: 'data' }, error);
+		const data = { a: 'a' };
+		mockUseFetcher(data, error);
 
 		const { result } = renderHook(() => useTrellzoAPI(params));
 
 		expect(result.current).toStrictEqual([
-			{ data: 'data' },
+			data,
 			error,
 			expect.any(Function),
 			expect.any(Function),
@@ -133,16 +131,24 @@ describe('useTrellzoAPI', () => {
 		params2.setRoute('/b');
 		const data2 = { b: 'data' };
 
-		fetchMock.get(/\/a/, { body: data1 }).get(/\/b/, { body: data2 });
+		fetchMock
+			.get(/\/a/, {
+				body: data1,
+			})
+			.get(/\/b/, {
+				body: data2,
+			});
 
 		const { result } = renderHook(() => useTrellzoAPI(params1));
 		await act(() => result.current[2]());
 		const [data, error, reload, changeParams] = result.current;
 		expect(data).toStrictEqual(data1);
+		expect(error).toBeUndefined();
 
 		act(() => changeParams(params2));
 		await act(() => reload());
-		const [newData] = result.current;
+		const [newData, newError] = result.current;
+		expect(newError).toBeUndefined();
 		expect(newData).toStrictEqual(data2);
 
 		fetchMock.restore();
