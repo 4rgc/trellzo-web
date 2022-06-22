@@ -226,4 +226,37 @@ describe('useTrellzoAPI', () => {
 			expect(setErrorMock).toHaveBeenCalledWith(expect.any(Error));
 		}
 	});
+
+	it('refreshes and leaves error empty on 401 response code', async () => {
+		useFetcherMock.mockRestore();
+
+		const params = new APIRequestParams();
+		params.setRoute('/a');
+
+		const successData = { a: 'a' };
+		const refreshSpy = jest.fn();
+
+		fetchMock
+			.post(/\/auth\/refresh/, function () {
+				refreshSpy();
+				fetchMock.getOnce(/\/a/, successData, {
+					overwriteRoutes: true,
+				});
+				return { message: 'Refreshed' };
+			})
+			.getOnce(/\/a/, {
+				status: 401,
+				body: { message: 'Unauthorized: jwt expired' },
+			});
+
+		const { result } = renderHook(() => useTrellzoAPI(params));
+
+		//reload
+		await act(() => result.current[2]());
+		const [data, error] = result.current;
+
+		expect(refreshSpy).toHaveBeenCalledTimes(1);
+		expect(data).toStrictEqual(successData);
+		expect(error).toBeUndefined();
+	});
 });

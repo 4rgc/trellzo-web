@@ -1,5 +1,6 @@
-import { Dispatch, useCallback, useEffect, useState } from 'react';
+import { Dispatch, useEffect, useState } from 'react';
 import APIRequestParams from '../../util/APIParams';
+import fetcher from '../../util/fetcher';
 import useFetcher from '../useFetcher/useFetcher';
 
 const buildUrl = (baseUrl: string, params?: APIRequestParams) =>
@@ -68,7 +69,20 @@ const useTrellzoAPI = function <T = any>(
 
 	useEffect(() => {
 		if (fetcherError?.message) {
+			//custom handler will set the error if response code 400 <= x <= 600
+			if (/401/.test(fetcherError?.message)) {
+				fetcher(buildUrl(baseUrl, refreshParams), refreshParams).then(
+					(res) => {
+						//TODO: add logic for handling failed refresh
+						if (res && res.status === 200) {
+							setError(undefined);
+							reload();
+						}
+					}
+				);
+			} else {
 				setError(fetcherError);
+			}
 		}
 	}, [fetcherError, reload]);
 
