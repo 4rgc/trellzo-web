@@ -10,6 +10,7 @@ const buildUrl = (baseUrl: string, params?: APIRequestParams) =>
 
 const refreshParams = new APIRequestParams('post');
 refreshParams.setRoute('/auth/refresh');
+Object.freeze(refreshParams);
 
 const customHandler = async (
 	res: Response | undefined,
@@ -84,10 +85,23 @@ const useTrellzoAPI = function <T = any>(
 			if (/auth token expired/i.test(fetcherError?.message)) {
 				fetcher(buildUrl(baseUrl, refreshParams), refreshParams).then(
 					(res) => {
-						//TODO: add logic for handling failed refresh
-						if (res && res.status === 200) {
-							setError(undefined);
-							reload();
+						// Ignoring else because refresh params are frozen and the url will never be '', therefore fetcher will always return a response
+						/* istanbul ignore else */
+						if (res) {
+							if (res.status === 200) {
+								setError(undefined);
+								reload();
+							} else {
+								res.json().then((res) => {
+									setError(
+										new Error(
+											`API Error: Error while refreshing: ${res.message}`
+										)
+									);
+								});
+							}
+						} else {
+							setError(new Error('API Error: empty response'));
 						}
 					}
 				);

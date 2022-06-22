@@ -288,4 +288,34 @@ describe('useTrellzoAPI', () => {
 		expect(data).toBeUndefined();
 		expect(error?.message).toMatch(new RegExp(errorBody.message));
 	});
+
+	it('does not reject when refresh fails', async () => {
+		useFetcherMock.mockRestore();
+
+		const params = new APIRequestParams();
+		params.setRoute('/a');
+
+		const errorBody = { message: 'Fake internal error' };
+		const refreshSpy = jest.fn();
+
+		fetchMock
+			.post(/\/auth\/refresh/, function () {
+				refreshSpy();
+				return { status: 500, body: errorBody };
+			})
+			.get(/\/a/, {
+				status: 401,
+				body: { message: 'Unauthorized: jwt expired' },
+			});
+
+		const { result } = renderHook(() => useTrellzoAPI(params));
+
+		//reload
+		await act(() => result.current[2]());
+		const [data, error] = result.current;
+
+		expect(refreshSpy).toHaveBeenCalledTimes(1);
+		expect(data).toBeUndefined();
+		expect(error?.message).toMatch(new RegExp(errorBody.message));
+	});
 });
