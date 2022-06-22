@@ -25,6 +25,7 @@ function useAsyncReference<T>(
 }
 
 const useFetcher = (
+	//TODO: consider changing to initialBaseUrl or just baseUrl, or adding baseUrl to params
 	initialUrl: string,
 	initialParams: APIRequestParams,
 	customHandler?: (
