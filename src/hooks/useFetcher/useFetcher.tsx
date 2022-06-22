@@ -40,13 +40,13 @@ const useFetcher = (
 ] => {
 	const [data, setData] = useState<any>(undefined);
 	const [error, setError] = useState<Error | undefined>(undefined);
-	const [urlState, setUrlState] = useAsyncReference<string>(initialUrl);
-	const [paramsState, setParamsState] =
+	const [url, setUrl] = useAsyncReference<string>(initialUrl);
+	const [params, setParams] =
 		useAsyncReference<APIRequestParams>(initialParams);
 
 	const reload = useCallback(async () => {
 		try {
-			const res = await fetcher(urlState.current, paramsState.current);
+			const res = await fetcher(url.current, params.current);
 			if (customHandler) await customHandler(res, setData, setError);
 			else {
 				const newData = res && (await res?.json());
@@ -58,9 +58,9 @@ const useFetcher = (
 			else if (typeof err === 'string') setError(new Error(err));
 			else setError(new Error(`Fetcher error: ${JSON.stringify(err)}`));
 		}
-	}, [customHandler, paramsState, urlState]);
+	}, [customHandler, params, url]);
 
-	const changeParams = useCallback(
+	const setParamsAndUrl = useCallback(
 		({
 			url: newUrl,
 			params: newParams,
@@ -68,13 +68,13 @@ const useFetcher = (
 			url?: string;
 			params?: APIRequestParams;
 		}) => {
-			if (newUrl) setUrlState(newUrl);
-			if (newParams) setParamsState(newParams);
+			if (newUrl) setUrl(newUrl);
+			if (newParams) setParams(newParams);
 		},
-		[setParamsState, setUrlState]
+		[setParams, setUrl]
 	);
 
-	return [data, error, reload, changeParams];
+	return [data, error, reload, setParamsAndUrl];
 };
 
 export default useFetcher;
