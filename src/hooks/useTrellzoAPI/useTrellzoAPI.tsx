@@ -20,10 +20,21 @@ const customHandler = async (
 		setError(new Error('API Error: Empty response'));
 		return;
 	}
+	const nonProtectedRoutes = [/\/auth\/.*/, /\/user\/register/];
+	const isRouteProtected = !nonProtectedRoutes
+		.map((r) => r.test(res.url))
+		.includes(true);
 
 	if ([200, 201].includes(res.status)) {
 		const data = await res.json();
 		setData(data);
+	} else if (res.status === 401 && isRouteProtected) {
+		const body = await res.json();
+		setError(
+			new Error(
+				`Error: 401 Unauthorized: Auth token expired: ${body.message}`
+			)
+		);
 	} else if (res.status >= 400 && res.status < 600) {
 		const body = await res.json();
 		setError(new Error(`API Error: ${res.status} ${body.message}`));
@@ -70,7 +81,7 @@ const useTrellzoAPI = function <T = any>(
 	useEffect(() => {
 		if (fetcherError?.message) {
 			//custom handler will set the error if response code 400 <= x <= 600
-			if (/401/.test(fetcherError?.message)) {
+			if (/auth token expired/i.test(fetcherError?.message)) {
 				fetcher(buildUrl(baseUrl, refreshParams), refreshParams).then(
 					(res) => {
 						//TODO: add logic for handling failed refresh

@@ -259,4 +259,33 @@ describe('useTrellzoAPI', () => {
 		expect(data).toStrictEqual(successData);
 		expect(error).toBeUndefined();
 	});
+
+	it('does not refresh when a route is not protected', async () => {
+		useFetcherMock.mockRestore();
+
+		const params = new APIRequestParams();
+		params.setRoute('/auth/login');
+
+		const errorBody = {
+			message: 'User not found or password is incorrect',
+		};
+		const refreshSpy = jest.fn();
+
+		fetchMock
+			.post(/\/auth\/refresh/, function () {
+				refreshSpy();
+				return { message: 'Refreshed' };
+			})
+			.get(/\/auth\/login/, { status: 401, body: errorBody });
+
+		const { result } = renderHook(() => useTrellzoAPI(params));
+
+		//reload
+		await act(() => result.current[2]());
+		const [data, error] = result.current;
+
+		expect(refreshSpy).not.toHaveBeenCalled();
+		expect(data).toBeUndefined();
+		expect(error?.message).toMatch(new RegExp(errorBody.message));
+	});
 });
