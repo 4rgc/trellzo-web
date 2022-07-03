@@ -8,6 +8,7 @@ export interface ICardProps extends React.ComponentPropsWithoutRef<'div'> {
 	children?: ICardContentsProps['children'];
 	isDisabled?: boolean;
 	imageUrl?: ICardCoverProps['src'];
+	isImageDisabled?: boolean;
 	title?: ICardContentsProps['title'];
 	content?: ICardContentsProps['content'];
 	size?: 'sm' | 'md' | 'lg';
@@ -18,6 +19,7 @@ const Card: React.FC<ICardProps> = (props) => {
 		onClick,
 		children,
 		isDisabled = false,
+		isImageDisabled = false,
 		imageUrl,
 		title,
 		content,
@@ -30,14 +32,18 @@ const Card: React.FC<ICardProps> = (props) => {
 
 	return (
 		<div
-			className={`card card-${size}${isActive ? '-clickable' : ''} ${
-				className || ''
-			}`}
+			className={`card card-${size}${isActive ? ' card-clickable' : ''}${
+				isImageDisabled || size === 'sm' ? ' card-noimage' : ''
+			}${className ? ` ${className}` : ''}`}
 			onClick={onClick}
 			{...otherProps}
 		>
-			<CardCover src={imageUrl} />
-			<CardDivider />
+			{!isImageDisabled && (
+				<>
+					<CardCover src={imageUrl} />
+					<CardDivider />
+				</>
+			)}
 			<CardContents content={content} title={title}>
 				{children}
 			</CardContents>
