@@ -6,7 +6,7 @@ export interface IGhostCardProps extends ICardProps {
 	innerText?: string;
 }
 
-const GhostCard = (props: IGhostCardProps) => {
+const GhostCard: React.FC<IGhostCardProps> = (props) => {
 	const { innerText, ...otherProps } = props;
 
 	return (
