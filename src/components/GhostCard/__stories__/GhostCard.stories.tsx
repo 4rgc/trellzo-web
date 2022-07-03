@@ -20,3 +20,12 @@ const Template: ComponentStory<typeof GhostCard> = ({ children, ...args }) => (
 );
 
 export const Default = Template.bind({});
+
+export const NoImage = Template.bind({});
+NoImage.args = { isImageDisabled: true };
+
+export const Small = Template.bind({});
+Small.args = { size: 'sm' };
+
+export const Large = Template.bind({});
+Large.args = { size: 'lg' };
