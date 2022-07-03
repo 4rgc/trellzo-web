@@ -3,7 +3,7 @@ import CardContents, { ICardContentsProps } from './CardContents';
 import CardCover, { ICardCoverProps } from './CardCover';
 import CardDivider from './CardDivider';
 
-interface ICardProps extends React.ComponentPropsWithoutRef<'div'> {
+export interface ICardProps extends React.ComponentPropsWithoutRef<'div'> {
 	onClick?: () => void;
 	children?: ICardContentsProps['children'];
 	isDisabled?: boolean;
@@ -22,6 +22,7 @@ const Card: React.FC<ICardProps> = (props) => {
 		title,
 		content,
 		size = 'md',
+		className,
 		...otherProps
 	} = props;
 
@@ -29,7 +30,9 @@ const Card: React.FC<ICardProps> = (props) => {
 
 	return (
 		<div
-			className={`card-${size}${isActive ? '-clickable' : ''}`}
+			className={`card card-${size}${isActive ? '-clickable' : ''} ${
+				className || ''
+			}`}
 			onClick={onClick}
 			{...otherProps}
 		>
