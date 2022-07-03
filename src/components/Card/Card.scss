@@ -10,12 +10,6 @@ $line-clamp: (
 	'lg': 14,
 );
 
-$divider-display: (
-	'sm': none,
-	'md': initial,
-	'lg': initial,
-);
-
 .card-base {
 	display: flex;
 	flex-direction: column;
@@ -31,11 +25,8 @@ $divider-display: (
 	margin-bottom: 10px;
 }
 
+%card-cover-md,
 %card-cover-sm {
-	display: none;
-}
-
-%card-cover-md {
 	height: 50%;
 }
 
@@ -43,35 +34,43 @@ $divider-display: (
 	height: 30%;
 }
 
-@each $size, $value in $sizes {
-	.card-#{$size} {
-		@extend .card-base;
-		height: $value;
-		.card-content-text {
-			display: -webkit-box;
-			-webkit-line-clamp: map-get($map: $line-clamp, $key: $size);
-			-webkit-box-orient: vertical;
-			overflow: hidden;
+%card-hover {
+	cursor: pointer;
+	background-color: rgba($color: #ddf, $alpha: 0.9);
+}
+
+%card-noimage {
+	justify-content: center;
+}
+
+.card {
+	@extend .card-base;
+
+	@each $size, $value in $sizes {
+		&.card-#{$size} {
+			height: $value;
+			.card-content-text {
+				display: -webkit-box;
+				-webkit-line-clamp: map-get($map: $line-clamp, $key: $size);
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+			.card-cover {
+				@extend %card-cover-#{$size};
+			}
 		}
-		.card-cover {
-			@extend %card-cover-#{$size};
-		}
-		.card-divider {
-			display: map-get($map: $divider-display, $key: $size);
-		}
-		&-clickable {
-			@extend .card-#{$size};
+		&.card-clickable {
 			transition: background-color 0.3s ease;
 
 			&:hover {
-				@extend .card-#{$size};
-				cursor: pointer;
-				background-color: rgba($color: #ddf, $alpha: 0.9);
+				@extend %card-hover;
 			}
+		}
+		&.card-noimage {
+			@extend %card-noimage;
 		}
 	}
 }
-
 .card-divider {
 	margin: 0 auto;
 	height: 0;

@@ -1,0 +1,16 @@
+.ghost-card.card {
+	border: 4px grey dashed;
+	border-radius: 20px;
+
+	&:hover {
+		background-color: rgba($color: lightgrey, $alpha: 0.9);
+	}
+}
+
+.ghost-card-text-container {
+	text-align: center;
+}
+
+.ghost-card-text {
+	color: grey;
+}

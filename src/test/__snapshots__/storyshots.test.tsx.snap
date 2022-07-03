@@ -72,7 +72,7 @@ exports[`Storyshots Components/Button Square 1`] = `
 
 exports[`Storyshots Components/Card Default 1`] = `
 <div
-  className="card-md"
+  className="card card-md"
   style={
     Object {
       "width": "200px",
@@ -107,7 +107,7 @@ exports[`Storyshots Components/Card Default 1`] = `
 
 exports[`Storyshots Components/Card With Cover 1`] = `
 <div
-  className="card-md"
+  className="card card-md"
   style={
     Object {
       "width": "200px",
@@ -139,7 +139,7 @@ exports[`Storyshots Components/Card With Cover 1`] = `
 
 exports[`Storyshots Components/Card With Custom Children 1`] = `
 <div
-  className="card-md"
+  className="card card-md"
   style={
     Object {
       "width": "200px",
@@ -178,7 +178,7 @@ exports[`Storyshots Components/Card With Custom Children 1`] = `
 
 exports[`Storyshots Components/Card With Custom Content 1`] = `
 <div
-  className="card-md"
+  className="card card-md"
   style={
     Object {
       "width": "200px",
@@ -224,7 +224,7 @@ exports[`Storyshots Components/Card With Custom Content 1`] = `
 
 exports[`Storyshots Components/Card With Horizontal Cover 1`] = `
 <div
-  className="card-md"
+  className="card card-md"
   style={
     Object {
       "width": "200px",
@@ -256,7 +256,7 @@ exports[`Storyshots Components/Card With Horizontal Cover 1`] = `
 
 exports[`Storyshots Components/Card With Long Title 1`] = `
 <div
-  className="card-md"
+  className="card card-md"
   style={
     Object {
       "width": "200px",
@@ -291,7 +291,7 @@ exports[`Storyshots Components/Card With Long Title 1`] = `
 
 exports[`Storyshots Components/Card With Vertical Cover 1`] = `
 <div
-  className="card-md"
+  className="card card-md"
   style={
     Object {
       "width": "200px",
@@ -316,6 +316,139 @@ exports[`Storyshots Components/Card With Vertical Cover 1`] = `
       className="card-content-text"
     >
       Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/GhostCard Default 1`] = `
+<div
+  className="card card-md ghost-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <svg
+    className="card-cover"
+    fill="black"
+    preserveAspectRatio="xMinYMin slice"
+    stroke="black"
+  >
+    placeholder.svg
+  </svg>
+  <div
+    className="card-divider"
+  />
+  <div
+    className="card-container-no-text"
+  >
+    <div
+      className="ghost-card-text-container"
+    >
+      <b
+        className="ghost-card-text"
+      >
+        Add a new asdf...
+      </b>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/GhostCard Large 1`] = `
+<div
+  className="card card-lg ghost-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <svg
+    className="card-cover"
+    fill="black"
+    preserveAspectRatio="xMinYMin slice"
+    stroke="black"
+  >
+    placeholder.svg
+  </svg>
+  <div
+    className="card-divider"
+  />
+  <div
+    className="card-container-no-text"
+  >
+    <div
+      className="ghost-card-text-container"
+    >
+      <b
+        className="ghost-card-text"
+      >
+        Add a new asdf...
+      </b>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/GhostCard No Image 1`] = `
+<div
+  className="card card-md card-noimage ghost-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <div
+      className="ghost-card-text-container"
+    >
+      <b
+        className="ghost-card-text"
+      >
+        Add a new asdf...
+      </b>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/GhostCard Small 1`] = `
+<div
+  className="card card-sm card-noimage ghost-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <svg
+    className="card-cover"
+    fill="black"
+    preserveAspectRatio="xMinYMin slice"
+    stroke="black"
+  >
+    placeholder.svg
+  </svg>
+  <div
+    className="card-divider"
+  />
+  <div
+    className="card-container-no-text"
+  >
+    <div
+      className="ghost-card-text-container"
+    >
+      <b
+        className="ghost-card-text"
+      >
+        Add a new asdf...
+      </b>
     </div>
   </div>
 </div>
