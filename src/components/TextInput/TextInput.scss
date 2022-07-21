@@ -1,0 +1,28 @@
+input,
+textarea {
+	border-radius: 5px;
+	border: darkgrey 1px solid;
+	padding: 5px;
+	box-shadow: 1px grey;
+	outline: rgba(0, 0, 0, 0) solid 0px;
+	transition: outline 50ms linear;
+	box-sizing: border-box;
+	width: 100%;
+
+	&.tinput-md {
+		font-size: 0.85rem;
+	}
+
+	&.tinput-lg {
+		font-size: large;
+	}
+}
+
+textarea {
+	resize: none;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+	outline: rgba(20, 100, 255, 50) solid 2px;
+}

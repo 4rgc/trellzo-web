@@ -453,3 +453,154 @@ exports[`Storyshots Components/GhostCard Small 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Components/TextInput Bigger Multiline 1`] = `
+<div
+  style={
+    Object {
+      "border": "2px black solid",
+      "padding": "20px",
+      "width": "400px",
+    }
+  }
+>
+  <textarea
+    className="tinput-md"
+    onChange={[Function]}
+    rows={6}
+  >
+    
+  </textarea>
+</div>
+`;
+
+exports[`Storyshots Components/TextInput Default 1`] = `
+<div
+  style={
+    Object {
+      "border": "2px black solid",
+      "padding": "20px",
+      "width": "400px",
+    }
+  }
+>
+  <input
+    className="tinput-md"
+    onChange={[Function]}
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Components/TextInput In A Tight Container 1`] = `
+<div
+  style={
+    Object {
+      "border": "2px black solid",
+      "padding": "10px",
+      "width": "100px",
+    }
+  }
+>
+  <input
+    className="tinput-md"
+    onChange={[Function]}
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Components/TextInput Large Font 1`] = `
+<div
+  style={
+    Object {
+      "border": "2px black solid",
+      "padding": "20px",
+      "width": "400px",
+    }
+  }
+>
+  <input
+    className="tinput-lg"
+    onChange={[Function]}
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Components/TextInput Multiline 1`] = `
+<div
+  style={
+    Object {
+      "border": "2px black solid",
+      "padding": "20px",
+      "width": "400px",
+    }
+  }
+>
+  <textarea
+    className="tinput-md"
+    onChange={[Function]}
+  >
+    
+  </textarea>
+</div>
+`;
+
+exports[`Storyshots Components/TextInput Multiline With Placeholder 1`] = `
+<div
+  style={
+    Object {
+      "border": "2px black solid",
+      "padding": "20px",
+      "width": "400px",
+    }
+  }
+>
+  <textarea
+    className="tinput-md"
+    onChange={[Function]}
+    placeholder="Type something long here..."
+  >
+    
+  </textarea>
+</div>
+`;
+
+exports[`Storyshots Components/TextInput Single Line With Rows Specified 1`] = `
+<div
+  style={
+    Object {
+      "border": "2px black solid",
+      "padding": "20px",
+      "width": "400px",
+    }
+  }
+>
+  <input
+    className="tinput-md"
+    onChange={[Function]}
+    rows={5}
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Components/TextInput With Placeholder 1`] = `
+<div
+  style={
+    Object {
+      "border": "2px black solid",
+      "padding": "20px",
+      "width": "400px",
+    }
+  }
+>
+  <input
+    className="tinput-md"
+    onChange={[Function]}
+    placeholder="Enter something..."
+    value=""
+  />
+</div>
+`;
