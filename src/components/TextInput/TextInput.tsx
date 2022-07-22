@@ -28,10 +28,11 @@ const TextInput: React.FC<TextInputProps> = (props) => {
 		onChange,
 		value,
 		fontSize = 'md',
+		className: customClassName,
 		...otherProps
 	} = props;
 
-	const className = `tinput-${fontSize}`;
+	const className = `tinput-${fontSize}${customClassName ? ` ${customClassName}`: ''}`;
 
 	return variant === 'multi' ? (
 		<textarea
