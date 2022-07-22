@@ -468,6 +468,7 @@ exports[`Storyshots Components/TextInput Bigger Multiline 1`] = `
     className="tinput-md"
     onChange={[Function]}
     rows={6}
+    value=""
   >
     
   </textarea>
@@ -541,6 +542,7 @@ exports[`Storyshots Components/TextInput Multiline 1`] = `
   <textarea
     className="tinput-md"
     onChange={[Function]}
+    value=""
   >
     
   </textarea>
@@ -561,6 +563,7 @@ exports[`Storyshots Components/TextInput Multiline With Placeholder 1`] = `
     className="tinput-md"
     onChange={[Function]}
     placeholder="Type something long here..."
+    value=""
   >
     
   </textarea>

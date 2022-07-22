@@ -24,7 +24,7 @@ const Template: ComponentStory<typeof TextInput> = (args) => {
 				width: '400px',
 			}}
 		>
-			<TextInput {...args} value={value} onChanged={setValue} />
+			<TextInput {...args} value={value} onChange={setValue} />
 		</div>
 	);
 };
@@ -63,7 +63,7 @@ export const InATightContainer: ComponentStory<typeof TextInput> = (args) => {
 				padding: '10px',
 			}}
 		>
-			<TextInput {...args} value={value} onChanged={setValue} />
+			<TextInput {...args} value={value} onChange={setValue} />
 		</div>
 	);
 };

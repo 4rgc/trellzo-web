@@ -4,15 +4,15 @@ import './TextInput.scss';
 type InputChangeHandler = (text: string) => void;
 
 interface ISingleLineInputProps {
-	onChanged?: InputChangeHandler;
+	variant?: 'single';
+	onChange?: InputChangeHandler;
 	fontSize?: 'md' | 'lg';
 	value?: string;
-	variant?: 'single';
 }
 
 interface IMultilineInputProps {
 	variant?: 'multi';
-	onChanged?: InputChangeHandler;
+	onChange?: InputChangeHandler;
 	fontSize?: 'md' | 'lg';
 	value?: string;
 	rows?: number;
@@ -20,17 +20,24 @@ interface IMultilineInputProps {
 }
 
 export type TextInputProps = (ISingleLineInputProps | IMultilineInputProps) &
-	(ComponentProps<'input'> & ComponentProps<'textarea'>);
+	Omit<ComponentProps<'input'> & ComponentProps<'textarea'>, 'onChange'>;
 
-const TextInput: React.FC<TextInputProps> = (props = { variant: 'single' }) => {
-	const { variant, onChanged, value, fontSize = 'md', ...otherProps } = props;
+const TextInput: React.FC<TextInputProps> = (props) => {
+	const {
+		variant = 'single',
+		onChange,
+		value,
+		fontSize = 'md',
+		...otherProps
+	} = props;
 
 	const className = `tinput-${fontSize}`;
 
 	return variant === 'multi' ? (
 		<textarea
 			className={className}
-			onChange={onChanged && ((e) => onChanged(e.target.value))}
+			onChange={onChange && ((e) => onChange(e.target.value))}
+			value={value}
 			{...otherProps}
 		>
 			{value}
@@ -39,7 +46,7 @@ const TextInput: React.FC<TextInputProps> = (props = { variant: 'single' }) => {
 		<input
 			className={className}
 			value={value}
-			onChange={onChanged && ((e) => onChanged(e.target.value))}
+			onChange={onChange && ((e) => onChange(e.target.value))}
 			{...otherProps}
 		/>
 	);
