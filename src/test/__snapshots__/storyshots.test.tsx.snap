@@ -321,6 +321,50 @@ exports[`Storyshots Components/Card With Vertical Cover 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/EditableCard Default 1`] = `
+<div
+  className="card card-md card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      rows={14}
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/EditableCard With Title 1`] = `
+<div
+  className="card card-md card-noimage editable-card"
+  hasTitleField={true}
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <input
+      className="tinput-md"
+    />
+    <textarea
+      className="tinput-md"
+      rows={14}
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/GhostCard Default 1`] = `
 <div
   className="card card-md ghost-card"
