@@ -1,7 +1,7 @@
 export interface ICardContentsProps {
-	content?: string | React.ReactElement | React.ReactElement[];
+	content?: string | React.ReactNode;
 	title?: string;
-	children?: React.ReactChild | React.ReactChild[];
+	children?: React.ReactNode;
 }
 
 const CardContents: React.FC<ICardContentsProps> = ({
