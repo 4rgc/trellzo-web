@@ -11,7 +11,7 @@ interface ISingleLineInputProps {
 }
 
 interface IMultilineInputProps {
-	variant?: 'multi';
+	variant: 'multi';
 	onChange?: InputChangeHandler;
 	fontSize?: 'md' | 'lg';
 	value?: string;
@@ -32,7 +32,9 @@ const TextInput: React.FC<TextInputProps> = (props) => {
 		...otherProps
 	} = props;
 
-	const className = `tinput-${fontSize}${customClassName ? ` ${customClassName}`: ''}`;
+	const className = `tinput-${fontSize}${
+		customClassName ? ` ${customClassName}` : ''
+	}`;
 
 	return variant === 'multi' ? (
 		<textarea
