@@ -5,7 +5,6 @@ import './EditableCard.scss';
 interface IEditableCardProps {
 	bodyPlaceholder?: string;
 	bodyValue?: string;
-	onTitleChange?: (text: string) => void;
 	onBodyChange?: (text: string) => void;
 }
 
@@ -16,6 +15,7 @@ type EditableCardPropsWithTitle = IEditableCardProps & {
 	hasTitleField?: true;
 	titlePlaceholder?: string;
 	titleValue?: string;
+	onTitleChange?: (text: string) => void;
 };
 
 export type EditableCardProps = Omit<
@@ -30,13 +30,7 @@ export type EditableCardProps = Omit<
 	(EditableCardPropsWithTitle | EditableCardPropsWithoutTitle);
 
 const EditableCard: React.FC<EditableCardProps> = (props) => {
-	const {
-		bodyPlaceholder,
-		bodyValue,
-		onTitleChange,
-		onBodyChange,
-		...otherProps
-	} = props;
+	const { bodyPlaceholder, bodyValue, onBodyChange, ...otherProps } = props;
 
 	return (
 		<Card
