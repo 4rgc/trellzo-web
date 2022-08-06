@@ -12,7 +12,7 @@ type EditableCardPropsWithoutTitle = IEditableCardProps & {
 	hasTitleField?: false;
 };
 type EditableCardPropsWithTitle = IEditableCardProps & {
-	hasTitleField?: true;
+	hasTitleField: true;
 	titlePlaceholder?: string;
 	titleValue?: string;
 	onTitleChange?: (text: string) => void;
@@ -32,6 +32,17 @@ export type EditableCardProps = Omit<
 const EditableCard: React.FC<EditableCardProps> = (props) => {
 	const { bodyPlaceholder, bodyValue, onBodyChange, ...otherProps } = props;
 
+	let bodyRows = 14;
+	if (props.size === 'sm') {
+		bodyRows = 3;
+	} else if (props.size === 'md') {
+		if (props.hasTitleField) bodyRows = 12;
+		else bodyRows = 14;
+	} else if (props.size === 'lg') {
+		if (props.hasTitleField) bodyRows = 24;
+		else bodyRows = 26;
+	}
+
 	return (
 		<Card
 			{...otherProps}
@@ -39,8 +50,9 @@ const EditableCard: React.FC<EditableCardProps> = (props) => {
 			isDisabled={false}
 			className="editable-card"
 		>
-			{props.hasTitleField && (
+			{props.hasTitleField && props.size !== 'sm' && (
 				<TextInput
+					className="title"
 					variant="single"
 					value={props.titleValue}
 					placeholder={props.titlePlaceholder}
@@ -52,7 +64,7 @@ const EditableCard: React.FC<EditableCardProps> = (props) => {
 				value={bodyValue}
 				placeholder={bodyPlaceholder}
 				onChange={onBodyChange}
-				rows={14}
+				rows={bodyRows}
 			/>
 		</Card>
 	);
