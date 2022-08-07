@@ -46,6 +46,7 @@ const EditableCard: React.FC<EditableCardProps> = (props) => {
 	} = props;
 
 	let bodyRows = 14;
+	/*istanbul ignore else */
 	if (size === 'sm') {
 		bodyRows = 3;
 	} else if (size === 'md') {
