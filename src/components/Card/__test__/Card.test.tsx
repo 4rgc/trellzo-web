@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
 describe('Card', () => {
-	it('should call the onClick callback when clicked', async () => {
+	it('should call the onClick callback when clicked', () => {
 		const mockHandler = jest.fn();
 
 		render(<Card onClick={mockHandler} title="Test card" />);
@@ -14,7 +14,7 @@ describe('Card', () => {
 		expect(mockHandler).toHaveBeenCalledTimes(1);
 	});
 
-	it('should not call the onClick callback when clicked', async () => {
+	it('should not call the onClick callback when clicked', () => {
 		const mockHandler = jest.fn();
 
 		render(
