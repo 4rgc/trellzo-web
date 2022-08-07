@@ -35,7 +35,7 @@ const Card: React.FC<ICardProps> = (props) => {
 			className={`card card-${size}${isActive ? ' card-clickable' : ''}${
 				isImageDisabled || size === 'sm' ? ' card-noimage' : ''
 			}${className ? ` ${className}` : ''}`}
-			onClick={onClick}
+			onClick={isActive ? onClick : undefined}
 			{...otherProps}
 		>
 			{!isImageDisabled && (
