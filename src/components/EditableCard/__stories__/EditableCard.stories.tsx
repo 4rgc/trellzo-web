@@ -5,18 +5,20 @@ import EditableCard from '..';
 export default {
 	title: 'Components/EditableCard',
 	args: {
-		hasTitleField: false,
 		bodyPlaceholder: '',
 		titlePlaceholder: undefined,
-		size: 'md',
 	},
 	argTypes: {
-		onBodyChange: { action: 'body input changed' },
-		onTitleChange: { action: 'title input changed' },
+		onBodyChange: { action: 'body input changed', type: 'function' },
+		onTitleChange: { action: 'title input changed', type: 'function' },
 		titlePlaceholder: {
 			type: 'string',
 		},
+		hasTitleField: {
+			type: 'boolean',
+		},
 		size: {
+			control: { type: 'radio' },
 			options: ['sm', 'md', 'lg'],
 		},
 	},
