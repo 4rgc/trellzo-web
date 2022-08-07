@@ -321,6 +321,191 @@ exports[`Storyshots Components/Card With Vertical Cover 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/EditableCard Default 1`] = `
+<div
+  className="card card-md card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={14}
+      value=""
+    >
+      
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/EditableCard Large 1`] = `
+<div
+  className="card card-lg card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={26}
+      value=""
+    >
+      
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/EditableCard Large With Title 1`] = `
+<div
+  className="card card-lg card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <input
+      className="tinput-md title"
+      onChange={[Function]}
+      value=""
+    />
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={24}
+      value=""
+    >
+      
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/EditableCard Medium 1`] = `
+<div
+  className="card card-md card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={14}
+      value=""
+    >
+      
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/EditableCard Small 1`] = `
+<div
+  className="card card-sm card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={3}
+      value=""
+    >
+      
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/EditableCard Small With Title 1`] = `
+<div
+  className="card card-sm card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={3}
+      value=""
+    >
+      
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/EditableCard With Title 1`] = `
+<div
+  className="card card-md card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <input
+      className="tinput-md title"
+      onChange={[Function]}
+      value=""
+    />
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={12}
+      value=""
+    >
+      
+    </textarea>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/GhostCard Default 1`] = `
 <div
   className="card card-md ghost-card"
