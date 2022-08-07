@@ -324,7 +324,6 @@ exports[`Storyshots Components/Card With Vertical Cover 1`] = `
 exports[`Storyshots Components/EditableCard Default 1`] = `
 <div
   className="card card-md card-noimage editable-card"
-  hasTitleField={false}
   style={
     Object {
       "width": "200px",
@@ -350,7 +349,6 @@ exports[`Storyshots Components/EditableCard Default 1`] = `
 exports[`Storyshots Components/EditableCard Large 1`] = `
 <div
   className="card card-lg card-noimage editable-card"
-  hasTitleField={false}
   style={
     Object {
       "width": "200px",
@@ -376,14 +374,11 @@ exports[`Storyshots Components/EditableCard Large 1`] = `
 exports[`Storyshots Components/EditableCard Large With Title 1`] = `
 <div
   className="card card-lg card-noimage editable-card"
-  hasTitleField={true}
-  onTitleChange={[Function]}
   style={
     Object {
       "width": "200px",
     }
   }
-  titleValue=""
 >
   <div
     className="card-container-no-text"
@@ -409,7 +404,6 @@ exports[`Storyshots Components/EditableCard Large With Title 1`] = `
 exports[`Storyshots Components/EditableCard Medium 1`] = `
 <div
   className="card card-md card-noimage editable-card"
-  hasTitleField={false}
   style={
     Object {
       "width": "200px",
@@ -435,7 +429,6 @@ exports[`Storyshots Components/EditableCard Medium 1`] = `
 exports[`Storyshots Components/EditableCard Small 1`] = `
 <div
   className="card card-sm card-noimage editable-card"
-  hasTitleField={false}
   style={
     Object {
       "width": "200px",
@@ -461,14 +454,11 @@ exports[`Storyshots Components/EditableCard Small 1`] = `
 exports[`Storyshots Components/EditableCard Small With Title 1`] = `
 <div
   className="card card-sm card-noimage editable-card"
-  hasTitleField={true}
-  onTitleChange={[Function]}
   style={
     Object {
       "width": "200px",
     }
   }
-  titleValue=""
 >
   <div
     className="card-container-no-text"
@@ -489,14 +479,11 @@ exports[`Storyshots Components/EditableCard Small With Title 1`] = `
 exports[`Storyshots Components/EditableCard With Title 1`] = `
 <div
   className="card card-md card-noimage editable-card"
-  hasTitleField={true}
-  onTitleChange={[Function]}
   style={
     Object {
       "width": "200px",
     }
   }
-  titleValue=""
 >
   <div
     className="card-container-no-text"

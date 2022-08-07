@@ -7,11 +7,15 @@ export default {
 	args: {
 		hasTitleField: false,
 		bodyPlaceholder: '',
+		titlePlaceholder: undefined,
 		size: 'md',
 	},
 	argTypes: {
 		onBodyChange: { action: 'body input changed' },
 		onTitleChange: { action: 'title input changed' },
+		titlePlaceholder: {
+			type: 'string',
+		},
 		size: {
 			options: ['sm', 'md', 'lg'],
 		},
