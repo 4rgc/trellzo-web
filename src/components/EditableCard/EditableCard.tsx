@@ -1,7 +1,6 @@
 import Card from '../Card';
 import TextInput from '../TextInput';
 import './EditableCard.scss';
-import Button, { IButtonProps } from '../Button/Button';
 
 interface IEditableCardProps {
 	bodyPlaceholder?: string;
