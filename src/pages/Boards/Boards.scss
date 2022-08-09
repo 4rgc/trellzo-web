@@ -16,5 +16,8 @@
 
 .boards-container .card-md {
 	margin: 5px;
-	width: auto;
+	width: 180px;
+	&.ghost-card {
+		width: 172px;
+	}
 }
