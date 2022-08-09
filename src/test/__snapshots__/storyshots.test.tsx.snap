@@ -457,6 +457,41 @@ exports[`Storyshots Components/EditableCard Small 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/EditableCard Small With A Button 1`] = `
+<div
+  className="card card-sm card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={1}
+      value=""
+    >
+      
+    </textarea>
+    <div
+      className="btn-container"
+    >
+      <button
+        className="btn-prm-md-thn "
+        onClick={[Function]}
+      >
+        click me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/EditableCard Small With Title 1`] = `
 <div
   className="card card-sm card-noimage editable-card"
@@ -572,7 +607,7 @@ exports[`Storyshots Components/EditableCard With Two Buttons 1`] = `
       className="btn-container"
     >
       <button
-        className="btn-prm-sm-thn "
+        className="btn-sec-sm-thn "
         onClick={[Function]}
       >
         cancel
