@@ -52,15 +52,27 @@
 	min-width: 200px;
 }
 
+%btn-reg {
+	height: 36px;
+}
+
+%btn-thn {
+	height: 30px;
+}
+
 $sizes: ('sq', 'sm', 'md', 'lg');
 $kinds: ('prm', 'prm-dis', 'sec', 'sec-dis');
+$heights: ('reg', 'thn');
 
 @each $size in $sizes {
 	@each $kind in $kinds {
-		.btn-#{$kind}-#{$size} {
-			@extend %btn-base;
-			@extend %btn-#{$size};
-			@extend %btn-#{$kind};
+		@each $height in $heights {
+			.btn-#{$kind}-#{$size}-#{$height} {
+				@extend %btn-base;
+				@extend %btn-#{$size};
+				@extend %btn-#{$kind};
+				@extend %btn-#{$height};
+			}
 		}
 	}
 }

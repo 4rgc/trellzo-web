@@ -1,20 +1,22 @@
 import './Button.scss';
 
-interface IButtonProps extends React.ComponentPropsWithoutRef<'button'> {
+export interface IButtonProps extends React.ComponentPropsWithoutRef<'button'> {
 	size?: 'square' | 'small' | 'medium' | 'large';
 	kind?: 'primary' | 'secondary';
+	height?: 'regular' | 'thin';
 	disabled?: boolean;
 	onClick?: () => void;
 	children?: React.ReactChild | React.ReactChild[];
 }
 
-export const Button: React.FC<IButtonProps> = (props) => {
+const Button: React.FC<IButtonProps> = (props) => {
 	const {
 		disabled = false,
 		children,
 		onClick,
 		kind = 'primary',
 		size = 'medium',
+		height = 'regular',
 		className,
 	} = props;
 
@@ -26,10 +28,11 @@ export const Button: React.FC<IButtonProps> = (props) => {
 		medium: 'md',
 		large: 'lg',
 	};
+	const heightToClass = { regular: 'reg', thin: 'thn' };
 
 	const buttonClass = `btn-${kindToClass[kind]}${
 		disabled ? disabledToClass : ''
-	}-${sizeToClass[size]} ${className || ''}`;
+	}-${sizeToClass[size]}-${heightToClass[height]} ${className || ''}`;
 
 	return (
 		<button
@@ -40,3 +43,5 @@ export const Button: React.FC<IButtonProps> = (props) => {
 		</button>
 	);
 };
+
+export default Button;
