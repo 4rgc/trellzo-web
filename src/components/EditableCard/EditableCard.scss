@@ -9,6 +9,13 @@
 		padding: 2px;
 		margin: 8px;
 	}
+
+	.btn-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin-top: 5px;
+	}
 }
 .editable-card .title {
 	margin-bottom: 4px;

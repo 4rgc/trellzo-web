@@ -1,6 +1,7 @@
 import Card from '../Card';
 import TextInput from '../TextInput';
 import './EditableCard.scss';
+import Button, { IButtonProps } from '../Button/Button';
 
 interface IEditableCardProps {
 	bodyPlaceholder?: string;
@@ -8,17 +9,29 @@ interface IEditableCardProps {
 	onBodyChange?: (text: string) => void;
 }
 
-type EditableCardPropsWithoutTitle = IEditableCardProps & {
+type EditableCardPropsWithoutTitle = {
 	hasTitleField?: false;
 	titlePlaceholder?: never;
 	titleValue?: never;
 	onTitleChange?: never;
 };
-type EditableCardPropsWithTitle = IEditableCardProps & {
+type EditableCardPropsWithTitle = {
 	hasTitleField: true;
 	titlePlaceholder?: string;
 	titleValue?: string;
 	onTitleChange?: (text: string) => void;
+};
+
+type EditableCardPropsWithButtons = {
+	hasButtons: true;
+	leftButtonProps?: IButtonProps;
+	rightButtonProps?: IButtonProps;
+};
+
+type EditableCardPropsWithoutButtons = {
+	hasButtons?: false;
+	leftButtonProps?: never;
+	rightButtonProps?: never;
 };
 
 export type EditableCardProps = Omit<
@@ -30,7 +43,9 @@ export type EditableCardProps = Omit<
 	| 'onClick'
 	| 'isDisabled'
 > &
-	(EditableCardPropsWithTitle | EditableCardPropsWithoutTitle);
+	IEditableCardProps &
+	(EditableCardPropsWithTitle | EditableCardPropsWithoutTitle) &
+	(EditableCardPropsWithButtons | EditableCardPropsWithoutButtons);
 
 const EditableCard: React.FC<EditableCardProps> = (props) => {
 	const {
@@ -38,6 +53,9 @@ const EditableCard: React.FC<EditableCardProps> = (props) => {
 		bodyValue,
 		onBodyChange,
 		hasTitleField = false,
+		hasButtons,
+		rightButtonProps,
+		leftButtonProps,
 		titlePlaceholder,
 		titleValue,
 		onTitleChange,
@@ -49,12 +67,15 @@ const EditableCard: React.FC<EditableCardProps> = (props) => {
 	/*istanbul ignore else */
 	if (size === 'sm') {
 		bodyRows = 3;
+		if (hasButtons) bodyRows -= 2;
 	} else if (size === 'md') {
-		if (hasTitleField) bodyRows = 12;
-		else bodyRows = 14;
+		bodyRows = 14;
+		if (hasTitleField) bodyRows -= 2;
+		if (hasButtons) bodyRows -= 2;
 	} else if (size === 'lg') {
-		if (hasTitleField) bodyRows = 24;
-		else bodyRows = 26;
+		bodyRows = 26;
+		if (hasTitleField) bodyRows -= 2;
+		if (hasButtons) bodyRows -= 2;
 	}
 
 	return (
@@ -81,6 +102,24 @@ const EditableCard: React.FC<EditableCardProps> = (props) => {
 				onChange={onBodyChange}
 				rows={bodyRows}
 			/>
+			{hasButtons && (
+				<div className="btn-container">
+					{leftButtonProps && (
+						<Button
+							{...leftButtonProps}
+							height="thin"
+							size={rightButtonProps ? 'small' : 'medium'}
+						/>
+					)}
+					{rightButtonProps && (
+						<Button
+							{...rightButtonProps}
+							height="thin"
+							size={leftButtonProps ? 'small' : 'medium'}
+						/>
+					)}
+				</div>
+			)}
 		</Card>
 	);
 };

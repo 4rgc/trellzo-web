@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { useState } from 'react';
 import EditableCard from '..';
 
@@ -76,3 +77,28 @@ Large.args = { size: 'lg' };
 
 export const LargeWithTitle = Template.bind({});
 LargeWithTitle.args = { size: 'lg', hasTitleField: true };
+
+export const WithAButton = Template.bind({});
+WithAButton.args = {
+	hasButtons: true,
+	leftButtonProps: {
+		children: 'click me',
+		kind: 'primary',
+		onClick: action('button clicked'),
+	},
+};
+
+export const WithTwoButtons = Template.bind({});
+WithTwoButtons.args = {
+	hasButtons: true,
+	rightButtonProps: {
+		children: 'ok',
+		kind: 'primary',
+		onClick: action('button clicked'),
+	},
+	leftButtonProps: {
+		children: 'cancel',
+		kind: 'primary',
+		onClick: action('button clicked 2'),
+	},
+};
