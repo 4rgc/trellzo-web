@@ -24,14 +24,12 @@ type EditableCardPropsWithTitle = {
 
 type EditableCardPropsWithButtons = {
 	hasButtons: true;
-	leftButtonProps?: IButtonProps;
-	rightButtonProps?: IButtonProps;
+	children?: React.ReactNode;
 };
 
 type EditableCardPropsWithoutButtons = {
 	hasButtons?: false;
-	leftButtonProps?: never;
-	rightButtonProps?: never;
+	children?: never;
 };
 
 export type EditableCardProps = Omit<
@@ -42,6 +40,7 @@ export type EditableCardProps = Omit<
 	| 'title'
 	| 'onClick'
 	| 'isDisabled'
+	| 'children'
 > &
 	IEditableCardProps &
 	(EditableCardPropsWithTitle | EditableCardPropsWithoutTitle) &
@@ -54,12 +53,11 @@ const EditableCard: React.FC<EditableCardProps> = (props) => {
 		onBodyChange,
 		hasTitleField = false,
 		hasButtons,
-		rightButtonProps,
-		leftButtonProps,
 		titlePlaceholder,
 		titleValue,
 		onTitleChange,
 		size = 'md',
+		children,
 		...otherProps
 	} = props;
 
@@ -102,24 +100,7 @@ const EditableCard: React.FC<EditableCardProps> = (props) => {
 				onChange={onBodyChange}
 				rows={bodyRows}
 			/>
-			{hasButtons && (
-				<div className="btn-container">
-					{leftButtonProps && (
-						<Button
-							{...leftButtonProps}
-							height="thin"
-							size={rightButtonProps ? 'small' : 'medium'}
-						/>
-					)}
-					{rightButtonProps && (
-						<Button
-							{...rightButtonProps}
-							height="thin"
-							size={leftButtonProps ? 'small' : 'medium'}
-						/>
-					)}
-				</div>
-			)}
+			{hasButtons && <div className="btn-container">{children}</div>}
 		</Card>
 	);
 };

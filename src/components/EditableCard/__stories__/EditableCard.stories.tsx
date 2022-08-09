@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { useState } from 'react';
 import EditableCard from '..';
+import Button from '../../Button';
 
 export default {
 	title: 'Components/EditableCard',
@@ -81,24 +82,44 @@ LargeWithTitle.args = { size: 'lg', hasTitleField: true };
 export const WithAButton = Template.bind({});
 WithAButton.args = {
 	hasButtons: true,
-	leftButtonProps: {
-		children: 'click me',
-		kind: 'primary',
-		onClick: action('button clicked'),
-	},
+	children: (
+		<Button height="thin" size="medium" onClick={action('button clicked')}>
+			click me
+		</Button>
+	),
 };
 
 export const WithTwoButtons = Template.bind({});
 WithTwoButtons.args = {
 	hasButtons: true,
-	rightButtonProps: {
-		children: 'ok',
-		kind: 'primary',
-		onClick: action('button clicked'),
-	},
-	leftButtonProps: {
-		children: 'cancel',
-		kind: 'primary',
-		onClick: action('button clicked 2'),
-	},
+	children: (
+		<>
+			<Button
+				kind="secondary"
+				height="thin"
+				size="small"
+				onClick={action('button clicked')}
+			>
+				cancel
+			</Button>
+			<Button
+				size="small"
+				height="thin"
+				onClick={action('button clicked 2')}
+			>
+				ok
+			</Button>
+		</>
+	),
+};
+
+export const SmallWithAButton = Template.bind({});
+SmallWithAButton.args = {
+	size: 'sm',
+	hasButtons: true,
+	children: (
+		<Button height="thin" size="medium" onClick={action('button clicked')}>
+			click me
+		</Button>
+	),
 };
