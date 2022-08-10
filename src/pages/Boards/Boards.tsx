@@ -8,25 +8,40 @@ import PartialBoard from '../../types/PartialBoard';
 import APIRequestParams from '../../util/APIParams';
 import './Boards.scss';
 
-const requestParams = new APIRequestParams('get');
-requestParams.setRoute('/board');
+const getBoardParams = new APIRequestParams('get');
+getBoardParams.setRoute('/board');
 
 const Boards = () => {
 	const [response, error, reload] =
-		useTrellzoAPI<{ boards: PartialBoard[] | undefined }>(requestParams);
-	const [isBoardBeingAdded, setIsBoardBeingAdded] = useState(false);
-	const [newBoardName, setNewBoardName] = useState('');
-	const [newBoardDescription, setNewBoardDescription] = useState('');
+		useTrellzoAPI<{ boards: PartialBoard[] | undefined }>(getBoardParams);
+	const [boards_, setBoards_] = useState<PartialBoard[]>([]);
+	const [isBoardBeingAdded, setIsBoardBeingAdded] = useState<boolean>(false);
+	const [newBoardName, setNewBoardName] = useState<string>('');
+	const [, , reloadCreate, changeCreateParams] = useTrellzoAPI<{
+		boards: PartialBoard | undefined;
+	}>(new APIRequestParams('get'));
 
 	useEffect(() => {
 		reload();
 	}, [reload]);
 
+	useEffect(() => {
+		setBoards_((response && response.boards) || []);
+	}, [response]);
+
 	const boards = response && response.boards;
 	const onBoardCreationCancel = () => {
 		setIsBoardBeingAdded(false);
 		setNewBoardName('');
-		setNewBoardDescription('');
+	};
+
+	const onBoardCreate = () => {
+		const params = new APIRequestParams('post');
+		params.setRoute('/board');
+		params.setBodyParam('name', newBoardName);
+
+		changeCreateParams(params);
+		reloadCreate().then(() => reload());
 	};
 
 	return (
@@ -44,13 +59,9 @@ const Boards = () => {
 					{isBoardBeingAdded ? (
 						<EditableCard
 							size="md"
-							hasTitleField
-							titleValue={newBoardName}
-							onTitleChange={setNewBoardName}
-							titlePlaceholder="Name"
-							bodyValue={newBoardDescription}
-							bodyPlaceholder="Description"
-							onBodyChange={setNewBoardDescription}
+							bodyValue={newBoardName}
+							bodyPlaceholder="Name"
+							onBodyChange={setNewBoardName}
 							hasButtons
 						>
 							<Button
@@ -61,7 +72,11 @@ const Boards = () => {
 							>
 								cancel
 							</Button>
-							<Button height="thin" size="small">
+							<Button
+								height="thin"
+								size="small"
+								onClick={onBoardCreate}
+							>
 								create
 							</Button>
 						</EditableCard>
