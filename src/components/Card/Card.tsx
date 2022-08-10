@@ -11,6 +11,10 @@ export interface ICardProps extends React.ComponentPropsWithoutRef<'div'> {
 	isImageDisabled?: boolean;
 	title?: ICardContentsProps['title'];
 	content?: ICardContentsProps['content'];
+	//FIXME: make size names in component props consistent
+	// Button: small, medium, large
+	// Card: sm, md, lg
+	// Make sure to fix that in other Card types
 	size?: 'sm' | 'md' | 'lg';
 }
 

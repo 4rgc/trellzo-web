@@ -17,6 +17,9 @@
 .boards-container .card-md {
 	margin: 5px;
 	width: 180px;
+
+	// FIXME: find a better mechanism for making Card and GhostCard the same size
+	// preferrably, inside GhostCard.scss
 	&.ghost-card {
 		width: 172px;
 	}
