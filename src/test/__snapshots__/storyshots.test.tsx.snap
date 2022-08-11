@@ -909,3 +909,93 @@ exports[`Storyshots Components/TextInput With Placeholder 1`] = `
   />
 </div>
 `;
+
+exports[`Storyshots Components/WarningFab Always Display 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "block",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/WarningFab Default 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "none",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/WarningFab Display On Message 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "block",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/WarningFab Display On Message No Message 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "none",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/WarningFab With Custom Action 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "block",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
+  />
+</div>
+`;
