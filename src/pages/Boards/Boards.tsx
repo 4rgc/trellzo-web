@@ -3,6 +3,7 @@ import Button from '../../components/Button';
 import Card from '../../components/Card';
 import EditableCard from '../../components/EditableCard';
 import GhostCard from '../../components/GhostCard';
+import WarningFab from '../../components/WarningFab';
 import useTrellzoAPI from '../../hooks/useTrellzoAPI';
 import PartialBoard from '../../types/PartialBoard';
 import APIRequestParams from '../../util/APIParams';
@@ -91,11 +92,7 @@ const Boards = () => {
 				</div>
 			)}
 
-			{error && (
-				<div style={{ color: 'red', fontStyle: 'bold' }}>
-					{error.message}
-				</div>
-			)}
+			<WarningFab displayOnMessage message={error?.message} />
 		</div>
 	);
 };
