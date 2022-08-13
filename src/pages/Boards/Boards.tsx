@@ -94,6 +94,7 @@ const Boards = () => {
 			</div>
 
 			<WarningFab displayOnMessage message={error?.message} />
+			<WarningFab displayOnMessage message={createError?.message} />
 		</div>
 	);
 };
