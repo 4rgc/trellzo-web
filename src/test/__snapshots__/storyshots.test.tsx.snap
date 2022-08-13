@@ -2,7 +2,7 @@
 
 exports[`Storyshots Components/Button Custom Class 1`] = `
 <button
-  className="btn-prm-md btn-dis"
+  className="btn-prm-md-reg btn-dis"
 >
   fake disabled
 </button>
@@ -10,13 +10,13 @@ exports[`Storyshots Components/Button Custom Class 1`] = `
 
 exports[`Storyshots Components/Button Default 1`] = `
 <button
-  className="btn-prm-md "
+  className="btn-prm-md-reg "
 />
 `;
 
 exports[`Storyshots Components/Button Disabled 1`] = `
 <button
-  className="btn-prm-dis-md "
+  className="btn-prm-dis-md-reg "
 >
   disabled
 </button>
@@ -24,7 +24,7 @@ exports[`Storyshots Components/Button Disabled 1`] = `
 
 exports[`Storyshots Components/Button Large 1`] = `
 <button
-  className="btn-prm-lg "
+  className="btn-prm-lg-reg "
 >
   Large Button !!!
 </button>
@@ -32,7 +32,7 @@ exports[`Storyshots Components/Button Large 1`] = `
 
 exports[`Storyshots Components/Button Medium 1`] = `
 <button
-  className="btn-prm-md "
+  className="btn-prm-md-reg "
 >
   Medium Btn
 </button>
@@ -40,7 +40,7 @@ exports[`Storyshots Components/Button Medium 1`] = `
 
 exports[`Storyshots Components/Button Primary 1`] = `
 <button
-  className="btn-prm-md "
+  className="btn-prm-md-reg "
 >
   Primary
 </button>
@@ -48,7 +48,7 @@ exports[`Storyshots Components/Button Primary 1`] = `
 
 exports[`Storyshots Components/Button Secondary 1`] = `
 <button
-  className="btn-sec-md "
+  className="btn-sec-md-reg "
 >
   Secondary
 </button>
@@ -56,7 +56,7 @@ exports[`Storyshots Components/Button Secondary 1`] = `
 
 exports[`Storyshots Components/Button Small 1`] = `
 <button
-  className="btn-prm-sm "
+  className="btn-prm-sm-reg "
 >
   Small
 </button>
@@ -64,10 +64,16 @@ exports[`Storyshots Components/Button Small 1`] = `
 
 exports[`Storyshots Components/Button Square 1`] = `
 <button
-  className="btn-prm-sq "
+  className="btn-prm-sq-reg "
 >
   OK
 </button>
+`;
+
+exports[`Storyshots Components/Button Thin 1`] = `
+<button
+  className="btn-prm-md-thn "
+/>
 `;
 
 exports[`Storyshots Components/Card Default 1`] = `
@@ -451,6 +457,41 @@ exports[`Storyshots Components/EditableCard Small 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/EditableCard Small With A Button 1`] = `
+<div
+  className="card card-sm card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={1}
+      value=""
+    >
+      
+    </textarea>
+    <div
+      className="btn-container"
+    >
+      <button
+        className="btn-prm-md-thn "
+        onClick={[Function]}
+      >
+        click me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/EditableCard Small With Title 1`] = `
 <div
   className="card card-sm card-noimage editable-card"
@@ -472,6 +513,41 @@ exports[`Storyshots Components/EditableCard Small With Title 1`] = `
     >
       
     </textarea>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/EditableCard With A Button 1`] = `
+<div
+  className="card card-md card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={12}
+      value=""
+    >
+      
+    </textarea>
+    <div
+      className="btn-container"
+    >
+      <button
+        className="btn-prm-md-thn "
+        onClick={[Function]}
+      >
+        click me
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -502,6 +578,47 @@ exports[`Storyshots Components/EditableCard With Title 1`] = `
     >
       
     </textarea>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/EditableCard With Two Buttons 1`] = `
+<div
+  className="card card-md card-noimage editable-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <textarea
+      className="tinput-md"
+      onChange={[Function]}
+      placeholder=""
+      rows={12}
+      value=""
+    >
+      
+    </textarea>
+    <div
+      className="btn-container"
+    >
+      <button
+        className="btn-sec-sm-thn "
+        onClick={[Function]}
+      >
+        cancel
+      </button>
+      <button
+        className="btn-prm-sm-thn "
+        onClick={[Function]}
+      >
+        ok
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -789,6 +906,96 @@ exports[`Storyshots Components/TextInput With Placeholder 1`] = `
     onChange={[Function]}
     placeholder="Enter something..."
     value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Components/WarningFab Always Display 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "block",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/WarningFab Default 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "none",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/WarningFab Display On Message 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "block",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/WarningFab Display On Message No Message 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "none",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/WarningFab With Custom Action 1`] = `
+<div
+  className="warningFab"
+  style={
+    Object {
+      "display": "block",
+    }
+  }
+>
+  <img
+    alt="warning icon"
+    className="icon"
+    onClick={[Function]}
+    src="warning.svg"
   />
 </div>
 `;

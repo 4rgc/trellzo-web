@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Button } from '../Button';
+import Button from '../Button';
 
 export default {
 	title: 'Components/Button',
@@ -34,6 +34,9 @@ Secondary.args = { kind: 'secondary', children: 'Secondary' };
 
 export const Disabled = Template.bind({});
 Disabled.args = { disabled: true, children: 'disabled' };
+
+export const Thin = Template.bind({});
+Thin.args = { height: 'thin' };
 
 export const CustomClass = Template.bind({});
 CustomClass.args = {

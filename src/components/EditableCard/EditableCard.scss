@@ -5,9 +5,18 @@
 		margin-bottom: 4px;
 	}
 
+	//FIXME: find a way to derive these values from Card.scss
+	// this would break if margin in Card.scss changed
 	.card-container-no-text {
 		padding: 2px;
 		margin: 8px;
+	}
+
+	.btn-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin-top: 5px;
 	}
 }
 .editable-card .title {

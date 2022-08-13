@@ -1,9 +1,25 @@
+@use '../Card/card-variables' as v;
+
+$border-size: 4px;
+
 .ghost-card.card {
-	border: 4px grey dashed;
+	border: $border-size grey dashed;
 	border-radius: 20px;
 
 	&:hover {
 		background-color: rgba($color: lightgrey, $alpha: 0.9);
+	}
+
+	&.card-sm {
+		height: calc(map-get($map: v.$sizes, $key: 'sm') - ($border-size * 2));
+	}
+
+	&.card-md {
+		height: calc(map-get($map: v.$sizes, $key: 'md') - ($border-size * 2));
+	}
+
+	&.card-lg {
+		height: calc(map-get($map: v.$sizes, $key: 'lg') - ($border-size * 2));
 	}
 }
 

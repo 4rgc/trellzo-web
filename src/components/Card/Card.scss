@@ -1,14 +1,4 @@
-$sizes: (
-	'sm': 100px,
-	'md': 300px,
-	'lg': 500px,
-);
-
-$line-clamp: (
-	'sm': 2,
-	'md': 4,
-	'lg': 14,
-);
+@use 'card-variables' as v;
 
 .card-base {
 	display: flex;
@@ -46,12 +36,12 @@ $line-clamp: (
 .card {
 	@extend .card-base;
 
-	@each $size, $value in $sizes {
+	@each $size, $value in v.$sizes {
 		&.card-#{$size} {
 			height: $value;
 			.card-content-text {
 				display: -webkit-box;
-				-webkit-line-clamp: map-get($map: $line-clamp, $key: $size);
+				-webkit-line-clamp: map-get($map: v.$line-clamp, $key: $size);
 				-webkit-box-orient: vertical;
 				overflow: hidden;
 			}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Login.scss';
-import { Button } from '../../components/Button/Button';
+import Button from '../../components/Button/Button';
 import useTrellzoAPI from '../../hooks/useTrellzoAPI/useTrellzoAPI';
 import APIRequestParams from '../../util/APIParams';
 import { useNavigate } from 'react-router-dom';
