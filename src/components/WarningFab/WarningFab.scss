@@ -12,6 +12,13 @@
 	// TODO: replace these with 'line-clamp: 3' when it's released
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
+	text-align: left;
+	transition: max-width 0.4s, -webkit-line-clamp 0s;
+}
+
+.message:hover {
+	max-width: 400px;
+	-webkit-line-clamp: 10;
 }
 
 .message-container {
