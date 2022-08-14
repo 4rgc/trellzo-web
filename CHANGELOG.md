@@ -1,3 +1,9 @@
+## v0.1.1 (2022-08-14)
+
+### Fix
+
+- **ci**: save commitzen change increment for the release step
+
 ## v0.1.0 (2022-08-14)
 
 ### Feat
