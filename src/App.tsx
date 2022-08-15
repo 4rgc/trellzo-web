@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import './App.scss';
 import Logo from './components/Logo';
+import Board from './pages/Board';
 
 import Boards from './pages/Boards';
 import Login from './pages/Login';
@@ -22,6 +23,7 @@ const App: React.FC = () => {
 				<Route path="/" element={<Navigate to="/login" />} />
 				<Route element={<Login />} path="login" />
 				<Route element={<Boards />} path="boards" />
+				<Route element={<Board />} path="b/:id" />
 			</Routes>
 		</div>
 	);
