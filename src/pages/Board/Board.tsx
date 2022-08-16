@@ -11,7 +11,6 @@ const Board: FC = () => {
 		new APIRequestParams('get')
 	);
 
-	//FIXME: Infinitely loops with 401
 	useEffect(() => {
 		const apiParams = new APIRequestParams('get');
 		apiParams.setRoute(`/board/${id}`);
