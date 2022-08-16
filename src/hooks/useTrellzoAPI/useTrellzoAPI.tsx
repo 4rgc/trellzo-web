@@ -1,4 +1,4 @@
-import { Dispatch, useEffect, useState } from 'react';
+import { Dispatch, useCallback, useEffect, useState } from 'react';
 import APIRequestParams from '../../util/APIParams';
 import fetcher from '../../util/fetcher';
 import useFetcher from '../useFetcher/useFetcher';
@@ -68,11 +68,14 @@ const useTrellzoAPI = function <T = any>(
 		customHandler
 	);
 
-	const changeParams = (params?: APIRequestParams) =>
-		setParamsAndUrl({
-			url: buildUrl(baseUrl, params),
-			params,
-		});
+	const changeParams = useCallback(
+		(params?: APIRequestParams) =>
+			setParamsAndUrl({
+				url: buildUrl(baseUrl, params),
+				params,
+			}),
+		[setParamsAndUrl]
+	);
 
 	useEffect(() => {
 		setData(fetcherData);

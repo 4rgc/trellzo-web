@@ -14,12 +14,12 @@ function useAsyncReference<T>(
 	const ref = useRef(value);
 	const [, forceRender] = useState(false);
 
-	function updateState(newState: T) {
+	const updateState = useCallback((newState: T) => {
 		if (!Object.is(ref.current, newState)) {
 			ref.current = newState;
 			forceRender((s) => !s);
 		}
-	}
+	}, []);
 
 	return [ref, updateState];
 }

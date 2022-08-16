@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import Card from '../../components/Card';
 import EditableCard from '../../components/EditableCard';
@@ -21,6 +22,7 @@ const Boards = () => {
 	const [, createError, createBoard, changeCreateParams] = useTrellzoAPI<{
 		boards: PartialBoard | undefined;
 	}>(new APIRequestParams('post'));
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		reload();
@@ -57,6 +59,7 @@ const Boards = () => {
 						title={b.name}
 						content={b.description}
 						style={{ margin: '5px' }}
+						onClick={() => navigate(`/b/${b._id}`)}
 					/>
 				))}
 				{isBoardBeingAdded ? (
