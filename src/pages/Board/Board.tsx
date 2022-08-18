@@ -90,7 +90,13 @@ const Board: FC = () => {
 		if (changed.length > 0) {
 			dispatch({ type: ActionTypes.LIST_UPDATE, data: changed });
 		}
+	}, [boardData?.board.lists, lists]);
 
+	useEffect(() => {
+		if (!boardData?.board.listsOrder) {
+			return;
+		}
+		// FIXME: component order changes only after 2 refreshes, even though state has properly changed
 		if (
 			JSON.stringify(boardData.board.listsOrder) !==
 			JSON.stringify(lists.map((l) => l._id))
@@ -100,7 +106,7 @@ const Board: FC = () => {
 				order: boardData.board.listsOrder,
 			});
 		}
-	}, [boardData?.board.lists, boardData?.board.listsOrder, lists]);
+	}, [boardData?.board.listsOrder, lists]);
 
 	return (
 		<div className="board">
