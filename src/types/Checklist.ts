@@ -1,10 +1,10 @@
 import CheckItem from './CheckItem';
+import MongoObject from './MongoObject';
 
 type Checklist = {
-	_id: string;
 	name: string;
 	checkItems: CheckItem[];
 	checkItemsOrder: string[];
-};
+} & MongoObject;
 
 export default Checklist;

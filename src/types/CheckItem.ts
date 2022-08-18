@@ -1,7 +1,8 @@
+import MongoObject from './MongoObject';
+
 type CheckItem = {
-	_id: string;
 	name: string;
 	checked: boolean;
-};
+} & MongoObject;
 
 export default CheckItem;

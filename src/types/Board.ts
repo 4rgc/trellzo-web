@@ -1,13 +1,13 @@
 import List from './List';
+import MongoObject from './MongoObject';
 
 type Board = {
-	_id: string;
 	name: string;
 	description: string;
 	lists: List[];
 	listsOrder: string[];
 	userIds: string[];
 	//TODO: add tags
-};
+} & MongoObject;
 
 export default Board;

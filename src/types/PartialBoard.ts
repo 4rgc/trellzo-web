@@ -1,7 +1,8 @@
+import MongoObject from './MongoObject';
+
 type PartialBoard = {
-	_id: string;
 	name: string;
 	description: string;
-};
+} & MongoObject;
 
 export default PartialBoard;

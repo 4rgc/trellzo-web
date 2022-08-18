@@ -1,12 +1,12 @@
+import MongoObject from './MongoObject';
 import Note from './Note';
 
 type List = {
-	_id: string;
 	name: string;
 	description: string;
 	notes: Note[];
 	notesOrder: string[];
 	boardId: string;
-};
+} & MongoObject;
 
 export default List;
