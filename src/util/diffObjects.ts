@@ -1,5 +1,6 @@
 import MongoObject from '../types/MongoObject';
 
+//FIXME: add tests
 export default function diffObjectArrays<T extends MongoObject>(
 	current: T[],
 	incoming: T[]

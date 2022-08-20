@@ -1,30 +1,32 @@
-import { FC, Reducer, useEffect, useReducer } from 'react';
+import { FC, Reducer, useEffect, useReducer, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import WarningFab from '../../components/WarningFab';
 import useTrellzoAPI from '../../hooks/useTrellzoAPI';
-import List from '../../types/List';
+import ListType from '../../types/List';
 import APIRequestParams from '../../util/APIParams';
 import './Board.scss';
 import BoardType from '../../types/Board';
 import Button from '../../components/Button';
 import diffObjectArrays from '../../util/diffObjects';
+import List from './List';
 
-const initialLists: List[] = [];
+const initialLists: ListType[] = [];
 
 enum ActionTypes {
 	LIST_UPDATE,
 	LIST_CREATE,
 	LIST_DELETE,
-	ORDER_UPDATE,
 }
 
 type Action =
-	| { type: ActionTypes.LIST_UPDATE; data: List[] }
-	| { type: ActionTypes.LIST_CREATE; data: List[] }
-	| { type: ActionTypes.LIST_DELETE; data: List[] }
-	| { type: ActionTypes.ORDER_UPDATE; order: string[] };
+	| { type: ActionTypes.LIST_UPDATE; data: ListType[] }
+	| { type: ActionTypes.LIST_CREATE; data: ListType[] }
+	| { type: ActionTypes.LIST_DELETE; data: ListType[] };
 
-const listsReducer: Reducer<List[], Action> = (state: List[], action) => {
+const listsReducer: Reducer<ListType[], Action> = (
+	state: ListType[],
+	action
+) => {
 	switch (action.type) {
 		case ActionTypes.LIST_UPDATE:
 			return state.map((stateList) => {
@@ -41,11 +43,6 @@ const listsReducer: Reducer<List[], Action> = (state: List[], action) => {
 				(stateList) =>
 					!action.data.find((list) => stateList._id === list._id)
 			);
-		case ActionTypes.ORDER_UPDATE:
-			return state.sort(
-				(a, b) =>
-					action.order.indexOf(a._id) - action.order.indexOf(b._id)
-			);
 		default:
 			throw new Error();
 	}
@@ -58,6 +55,7 @@ const Board: FC = () => {
 	const [boardData, boardError, reload, setParams] = useTrellzoAPI<{
 		board: BoardType;
 	}>(new APIRequestParams('get'));
+	const [listsOrder, setListsOrder] = useState<BoardType['listsOrder']>([]);
 
 	useEffect(() => {
 		const apiParams = new APIRequestParams('get');
@@ -66,6 +64,12 @@ const Board: FC = () => {
 		setParams(apiParams);
 		reload();
 	}, [id, setParams, reload]);
+
+	useEffect(() => {
+		if (boardData?.board.listsOrder) {
+			setListsOrder(boardData.board.listsOrder);
+		}
+	}, [boardData]);
 
 	useEffect(() => {
 		if (!boardData?.board.lists) {
@@ -92,34 +96,17 @@ const Board: FC = () => {
 		}
 	}, [boardData?.board.lists, lists]);
 
-	useEffect(() => {
-		if (!boardData?.board.listsOrder) {
-			return;
-		}
-		// FIXME: component order changes only after 2 refreshes, even though state has properly changed
-		if (
-			JSON.stringify(boardData.board.listsOrder) !==
-			JSON.stringify(lists.map((l) => l._id))
-		) {
-			dispatch({
-				type: ActionTypes.ORDER_UPDATE,
-				order: boardData.board.listsOrder,
-			});
-		}
-	}, [boardData?.board.listsOrder, lists]);
-
 	return (
 		<div className="board">
 			<Button onClick={reload}>reload</Button>
-			{lists.map((l) => (
-				<div
-					key={l._id}
-					style={{ backgroundColor: 'grey', margin: '15px' }}
-				>
-					<code>{JSON.stringify(l, null, 2)}</code>
-					<br />
-				</div>
-			))}
+			{lists
+				.sort(
+					(a, b) =>
+						listsOrder.indexOf(a._id) - listsOrder.indexOf(b._id)
+				)
+				.map((l) => {
+					return <List key={l._id} list={l} />;
+				})}
 			<WarningFab displayOnMessage message={boardError?.message} />
 		</div>
 	);
