@@ -5,8 +5,8 @@ import MongoObject from './MongoObject';
 type Note = {
 	name: string;
 	description: string;
-	startDate: string;
-	endDate: string;
+	startDate?: string;
+	endDate?: string;
 	checklists: Checklist[];
 	comments: Comment[];
 	checklistsOrder: string[];
