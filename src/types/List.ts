@@ -1,9 +1,9 @@
 import MongoObject from './MongoObject';
-import Note from './Note';
+import PartialNote from './PartialNote';
 
 type List = {
 	name: string;
-	notes: Note[];
+	notes: PartialNote[];
 	notesOrder: string[];
 	boardId: string;
 } & MongoObject;
