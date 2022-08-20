@@ -3,7 +3,6 @@ import Note from './Note';
 
 type List = {
 	name: string;
-	description: string;
 	notes: Note[];
 	notesOrder: string[];
 	boardId: string;
