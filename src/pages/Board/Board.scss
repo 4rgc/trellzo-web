@@ -1,4 +1,14 @@
 .board {
 	margin: 10px;
 	flex-grow: 1;
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	.notes-list {
+		margin: 0 15px auto 0;
+	}
+
+	.notes-list:first-child {
+		margin-left: 50px;
+	}
 }

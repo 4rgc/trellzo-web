@@ -6,9 +6,8 @@ import ListType from '../../types/List';
 import APIRequestParams from '../../util/APIParams';
 import './Board.scss';
 import BoardType from '../../types/Board';
-import Button from '../../components/Button';
 import diffObjectArrays from '../../util/diffObjects';
-import List from './List';
+import NotesList from '../../components/NotesList';
 
 const initialLists: ListType[] = [];
 
@@ -98,14 +97,13 @@ const Board: FC = () => {
 
 	return (
 		<div className="board">
-			<Button onClick={reload}>reload</Button>
 			{lists
 				.sort(
 					(a, b) =>
 						listsOrder.indexOf(a._id) - listsOrder.indexOf(b._id)
 				)
 				.map((l) => {
-					return <List key={l._id} list={l} />;
+					return <NotesList key={l._id} list={l} />;
 				})}
 			<WarningFab displayOnMessage message={boardError?.message} />
 		</div>
