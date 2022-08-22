@@ -756,6 +756,67 @@ exports[`Storyshots Components/GhostCard Small 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/NotesList Default 1`] = `
+<div
+  className="notes-list"
+>
+  <span
+    className="notes-list-name"
+  >
+    List 1
+  </span>
+  <div
+    className="card card-sm card-noimage"
+  >
+    <div
+      className="card-container"
+    >
+      <h3>
+        Note Something
+      </h3>
+      <div
+        className="card-content-text"
+      >
+        Buy something
+      </div>
+    </div>
+  </div>
+  <div
+    className="card card-sm card-noimage"
+  >
+    <div
+      className="card-container"
+    >
+      <h3>
+        Delete me
+      </h3>
+      <div
+        className="card-content-text"
+      >
+        
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NotesList Empty 1`] = `
+<div
+  className="notes-list"
+>
+  <span
+    className="notes-list-name"
+  >
+    List aa
+  </span>
+  <span
+    className="notes-list-empty-msg"
+  >
+    Nothing here yet.
+  </span>
+</div>
+`;
+
 exports[`Storyshots Components/TextInput Bigger Multiline 1`] = `
 <div
   style={

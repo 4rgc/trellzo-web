@@ -1,0 +1,27 @@
+.notes-list {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	background-color: #9191a1;
+	width: 200px;
+	border-radius: 2px;
+	min-height: 0;
+	.card {
+		width: 200px;
+		margin-bottom: 5px;
+	}
+	.card:last-child {
+		margin-bottom: 0;
+	}
+	.notes-list-name {
+		font-weight: 300;
+		text-align: left;
+		margin-bottom: 5px;
+		margin-left: 10px;
+	}
+	.notes-list-empty-msg {
+		color: white;
+		font-weight: 200;
+		margin: 10px;
+	}
+}

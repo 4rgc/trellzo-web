@@ -1,8 +1,8 @@
 import MongoObject from './MongoObject';
 
-type PartialBoard = {
+type CheckItem = {
 	name: string;
-	description: string;
+	checked: boolean;
 } & MongoObject;
 
-export default PartialBoard;
+export default CheckItem;

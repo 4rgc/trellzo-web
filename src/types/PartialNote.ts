@@ -1,8 +1,10 @@
 import MongoObject from './MongoObject';
 
-type PartialBoard = {
+type PartialNote = {
 	name: string;
 	description: string;
+	startDate?: string;
+	dueDate?: string;
 } & MongoObject;
 
-export default PartialBoard;
+export default PartialNote;
