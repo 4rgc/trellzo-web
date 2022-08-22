@@ -6,7 +6,7 @@ import ListType from '../../types/List';
 import APIRequestParams from '../../util/APIParams';
 import './Board.scss';
 import BoardType from '../../types/Board';
-import diffObjectArrays from '../../util/diffObjects';
+import diffObjectArrays from '../../util/diffObjectArrays';
 import NotesList from '../../components/NotesList';
 
 const initialLists: ListType[] = [];
