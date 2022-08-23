@@ -99,7 +99,9 @@ exports[`Storyshots Components/Card Default 1`] = `
   <div
     className="card-container"
   >
-    <h3>
+    <h3
+      className="card-title"
+    >
       Title
     </h3>
     <div
@@ -131,7 +133,9 @@ exports[`Storyshots Components/Card With Cover 1`] = `
   <div
     className="card-container"
   >
-    <h3>
+    <h3
+      className="card-title"
+    >
       Title
     </h3>
     <div
@@ -205,7 +209,9 @@ exports[`Storyshots Components/Card With Custom Content 1`] = `
   <div
     className="card-container-no-text"
   >
-    <h3>
+    <h3
+      className="card-title"
+    >
       Title
     </h3>
     <div
@@ -248,7 +254,9 @@ exports[`Storyshots Components/Card With Horizontal Cover 1`] = `
   <div
     className="card-container"
   >
-    <h3>
+    <h3
+      className="card-title"
+    >
       Title
     </h3>
     <div
@@ -283,7 +291,9 @@ exports[`Storyshots Components/Card With Long Title 1`] = `
   <div
     className="card-container"
   >
-    <h3>
+    <h3
+      className="card-title"
+    >
       Hello this is long title
     </h3>
     <div
@@ -315,7 +325,9 @@ exports[`Storyshots Components/Card With Vertical Cover 1`] = `
   <div
     className="card-container"
   >
-    <h3>
+    <h3
+      className="card-title"
+    >
       Title
     </h3>
     <div
@@ -771,7 +783,9 @@ exports[`Storyshots Components/NotesList Default 1`] = `
     <div
       className="card-container"
     >
-      <h3>
+      <h3
+        className="card-title"
+      >
         Note Something
       </h3>
       <div
@@ -787,7 +801,9 @@ exports[`Storyshots Components/NotesList Default 1`] = `
     <div
       className="card-container"
     >
-      <h3>
+      <h3
+        className="card-title"
+      >
         Delete me
       </h3>
       <div

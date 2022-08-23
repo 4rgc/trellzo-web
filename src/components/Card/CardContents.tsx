@@ -16,7 +16,7 @@ const CardContents: React.FC<ICardContentsProps> = ({
 	>
 		{children ?? (
 			<>
-				<h3>{title}</h3>
+				<h3 className="card-title">{title}</h3>
 				<div
 					className={
 						typeof content === 'string' ? 'card-content-text' : ''
