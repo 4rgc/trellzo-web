@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import List from '../../types/List';
-import Card from '../Card';
+import NoteCard from '../NoteCard';
 import './NotesList.scss';
 
 export type NotesListProps = {
@@ -18,15 +18,7 @@ const NotesList: FC<NotesListProps> = ({ list }) => {
 							list.notesOrder.indexOf(a._id) -
 							list.notesOrder.indexOf(b._id)
 					)
-					.map((n) => (
-						<Card
-							key={n._id}
-							size="sm"
-							title={n.name}
-							content={n.description}
-							isImageDisabled
-						/>
-					))
+					.map((n) => <NoteCard key={n._id} note={n} />)
 			) : (
 				<span className="notes-list-empty-msg">Nothing here yet.</span>
 			)}

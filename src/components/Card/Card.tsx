@@ -3,6 +3,7 @@ import CardContents, { ICardContentsProps } from './CardContents';
 import CardCover, { ICardCoverProps } from './CardCover';
 import CardDivider from './CardDivider';
 
+// TODO: make props names consistent (ISomethingProps vs SomethingProps)
 export interface ICardProps extends React.ComponentPropsWithoutRef<'div'> {
 	onClick?: () => void;
 	children?: ICardContentsProps['children'];
