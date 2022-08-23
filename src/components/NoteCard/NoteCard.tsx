@@ -1,5 +1,6 @@
 import Card from '../Card';
 import PartialNote from '../../types/PartialNote';
+import './NoteCard.scss';
 
 type NoteCardProps = {
 	note: PartialNote;
