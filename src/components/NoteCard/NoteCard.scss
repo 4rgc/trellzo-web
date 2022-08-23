@@ -1,0 +1,13 @@
+.card.card-noimage {
+	align-items: start;
+	justify-content: flex-start;
+
+	.card-title {
+		margin-top: 0;
+		text-align: left;
+	}
+	.card-content-text {
+		text-align: left;
+		font-size: small;
+	}
+}
