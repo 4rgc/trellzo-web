@@ -215,20 +215,16 @@ exports[`Storyshots Components/Card With Custom Content 1`] = `
       Title
     </h3>
     <div
-      className=""
-    >
-      <div
-        style={
-          Object {
-            "backgroundColor": "blue",
-            "borderRadius": "10px",
-            "color": "white",
-            "textAlign": "center",
-          }
+      style={
+        Object {
+          "backgroundColor": "blue",
+          "borderRadius": "10px",
+          "color": "white",
+          "textAlign": "center",
         }
-      >
-        Custom content
-      </div>
+      }
+    >
+      Custom content
     </div>
   </div>
 </div>
@@ -709,32 +705,7 @@ exports[`Storyshots Components/GhostCard Large 1`] = `
 
 exports[`Storyshots Components/GhostCard No Image 1`] = `
 <div
-  className="card card-md card-noimage ghost-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
->
-  <div
-    className="card-container-no-text"
-  >
-    <div
-      className="ghost-card-text-container"
-    >
-      <b
-        className="ghost-card-text"
-      >
-        Add a new asdf...
-      </b>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/GhostCard Small 1`] = `
-<div
-  className="card card-sm card-noimage ghost-card"
+  className="card card-md ghost-card"
   style={
     Object {
       "width": "200px",
@@ -768,6 +739,391 @@ exports[`Storyshots Components/GhostCard Small 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/GhostCard Small 1`] = `
+<div
+  className="card card-sm card-noimage ghost-card"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card-container-no-text"
+  >
+    <div
+      className="ghost-card-text-container"
+    >
+      <b
+        className="ghost-card-text"
+      >
+        Add a new asdf...
+      </b>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NoteCard Default 1`] = `
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card card-sm card-noimage note"
+  >
+    <div
+      className="card-container-no-text"
+    >
+      <h3
+        className="card-title"
+      >
+        Buy Groceries
+      </h3>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
+      >
+        <div
+          className="note-card-description card-content-text"
+        >
+          eggs, chicken, tomatoes, green onion
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NoteCard Due In 3 Days 1`] = `
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card card-sm card-noimage note"
+  >
+    <div
+      className="card-container-no-text"
+    >
+      <h3
+        className="card-title"
+      >
+        Name
+      </h3>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
+      >
+        <div
+          className="note-card-description card-content-text"
+        >
+          Description
+        </div>
+        <div
+          className="due due-text"
+        >
+          due in
+           
+          <span
+            className="due-soon"
+          >
+            3 days
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NoteCard Due In 5 Days 1`] = `
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card card-sm card-noimage note"
+  >
+    <div
+      className="card-container-no-text"
+    >
+      <h3
+        className="card-title"
+      >
+        Name
+      </h3>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
+      >
+        <div
+          className="note-card-description card-content-text"
+        >
+          Description
+        </div>
+        <div
+          className="due due-text"
+        >
+          due in
+           
+          <span
+            className="due-far"
+          >
+            5 days
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NoteCard Due Today 1`] = `
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card card-sm card-noimage note"
+  >
+    <div
+      className="card-container-no-text"
+    >
+      <h3
+        className="card-title"
+      >
+        Name
+      </h3>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
+      >
+        <div
+          className="note-card-description card-content-text"
+        >
+          Description
+        </div>
+        <div
+          className="due due-text"
+        >
+          due 
+          <span
+            className="due-very-soon"
+          >
+            today
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NoteCard Due Tomorrow 1`] = `
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card card-sm card-noimage note"
+  >
+    <div
+      className="card-container-no-text"
+    >
+      <h3
+        className="card-title"
+      >
+        Name
+      </h3>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
+      >
+        <div
+          className="note-card-description card-content-text"
+        >
+          Description
+        </div>
+        <div
+          className="due due-text"
+        >
+          due 
+          <span
+            className="due-very-soon"
+          >
+            tomorrow
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NoteCard Long Desctription 1`] = `
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card card-sm card-noimage note"
+  >
+    <div
+      className="card-container-no-text"
+    >
+      <h3
+        className="card-title"
+      >
+        Name is short
+      </h3>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
+      >
+        <div
+          className="note-card-description card-content-text"
+        >
+          description is very very very very very very very very very very very very long
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NoteCard Long Name 1`] = `
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card card-sm card-noimage note"
+  >
+    <div
+      className="card-container-no-text"
+    >
+      <h3
+        className="card-title"
+      >
+        hello my name is asdf nice to meet you
+      </h3>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
+      >
+        <div
+          className="note-card-description card-content-text"
+        >
+          description
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/NoteCard One Day Past Due 1`] = `
+<div
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <div
+    className="card card-sm card-noimage note"
+  >
+    <div
+      className="card-container-no-text"
+    >
+      <h3
+        className="card-title"
+      >
+        Name
+      </h3>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
+      >
+        <div
+          className="note-card-description card-content-text"
+        >
+          Description
+        </div>
+        <div
+          className="due due-past"
+        >
+          1 day
+           past due
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/NotesList Default 1`] = `
 <div
   className="notes-list"
@@ -778,10 +1134,10 @@ exports[`Storyshots Components/NotesList Default 1`] = `
     List 1
   </span>
   <div
-    className="card card-sm card-noimage"
+    className="card card-sm card-noimage note"
   >
     <div
-      className="card-container"
+      className="card-container-no-text"
     >
       <h3
         className="card-title"
@@ -789,17 +1145,27 @@ exports[`Storyshots Components/NotesList Default 1`] = `
         Note Something
       </h3>
       <div
-        className="card-content-text"
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
       >
-        Buy something
+        <div
+          className="note-card-description card-content-text"
+        >
+          Buy something
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="card card-sm card-noimage"
+    className="card card-sm card-noimage note"
   >
     <div
-      className="card-container"
+      className="card-container-no-text"
     >
       <h3
         className="card-title"
@@ -807,9 +1173,19 @@ exports[`Storyshots Components/NotesList Default 1`] = `
         Delete me
       </h3>
       <div
-        className="card-content-text"
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": 1,
+          }
+        }
       >
-        
+        <div
+          className="note-card-description card-content-text"
+        >
+          
+        </div>
       </div>
     </div>
   </div>
