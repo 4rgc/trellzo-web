@@ -837,7 +837,7 @@ exports[`Storyshots Components/NoteCard Due In 3 Days 1`] = `
           Description
         </div>
         <div
-          className="due due-text"
+          className="due"
         >
           due in
            
@@ -887,7 +887,7 @@ exports[`Storyshots Components/NoteCard Due In 5 Days 1`] = `
           Description
         </div>
         <div
-          className="due due-text"
+          className="due"
         >
           due in
            
@@ -937,7 +937,7 @@ exports[`Storyshots Components/NoteCard Due Today 1`] = `
           Description
         </div>
         <div
-          className="due due-text"
+          className="due"
         >
           due 
           <span
@@ -986,7 +986,7 @@ exports[`Storyshots Components/NoteCard Due Tomorrow 1`] = `
           Description
         </div>
         <div
-          className="due due-text"
+          className="due"
         >
           due 
           <span
@@ -1113,10 +1113,14 @@ exports[`Storyshots Components/NoteCard One Day Past Due 1`] = `
           Description
         </div>
         <div
-          className="due due-past"
+          className="due"
         >
-          1 day
-           past due
+          <span
+            className="due-past"
+          >
+            1 day
+             past due
+          </span>
         </div>
       </div>
     </div>

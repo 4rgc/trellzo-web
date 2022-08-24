@@ -3,7 +3,6 @@ import PartialNote from '../../types/PartialNote';
 import './NoteCard.scss';
 import { DateTime, Duration } from 'luxon';
 import humanizeDuration from 'humanize-duration';
-import _ from 'lodash';
 
 export type NoteCardProps = {
 	note: PartialNote;
@@ -39,35 +38,35 @@ const NoteCardContent: React.FC<{
 
 		if (daysUntilDue > 3) {
 			dueComponent = (
-				<div className="due due-text">
+				<>
 					due in{' '}
 					<span className="due-far">{humanizedDaysUntilDue}</span>
-				</div>
+				</>
 			);
 		} else if (daysUntilDue > 1) {
 			dueComponent = (
-				<div className="due due-text">
+				<>
 					due in{' '}
 					<span className="due-soon">{humanizedDaysUntilDue}</span>
-				</div>
+				</>
 			);
 		} else if (daysUntilDue === 1) {
 			dueComponent = (
-				<div className="due due-text">
+				<>
 					due <span className="due-very-soon">tomorrow</span>
-				</div>
+				</>
 			);
 		} else if (daysUntilDue === 0) {
 			dueComponent = (
-				<div className="due due-text">
+				<>
 					due <span className="due-very-soon">today</span>
-				</div>
+				</>
 			);
 		} else {
 			dueComponent = (
-				<div className="due due-past">
+				<span className="due-past">
 					{humanizedDaysUntilDue} past due
-				</div>
+				</span>
 			);
 		}
 	}
@@ -77,7 +76,7 @@ const NoteCardContent: React.FC<{
 			<div className="note-card-description card-content-text">
 				{description}
 			</div>
-			{dueComponent}
+			{dueComponent && <div className="due">{dueComponent}</div>}
 		</div>
 	);
 };
