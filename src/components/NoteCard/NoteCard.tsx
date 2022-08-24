@@ -50,16 +50,13 @@ const NoteCardContent: React.FC<{
 					<span className="due-soon">{humanizedDaysUntilDue}</span>
 				</>
 			);
-		} else if (daysUntilDue === 1) {
+		} else if (daysUntilDue > 0) {
 			dueComponent = (
 				<>
-					due <span className="due-very-soon">tomorrow</span>
-				</>
-			);
-		} else if (daysUntilDue === 0) {
-			dueComponent = (
-				<>
-					due <span className="due-very-soon">today</span>
+					due{' '}
+					<span className="due-very-soon">
+						{daysUntilDue === 1 ? 'tomorrow' : 'today'}
+					</span>
 				</>
 			);
 		} else {
