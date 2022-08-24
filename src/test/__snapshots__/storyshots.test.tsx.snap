@@ -939,7 +939,8 @@ exports[`Storyshots Components/NoteCard Due Today 1`] = `
         <div
           className="due"
         >
-          due 
+          due
+           
           <span
             className="due-very-soon"
           >
@@ -988,7 +989,8 @@ exports[`Storyshots Components/NoteCard Due Tomorrow 1`] = `
         <div
           className="due"
         >
-          due 
+          due
+           
           <span
             className="due-very-soon"
           >
