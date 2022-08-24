@@ -8,8 +8,8 @@
 	//FIXME: find a way to derive these values from Card.scss
 	// this would break if margin in Card.scss changed
 	.card-container-no-text {
-		padding: 2px;
-		margin: 8px;
+		padding: 10px;
+		box-sizing: border-box;
 	}
 
 	.btn-container {
