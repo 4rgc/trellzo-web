@@ -12,6 +12,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note }) => (
 		content={note.description}
 		isImageDisabled
 		size={'sm'}
+		className="note"
 	/>
 );
 
