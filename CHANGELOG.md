@@ -1,3 +1,26 @@
+## v0.4.0 (2022-08-24)
+
+### Feat
+
+- **NoteCard**: display note due date
+- **NoteCard**: align card name and description to the top-left corner
+
+### Fix
+
+- **NoteCard**: fix else if condition after refactor
+- **Card**: render contents without an extra div if it's a ReactNode
+- **NoteCard**: prevent NoteCard css spilling into other Card components
+- **GhostCard**: force disable image on small GhostCards
+- **EditableCard**: inputs and textareas growing outside card bounds
+- **Card**: inner container growing outisde card bounds
+
+### Refactor
+
+- **NoteCard**: remove extra else if block in due date rendering
+- **NoteCard**: remove redundant due-text class
+- **Card**: separate title implementation by adding a className to it
+- **NotesList**: move NoteCard to a separate component
+
 ## v0.3.0 (2022-08-22)
 
 ### Feat
