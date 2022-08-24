@@ -70,8 +70,10 @@
 }
 
 .card-container {
-	margin: 10px;
-	h3 {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	.card-title {
 		margin: 4px 0;
 		white-space: nowrap;
 		overflow: hidden;
