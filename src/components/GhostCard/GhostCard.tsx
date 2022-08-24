@@ -9,8 +9,17 @@ export interface IGhostCardProps extends ICardProps {
 const GhostCard: React.FC<IGhostCardProps> = (props) => {
 	const { innerText, ...otherProps } = props;
 
+	let forceDisableImage = false;
+	if (otherProps.size === 'sm') {
+		forceDisableImage = true;
+	}
+
 	return (
-		<Card {...otherProps} className="ghost-card">
+		<Card
+			{...otherProps}
+			isImageDisabled={forceDisableImage}
+			className="ghost-card"
+		>
 			<div className="ghost-card-text-container">
 				<b className="ghost-card-text">{innerText}</b>
 			</div>
