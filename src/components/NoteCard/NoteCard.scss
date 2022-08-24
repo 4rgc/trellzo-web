@@ -6,8 +6,47 @@
 		margin-top: 0;
 		text-align: left;
 	}
-	.card-content-text {
+
+	.card-container-no-text {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.note-card-description {
 		text-align: left;
 		font-size: small;
+	}
+
+	.due {
+		font-size: small;
+		margin-top: auto;
+	}
+
+	.due-text {
+		color: grey;
+	}
+
+	.due-far,
+	.due-soon,
+	.due-very-soon {
+		font-weight: bold;
+	}
+
+	.due-far {
+		color: #444444;
+	}
+
+	.due-soon {
+		color: cornflowerblue;
+	}
+
+	.due-very-soon {
+		color: green;
+	}
+
+	.due-past {
+		font-weight: 900;
+		color: #b00020;
 	}
 }
