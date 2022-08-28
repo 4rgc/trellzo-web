@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hello-pangea/dnd": "^16.0.0",
     "humanize-duration": "^3.27.2",
     "lodash": "^4.17.21",
     "luxon": "^3.0.1",
