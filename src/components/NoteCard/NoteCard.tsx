@@ -6,14 +6,7 @@ import humanizeDuration from 'humanize-duration';
 
 export type NoteCardProps = {
 	note: PartialNote;
-};
-
-const stripTime = (d: DateTime) => {
-	return Duration.fromDurationLike({
-		year: d.year,
-		month: d.month,
-		day: d.day,
-	});
+	index: number;
 };
 
 const NoteCardContent: React.FC<{
@@ -24,9 +17,10 @@ const NoteCardContent: React.FC<{
 	let dueComponent;
 
 	if (dueDate) {
-		const daysUntilDue =
-			stripTime(DateTime.fromISO(dueDate)).days -
-			stripTime(DateTime.now()).days;
+		const daysUntilDue = DateTime.fromISO(dueDate)
+			.startOf('day')
+			.diff(DateTime.now().startOf('day'))
+			.as('days');
 		const msecUntilDue = Duration.fromDurationLike({
 			days: daysUntilDue,
 		}).toMillis();
