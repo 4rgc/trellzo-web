@@ -8,6 +8,7 @@ import './Board.scss';
 import BoardType from '../../types/Board';
 import diffObjectArrays from '../../util/diffObjectArrays';
 import NotesList from '../../components/NotesList';
+import { DragDropContext, OnDragEndResponder } from 'react-beautiful-dnd';
 
 const initialLists: ListType[] = [];
 
@@ -56,6 +57,12 @@ const Board: FC = () => {
 	}>(new APIRequestParams('get'));
 	const [listsOrder, setListsOrder] = useState<BoardType['listsOrder']>([]);
 
+	const onDragEnd: OnDragEndResponder = (result) => {
+		const { source, destination } = result;
+
+		//TODO: compare and change state
+	};
+
 	useEffect(() => {
 		const apiParams = new APIRequestParams('get');
 		apiParams.setRoute(`/board/${id}`);
@@ -97,15 +104,18 @@ const Board: FC = () => {
 
 	return (
 		<div className="board">
-			{lists
-				.sort(
-					(a, b) =>
-						listsOrder.indexOf(a._id) - listsOrder.indexOf(b._id)
-				)
-				.map((l) => {
-					return <NotesList key={l._id} list={l} />;
-				})}
-			<WarningFab displayOnMessage message={boardError?.message} />
+			<DragDropContext onDragEnd={onDragEnd}>
+				{lists
+					.sort(
+						(a, b) =>
+							listsOrder.indexOf(a._id) -
+							listsOrder.indexOf(b._id)
+					)
+					.map((l) => {
+						return <NotesList key={l._id} list={l} />;
+					})}
+				<WarningFab displayOnMessage message={boardError?.message} />
+			</DragDropContext>
 		</div>
 	);
 };
