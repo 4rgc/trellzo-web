@@ -1,3 +1,4 @@
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { DateTime, Duration } from 'luxon';
 import NoteCard from '../NoteCard';
@@ -14,9 +15,22 @@ export default {
 } as ComponentMeta<typeof NoteCard>;
 
 const Template: ComponentStory<typeof NoteCard> = (args) => (
-	<div style={{ width: '200px' }}>
-		<NoteCard {...args} />
-	</div>
+	<DragDropContext onDragEnd={() => {}}>
+		<Droppable droppableId="1">
+			{(provided) => {
+				return (
+					<div
+						style={{ width: '200px' }}
+						{...provided.droppableProps}
+						ref={provided.innerRef}
+					>
+						<NoteCard {...args} index={1} />
+						{provided.placeholder}
+					</div>
+				);
+			}}
+		</Droppable>
+	</DragDropContext>
 );
 
 export const Default = Template.bind({});

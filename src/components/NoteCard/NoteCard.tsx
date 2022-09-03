@@ -3,6 +3,7 @@ import PartialNote from '../../types/PartialNote';
 import './NoteCard.scss';
 import { DateTime, Duration } from 'luxon';
 import humanizeDuration from 'humanize-duration';
+import { Draggable } from 'react-beautiful-dnd';
 
 export type NoteCardProps = {
 	note: PartialNote;
@@ -72,20 +73,28 @@ const NoteCardContent: React.FC<{
 	);
 };
 
-const NoteCard: React.FC<NoteCardProps> = ({ note }) => (
-	<Card
-		title={note.name}
-		content={
-			<NoteCardContent
-				description={note.description}
-				startDate={note.startDate}
-				dueDate={note.dueDate}
-			/>
-		}
-		isImageDisabled
-		size={'sm'}
-		className="note"
-	/>
+const NoteCard: React.FC<NoteCardProps> = ({ note, index }) => (
+	<Draggable draggableId={note._id} index={index}>
+		{(provided) => {
+			return (
+				<Card
+					title={note.name}
+					content={
+						<NoteCardContent
+							description={note.description}
+							startDate={note.startDate}
+							dueDate={note.dueDate}
+						/>
+					}
+					isImageDisabled
+					size={'sm'}
+					className="note"
+					provided={provided}
+					innerRef={provided.innerRef}
+				/>
+			);
+		}}
+	</Draggable>
 );
 
 export default NoteCard;
