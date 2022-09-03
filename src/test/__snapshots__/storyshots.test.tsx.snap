@@ -766,6 +766,8 @@ exports[`Storyshots Components/GhostCard Small 1`] = `
 
 exports[`Storyshots Components/NoteCard Default 1`] = `
 <div
+  data-rbd-droppable-context-id="0"
+  data-rbd-droppable-id="1"
   style={
     Object {
       "width": "200px",
@@ -773,7 +775,23 @@ exports[`Storyshots Components/NoteCard Default 1`] = `
   }
 >
   <div
+    aria-describedby="rbd-hidden-text-0-hidden-text-0"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="0"
+    data-rbd-drag-handle-draggable-id="1"
+    data-rbd-draggable-context-id="0"
+    data-rbd-draggable-id="1"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -805,6 +823,8 @@ exports[`Storyshots Components/NoteCard Default 1`] = `
 
 exports[`Storyshots Components/NoteCard Due In 3 Days 1`] = `
 <div
+  data-rbd-droppable-context-id="1"
+  data-rbd-droppable-id="1"
   style={
     Object {
       "width": "200px",
@@ -812,7 +832,23 @@ exports[`Storyshots Components/NoteCard Due In 3 Days 1`] = `
   }
 >
   <div
+    aria-describedby="rbd-hidden-text-1-hidden-text-3"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="1"
+    data-rbd-drag-handle-draggable-id="1"
+    data-rbd-draggable-context-id="1"
+    data-rbd-draggable-id="1"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -855,6 +891,8 @@ exports[`Storyshots Components/NoteCard Due In 3 Days 1`] = `
 
 exports[`Storyshots Components/NoteCard Due In 5 Days 1`] = `
 <div
+  data-rbd-droppable-context-id="2"
+  data-rbd-droppable-id="1"
   style={
     Object {
       "width": "200px",
@@ -862,7 +900,23 @@ exports[`Storyshots Components/NoteCard Due In 5 Days 1`] = `
   }
 >
   <div
+    aria-describedby="rbd-hidden-text-2-hidden-text-6"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="2"
+    data-rbd-drag-handle-draggable-id="1"
+    data-rbd-draggable-context-id="2"
+    data-rbd-draggable-id="1"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -905,6 +959,8 @@ exports[`Storyshots Components/NoteCard Due In 5 Days 1`] = `
 
 exports[`Storyshots Components/NoteCard Due Today 1`] = `
 <div
+  data-rbd-droppable-context-id="3"
+  data-rbd-droppable-id="1"
   style={
     Object {
       "width": "200px",
@@ -912,7 +968,23 @@ exports[`Storyshots Components/NoteCard Due Today 1`] = `
   }
 >
   <div
+    aria-describedby="rbd-hidden-text-3-hidden-text-9"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="3"
+    data-rbd-drag-handle-draggable-id="1"
+    data-rbd-draggable-context-id="3"
+    data-rbd-draggable-id="1"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -955,6 +1027,8 @@ exports[`Storyshots Components/NoteCard Due Today 1`] = `
 
 exports[`Storyshots Components/NoteCard Due Tomorrow 1`] = `
 <div
+  data-rbd-droppable-context-id="4"
+  data-rbd-droppable-id="1"
   style={
     Object {
       "width": "200px",
@@ -962,7 +1036,23 @@ exports[`Storyshots Components/NoteCard Due Tomorrow 1`] = `
   }
 >
   <div
+    aria-describedby="rbd-hidden-text-4-hidden-text-12"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="4"
+    data-rbd-drag-handle-draggable-id="1"
+    data-rbd-draggable-context-id="4"
+    data-rbd-draggable-id="1"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -1005,6 +1095,8 @@ exports[`Storyshots Components/NoteCard Due Tomorrow 1`] = `
 
 exports[`Storyshots Components/NoteCard Long Desctription 1`] = `
 <div
+  data-rbd-droppable-context-id="5"
+  data-rbd-droppable-id="1"
   style={
     Object {
       "width": "200px",
@@ -1012,7 +1104,23 @@ exports[`Storyshots Components/NoteCard Long Desctription 1`] = `
   }
 >
   <div
+    aria-describedby="rbd-hidden-text-5-hidden-text-15"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="5"
+    data-rbd-drag-handle-draggable-id="1"
+    data-rbd-draggable-context-id="5"
+    data-rbd-draggable-id="1"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -1044,6 +1152,8 @@ exports[`Storyshots Components/NoteCard Long Desctription 1`] = `
 
 exports[`Storyshots Components/NoteCard Long Name 1`] = `
 <div
+  data-rbd-droppable-context-id="6"
+  data-rbd-droppable-id="1"
   style={
     Object {
       "width": "200px",
@@ -1051,7 +1161,23 @@ exports[`Storyshots Components/NoteCard Long Name 1`] = `
   }
 >
   <div
+    aria-describedby="rbd-hidden-text-6-hidden-text-18"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="6"
+    data-rbd-drag-handle-draggable-id="1"
+    data-rbd-draggable-context-id="6"
+    data-rbd-draggable-id="1"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -1083,6 +1209,8 @@ exports[`Storyshots Components/NoteCard Long Name 1`] = `
 
 exports[`Storyshots Components/NoteCard One Day Past Due 1`] = `
 <div
+  data-rbd-droppable-context-id="7"
+  data-rbd-droppable-id="1"
   style={
     Object {
       "width": "200px",
@@ -1090,7 +1218,23 @@ exports[`Storyshots Components/NoteCard One Day Past Due 1`] = `
   }
 >
   <div
+    aria-describedby="rbd-hidden-text-7-hidden-text-21"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="7"
+    data-rbd-drag-handle-draggable-id="1"
+    data-rbd-draggable-context-id="7"
+    data-rbd-draggable-id="1"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -1133,6 +1277,8 @@ exports[`Storyshots Components/NoteCard One Day Past Due 1`] = `
 exports[`Storyshots Components/NotesList Default 1`] = `
 <div
   className="notes-list"
+  data-rbd-droppable-context-id="8"
+  data-rbd-droppable-id="60c5d161a6c781e43c11a5a3"
 >
   <span
     className="notes-list-name"
@@ -1140,7 +1286,23 @@ exports[`Storyshots Components/NotesList Default 1`] = `
     List 1
   </span>
   <div
+    aria-describedby="rbd-hidden-text-8-hidden-text-24"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="8"
+    data-rbd-drag-handle-draggable-id="60c5d167a6c781e43c11a5a4"
+    data-rbd-draggable-context-id="8"
+    data-rbd-draggable-id="60c5d167a6c781e43c11a5a4"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -1168,7 +1330,23 @@ exports[`Storyshots Components/NotesList Default 1`] = `
     </div>
   </div>
   <div
+    aria-describedby="rbd-hidden-text-8-hidden-text-24"
     className="card card-sm card-noimage note"
+    data-rbd-drag-handle-context-id="8"
+    data-rbd-drag-handle-draggable-id="6106f35927d5f4001d197e65"
+    data-rbd-draggable-context-id="8"
+    data-rbd-draggable-id="6106f35927d5f4001d197e65"
+    draggable={false}
+    onDragStart={[Function]}
+    onTransitionEnd={null}
+    role="button"
+    style={
+      Object {
+        "transform": null,
+        "transition": null,
+      }
+    }
+    tabIndex={0}
   >
     <div
       className="card-container-no-text"
@@ -1201,6 +1379,8 @@ exports[`Storyshots Components/NotesList Default 1`] = `
 exports[`Storyshots Components/NotesList Empty 1`] = `
 <div
   className="notes-list"
+  data-rbd-droppable-context-id="9"
+  data-rbd-droppable-id="1"
 >
   <span
     className="notes-list-name"
