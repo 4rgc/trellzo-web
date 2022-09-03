@@ -1,3 +1,4 @@
+import { Droppable } from 'react-beautiful-dnd';
 import { FC } from 'react';
 import List from '../../types/List';
 import NoteCard from '../NoteCard';
@@ -9,20 +10,41 @@ export type NotesListProps = {
 
 const NotesList: FC<NotesListProps> = ({ list }) => {
 	return (
-		<div className="notes-list">
-			<span className="notes-list-name">{list.name}</span>
-			{list.notes.length ? (
-				list.notes
-					.sort(
-						(a, b) =>
-							list.notesOrder.indexOf(a._id) -
-							list.notesOrder.indexOf(b._id)
-					)
-					.map((n) => <NoteCard key={n._id} note={n} />)
-			) : (
-				<span className="notes-list-empty-msg">Nothing here yet.</span>
-			)}
-		</div>
+		<Droppable droppableId={list._id}>
+			{(provided) => {
+				return (
+					<div
+						className="notes-list"
+						{...provided.droppableProps}
+						ref={provided.innerRef}
+					>
+						<span className="notes-list-name">{list.name}</span>
+						{list.notes.length ? (
+							<>
+								{list.notes
+									.sort(
+										(a, b) =>
+											list.notesOrder.indexOf(a._id) -
+											list.notesOrder.indexOf(b._id)
+									)
+									.map((n, index) => (
+										<NoteCard
+											key={n._id}
+											note={n}
+											index={index}
+										/>
+									))}
+								{provided.placeholder}
+							</>
+						) : (
+							<span className="notes-list-empty-msg">
+								Nothing here yet.
+							</span>
+						)}
+					</div>
+				);
+			}}
+		</Droppable>
 	);
 };
 
