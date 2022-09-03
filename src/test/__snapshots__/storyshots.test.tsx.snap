@@ -2,7 +2,7 @@
 
 exports[`Storyshots Components/Button Custom Class 1`] = `
 <button
-  className="btn-prm-md-reg btn-dis"
+  class="btn-prm-md-reg btn-dis"
 >
   fake disabled
 </button>
@@ -10,13 +10,13 @@ exports[`Storyshots Components/Button Custom Class 1`] = `
 
 exports[`Storyshots Components/Button Default 1`] = `
 <button
-  className="btn-prm-md-reg "
+  class="btn-prm-md-reg "
 />
 `;
 
 exports[`Storyshots Components/Button Disabled 1`] = `
 <button
-  className="btn-prm-dis-md-reg "
+  class="btn-prm-dis-md-reg "
 >
   disabled
 </button>
@@ -24,7 +24,7 @@ exports[`Storyshots Components/Button Disabled 1`] = `
 
 exports[`Storyshots Components/Button Large 1`] = `
 <button
-  className="btn-prm-lg-reg "
+  class="btn-prm-lg-reg "
 >
   Large Button !!!
 </button>
@@ -32,7 +32,7 @@ exports[`Storyshots Components/Button Large 1`] = `
 
 exports[`Storyshots Components/Button Medium 1`] = `
 <button
-  className="btn-prm-md-reg "
+  class="btn-prm-md-reg "
 >
   Medium Btn
 </button>
@@ -40,7 +40,7 @@ exports[`Storyshots Components/Button Medium 1`] = `
 
 exports[`Storyshots Components/Button Primary 1`] = `
 <button
-  className="btn-prm-md-reg "
+  class="btn-prm-md-reg "
 >
   Primary
 </button>
@@ -48,7 +48,7 @@ exports[`Storyshots Components/Button Primary 1`] = `
 
 exports[`Storyshots Components/Button Secondary 1`] = `
 <button
-  className="btn-sec-md-reg "
+  class="btn-sec-md-reg "
 >
   Secondary
 </button>
@@ -56,7 +56,7 @@ exports[`Storyshots Components/Button Secondary 1`] = `
 
 exports[`Storyshots Components/Button Small 1`] = `
 <button
-  className="btn-prm-sm-reg "
+  class="btn-prm-sm-reg "
 >
   Small
 </button>
@@ -64,7 +64,7 @@ exports[`Storyshots Components/Button Small 1`] = `
 
 exports[`Storyshots Components/Button Square 1`] = `
 <button
-  className="btn-prm-sq-reg "
+  class="btn-prm-sq-reg "
 >
   OK
 </button>
@@ -72,21 +72,17 @@ exports[`Storyshots Components/Button Square 1`] = `
 
 exports[`Storyshots Components/Button Thin 1`] = `
 <button
-  className="btn-prm-md-thn "
+  class="btn-prm-md-thn "
 />
 `;
 
 exports[`Storyshots Components/Card Default 1`] = `
 <div
-  className="card card-md"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md"
+  style="width: 200px;"
 >
   <svg
-    className="card-cover"
+    class="card-cover"
     fill="black"
     preserveAspectRatio="xMinYMin slice"
     stroke="black"
@@ -94,18 +90,18 @@ exports[`Storyshots Components/Card Default 1`] = `
     placeholder.svg
   </svg>
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container"
+    class="card-container"
   >
     <h3
-      className="card-title"
+      class="card-title"
     >
       Title
     </h3>
     <div
-      className="card-content-text"
+      class="card-content-text"
     >
       Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
     </div>
@@ -115,31 +111,27 @@ exports[`Storyshots Components/Card Default 1`] = `
 
 exports[`Storyshots Components/Card With Cover 1`] = `
 <div
-  className="card card-md"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md"
+  style="width: 200px;"
 >
   <img
     alt="card img"
-    className="card-cover"
+    class="card-cover"
     src="/regular-cover.png"
   />
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container"
+    class="card-container"
   >
     <h3
-      className="card-title"
+      class="card-title"
     >
       Title
     </h3>
     <div
-      className="card-content-text"
+      class="card-content-text"
     >
       Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
     </div>
@@ -149,15 +141,11 @@ exports[`Storyshots Components/Card With Cover 1`] = `
 
 exports[`Storyshots Components/Card With Custom Children 1`] = `
 <div
-  className="card card-md"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md"
+  style="width: 200px;"
 >
   <svg
-    className="card-cover"
+    class="card-cover"
     fill="black"
     preserveAspectRatio="xMinYMin slice"
     stroke="black"
@@ -165,20 +153,13 @@ exports[`Storyshots Components/Card With Custom Children 1`] = `
     placeholder.svg
   </svg>
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container"
+    class="card-container"
   >
     <div
-      style={
-        Object {
-          "backgroundColor": "blue",
-          "borderRadius": "10px",
-          "color": "white",
-          "textAlign": "center",
-        }
-      }
+      style="background-color: blue; color: white; border-radius: 10px; text-align: center;"
     >
       Custom stuff
     </div>
@@ -188,15 +169,11 @@ exports[`Storyshots Components/Card With Custom Children 1`] = `
 
 exports[`Storyshots Components/Card With Custom Content 1`] = `
 <div
-  className="card card-md"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md"
+  style="width: 200px;"
 >
   <svg
-    className="card-cover"
+    class="card-cover"
     fill="black"
     preserveAspectRatio="xMinYMin slice"
     stroke="black"
@@ -204,25 +181,18 @@ exports[`Storyshots Components/Card With Custom Content 1`] = `
     placeholder.svg
   </svg>
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <h3
-      className="card-title"
+      class="card-title"
     >
       Title
     </h3>
     <div
-      style={
-        Object {
-          "backgroundColor": "blue",
-          "borderRadius": "10px",
-          "color": "white",
-          "textAlign": "center",
-        }
-      }
+      style="background-color: blue; color: white; border-radius: 10px; text-align: center;"
     >
       Custom content
     </div>
@@ -232,31 +202,27 @@ exports[`Storyshots Components/Card With Custom Content 1`] = `
 
 exports[`Storyshots Components/Card With Horizontal Cover 1`] = `
 <div
-  className="card card-md"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md"
+  style="width: 200px;"
 >
   <img
     alt="card img"
-    className="card-cover"
+    class="card-cover"
     src="/horizontal-cover.png"
   />
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container"
+    class="card-container"
   >
     <h3
-      className="card-title"
+      class="card-title"
     >
       Title
     </h3>
     <div
-      className="card-content-text"
+      class="card-content-text"
     >
       Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
     </div>
@@ -266,15 +232,11 @@ exports[`Storyshots Components/Card With Horizontal Cover 1`] = `
 
 exports[`Storyshots Components/Card With Long Title 1`] = `
 <div
-  className="card card-md"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md"
+  style="width: 200px;"
 >
   <svg
-    className="card-cover"
+    class="card-cover"
     fill="black"
     preserveAspectRatio="xMinYMin slice"
     stroke="black"
@@ -282,18 +244,18 @@ exports[`Storyshots Components/Card With Long Title 1`] = `
     placeholder.svg
   </svg>
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container"
+    class="card-container"
   >
     <h3
-      className="card-title"
+      class="card-title"
     >
       Hello this is long title
     </h3>
     <div
-      className="card-content-text"
+      class="card-content-text"
     >
       Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
     </div>
@@ -303,31 +265,27 @@ exports[`Storyshots Components/Card With Long Title 1`] = `
 
 exports[`Storyshots Components/Card With Vertical Cover 1`] = `
 <div
-  className="card card-md"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md"
+  style="width: 200px;"
 >
   <img
     alt="card img"
-    className="card-cover"
+    class="card-cover"
     src="/vertical-cover.png"
   />
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container"
+    class="card-container"
   >
     <h3
-      className="card-title"
+      class="card-title"
     >
       Title
     </h3>
     <div
-      className="card-content-text"
+      class="card-content-text"
     >
       Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
     </div>
@@ -337,161 +295,111 @@ exports[`Storyshots Components/Card With Vertical Cover 1`] = `
 
 exports[`Storyshots Components/EditableCard Default 1`] = `
 <div
-  className="card card-md card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={14}
-      value=""
-    >
-      
-    </textarea>
+      rows="14"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/EditableCard Large 1`] = `
 <div
-  className="card card-lg card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-lg card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={26}
-      value=""
-    >
-      
-    </textarea>
+      rows="26"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/EditableCard Large With Title 1`] = `
 <div
-  className="card card-lg card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-lg card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <input
-      className="tinput-md title"
-      onChange={[Function]}
+      class="tinput-md title"
       value=""
     />
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={24}
-      value=""
-    >
-      
-    </textarea>
+      rows="24"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/EditableCard Medium 1`] = `
 <div
-  className="card card-md card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={14}
-      value=""
-    >
-      
-    </textarea>
+      rows="14"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/EditableCard Small 1`] = `
 <div
-  className="card card-sm card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-sm card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={3}
-      value=""
-    >
-      
-    </textarea>
+      rows="3"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/EditableCard Small With A Button 1`] = `
 <div
-  className="card card-sm card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-sm card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={1}
-      value=""
-    >
-      
-    </textarea>
+      rows="1"
+    />
     <div
-      className="btn-container"
+      class="btn-container"
     >
       <button
-        className="btn-prm-md-thn "
-        onClick={[Function]}
+        class="btn-prm-md-thn "
       >
         click me
       </button>
@@ -502,56 +410,39 @@ exports[`Storyshots Components/EditableCard Small With A Button 1`] = `
 
 exports[`Storyshots Components/EditableCard Small With Title 1`] = `
 <div
-  className="card card-sm card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-sm card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={3}
-      value=""
-    >
-      
-    </textarea>
+      rows="3"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/EditableCard With A Button 1`] = `
 <div
-  className="card card-md card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={12}
-      value=""
-    >
-      
-    </textarea>
+      rows="12"
+    />
     <div
-      className="btn-container"
+      class="btn-container"
     >
       <button
-        className="btn-prm-md-thn "
-        onClick={[Function]}
+        class="btn-prm-md-thn "
       >
         click me
       </button>
@@ -562,67 +453,48 @@ exports[`Storyshots Components/EditableCard With A Button 1`] = `
 
 exports[`Storyshots Components/EditableCard With Title 1`] = `
 <div
-  className="card card-md card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <input
-      className="tinput-md title"
-      onChange={[Function]}
+      class="tinput-md title"
       value=""
     />
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={12}
-      value=""
-    >
-      
-    </textarea>
+      rows="12"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/EditableCard With Two Buttons 1`] = `
 <div
-  className="card card-md card-noimage editable-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md card-noimage editable-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <textarea
-      className="tinput-md"
-      onChange={[Function]}
+      class="tinput-md"
       placeholder=""
-      rows={12}
-      value=""
-    >
-      
-    </textarea>
+      rows="12"
+    />
     <div
-      className="btn-container"
+      class="btn-container"
     >
       <button
-        className="btn-sec-sm-thn "
-        onClick={[Function]}
+        class="btn-sec-sm-thn "
       >
         cancel
       </button>
       <button
-        className="btn-prm-sm-thn "
-        onClick={[Function]}
+        class="btn-prm-sm-thn "
       >
         ok
       </button>
@@ -633,15 +505,11 @@ exports[`Storyshots Components/EditableCard With Two Buttons 1`] = `
 
 exports[`Storyshots Components/GhostCard Default 1`] = `
 <div
-  className="card card-md ghost-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md ghost-card"
+  style="width: 200px;"
 >
   <svg
-    className="card-cover"
+    class="card-cover"
     fill="black"
     preserveAspectRatio="xMinYMin slice"
     stroke="black"
@@ -649,16 +517,16 @@ exports[`Storyshots Components/GhostCard Default 1`] = `
     placeholder.svg
   </svg>
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <div
-      className="ghost-card-text-container"
+      class="ghost-card-text-container"
     >
       <b
-        className="ghost-card-text"
+        class="ghost-card-text"
       >
         Add a new asdf...
       </b>
@@ -669,15 +537,11 @@ exports[`Storyshots Components/GhostCard Default 1`] = `
 
 exports[`Storyshots Components/GhostCard Large 1`] = `
 <div
-  className="card card-lg ghost-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-lg ghost-card"
+  style="width: 200px;"
 >
   <svg
-    className="card-cover"
+    class="card-cover"
     fill="black"
     preserveAspectRatio="xMinYMin slice"
     stroke="black"
@@ -685,16 +549,16 @@ exports[`Storyshots Components/GhostCard Large 1`] = `
     placeholder.svg
   </svg>
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <div
-      className="ghost-card-text-container"
+      class="ghost-card-text-container"
     >
       <b
-        className="ghost-card-text"
+        class="ghost-card-text"
       >
         Add a new asdf...
       </b>
@@ -705,15 +569,11 @@ exports[`Storyshots Components/GhostCard Large 1`] = `
 
 exports[`Storyshots Components/GhostCard No Image 1`] = `
 <div
-  className="card card-md ghost-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-md ghost-card"
+  style="width: 200px;"
 >
   <svg
-    className="card-cover"
+    class="card-cover"
     fill="black"
     preserveAspectRatio="xMinYMin slice"
     stroke="black"
@@ -721,16 +581,16 @@ exports[`Storyshots Components/GhostCard No Image 1`] = `
     placeholder.svg
   </svg>
   <div
-    className="card-divider"
+    class="card-divider"
   />
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <div
-      className="ghost-card-text-container"
+      class="ghost-card-text-container"
     >
       <b
-        className="ghost-card-text"
+        class="ghost-card-text"
       >
         Add a new asdf...
       </b>
@@ -741,21 +601,17 @@ exports[`Storyshots Components/GhostCard No Image 1`] = `
 
 exports[`Storyshots Components/GhostCard Small 1`] = `
 <div
-  className="card card-sm card-noimage ghost-card"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  class="card card-sm card-noimage ghost-card"
+  style="width: 200px;"
 >
   <div
-    className="card-container-no-text"
+    class="card-container-no-text"
   >
     <div
-      className="ghost-card-text-container"
+      class="ghost-card-text-container"
     >
       <b
-        className="ghost-card-text"
+        class="ghost-card-text"
       >
         Add a new asdf...
       </b>
@@ -768,50 +624,32 @@ exports[`Storyshots Components/NoteCard Default 1`] = `
 <div
   data-rbd-droppable-context-id="0"
   data-rbd-droppable-id="1"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  style="width: 200px;"
 >
   <div
     aria-describedby="rbd-hidden-text-0-hidden-text-0"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="0"
     data-rbd-drag-handle-draggable-id="1"
     data-rbd-draggable-context-id="0"
     data-rbd-draggable-id="1"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         Buy Groceries
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
+          class="note-card-description card-content-text"
         >
           eggs, chicken, tomatoes, green onion
         </div>
@@ -825,60 +663,42 @@ exports[`Storyshots Components/NoteCard Due In 3 Days 1`] = `
 <div
   data-rbd-droppable-context-id="1"
   data-rbd-droppable-id="1"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  style="width: 200px;"
 >
   <div
     aria-describedby="rbd-hidden-text-1-hidden-text-3"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="1"
     data-rbd-drag-handle-draggable-id="1"
     data-rbd-draggable-context-id="1"
     data-rbd-draggable-id="1"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         Name
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
+          class="note-card-description card-content-text"
         >
           Description
         </div>
         <div
-          className="due"
+          class="due"
         >
           due in
            
           <span
-            className="due-soon"
+            class="due-soon"
           >
             3 days
           </span>
@@ -893,60 +713,42 @@ exports[`Storyshots Components/NoteCard Due In 5 Days 1`] = `
 <div
   data-rbd-droppable-context-id="2"
   data-rbd-droppable-id="1"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  style="width: 200px;"
 >
   <div
     aria-describedby="rbd-hidden-text-2-hidden-text-6"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="2"
     data-rbd-drag-handle-draggable-id="1"
     data-rbd-draggable-context-id="2"
     data-rbd-draggable-id="1"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         Name
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
+          class="note-card-description card-content-text"
         >
           Description
         </div>
         <div
-          className="due"
+          class="due"
         >
           due in
            
           <span
-            className="due-far"
+            class="due-far"
           >
             5 days
           </span>
@@ -961,60 +763,42 @@ exports[`Storyshots Components/NoteCard Due Today 1`] = `
 <div
   data-rbd-droppable-context-id="3"
   data-rbd-droppable-id="1"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  style="width: 200px;"
 >
   <div
     aria-describedby="rbd-hidden-text-3-hidden-text-9"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="3"
     data-rbd-drag-handle-draggable-id="1"
     data-rbd-draggable-context-id="3"
     data-rbd-draggable-id="1"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         Name
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
+          class="note-card-description card-content-text"
         >
           Description
         </div>
         <div
-          className="due"
+          class="due"
         >
           due
            
           <span
-            className="due-very-soon"
+            class="due-very-soon"
           >
             today
           </span>
@@ -1029,60 +813,42 @@ exports[`Storyshots Components/NoteCard Due Tomorrow 1`] = `
 <div
   data-rbd-droppable-context-id="4"
   data-rbd-droppable-id="1"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  style="width: 200px;"
 >
   <div
     aria-describedby="rbd-hidden-text-4-hidden-text-12"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="4"
     data-rbd-drag-handle-draggable-id="1"
     data-rbd-draggable-context-id="4"
     data-rbd-draggable-id="1"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         Name
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
+          class="note-card-description card-content-text"
         >
           Description
         </div>
         <div
-          className="due"
+          class="due"
         >
           due
            
           <span
-            className="due-very-soon"
+            class="due-very-soon"
           >
             tomorrow
           </span>
@@ -1097,50 +863,32 @@ exports[`Storyshots Components/NoteCard Long Desctription 1`] = `
 <div
   data-rbd-droppable-context-id="5"
   data-rbd-droppable-id="1"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  style="width: 200px;"
 >
   <div
     aria-describedby="rbd-hidden-text-5-hidden-text-15"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="5"
     data-rbd-drag-handle-draggable-id="1"
     data-rbd-draggable-context-id="5"
     data-rbd-draggable-id="1"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         Name is short
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
+          class="note-card-description card-content-text"
         >
           description is very very very very very very very very very very very very long
         </div>
@@ -1154,50 +902,32 @@ exports[`Storyshots Components/NoteCard Long Name 1`] = `
 <div
   data-rbd-droppable-context-id="6"
   data-rbd-droppable-id="1"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  style="width: 200px;"
 >
   <div
     aria-describedby="rbd-hidden-text-6-hidden-text-18"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="6"
     data-rbd-drag-handle-draggable-id="1"
     data-rbd-draggable-context-id="6"
     data-rbd-draggable-id="1"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         hello my name is asdf nice to meet you
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
+          class="note-card-description card-content-text"
         >
           description
         </div>
@@ -1211,58 +941,40 @@ exports[`Storyshots Components/NoteCard One Day Past Due 1`] = `
 <div
   data-rbd-droppable-context-id="7"
   data-rbd-droppable-id="1"
-  style={
-    Object {
-      "width": "200px",
-    }
-  }
+  style="width: 200px;"
 >
   <div
     aria-describedby="rbd-hidden-text-7-hidden-text-21"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="7"
     data-rbd-drag-handle-draggable-id="1"
     data-rbd-draggable-context-id="7"
     data-rbd-draggable-id="1"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         Name
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
+          class="note-card-description card-content-text"
         >
           Description
         </div>
         <div
-          className="due"
+          class="due"
         >
           <span
-            className="due-past"
+            class="due-past"
           >
             1 day
              past due
@@ -1276,53 +988,39 @@ exports[`Storyshots Components/NoteCard One Day Past Due 1`] = `
 
 exports[`Storyshots Components/NotesList Default 1`] = `
 <div
-  className="notes-list"
+  class="notes-list"
   data-rbd-droppable-context-id="8"
   data-rbd-droppable-id="60c5d161a6c781e43c11a5a3"
 >
   <span
-    className="notes-list-name"
+    class="notes-list-name"
   >
     List 1
   </span>
   <div
     aria-describedby="rbd-hidden-text-8-hidden-text-24"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="8"
     data-rbd-drag-handle-draggable-id="60c5d167a6c781e43c11a5a4"
     data-rbd-draggable-context-id="8"
     data-rbd-draggable-id="60c5d167a6c781e43c11a5a4"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         Note Something
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
+          class="note-card-description card-content-text"
         >
           Buy something
         </div>
@@ -1331,45 +1029,29 @@ exports[`Storyshots Components/NotesList Default 1`] = `
   </div>
   <div
     aria-describedby="rbd-hidden-text-8-hidden-text-24"
-    className="card card-sm card-noimage note"
+    class="card card-sm card-noimage note"
     data-rbd-drag-handle-context-id="8"
     data-rbd-drag-handle-draggable-id="6106f35927d5f4001d197e65"
     data-rbd-draggable-context-id="8"
     data-rbd-draggable-id="6106f35927d5f4001d197e65"
-    draggable={false}
-    onDragStart={[Function]}
-    onTransitionEnd={null}
+    draggable="false"
     role="button"
-    style={
-      Object {
-        "transform": null,
-        "transition": null,
-      }
-    }
-    tabIndex={0}
+    tabindex="0"
   >
     <div
-      className="card-container-no-text"
+      class="card-container-no-text"
     >
       <h3
-        className="card-title"
+        class="card-title"
       >
         Delete me
       </h3>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "flexGrow": 1,
-          }
-        }
+        style="display: flex; flex-direction: column; flex-grow: 1;"
       >
         <div
-          className="note-card-description card-content-text"
-        >
-          
-        </div>
+          class="note-card-description card-content-text"
+        />
       </div>
     </div>
   </div>
@@ -1378,17 +1060,17 @@ exports[`Storyshots Components/NotesList Default 1`] = `
 
 exports[`Storyshots Components/NotesList Empty 1`] = `
 <div
-  className="notes-list"
+  class="notes-list"
   data-rbd-droppable-context-id="9"
   data-rbd-droppable-id="1"
 >
   <span
-    className="notes-list-name"
+    class="notes-list-name"
   >
     List aa
   </span>
   <span
-    className="notes-list-empty-msg"
+    class="notes-list-empty-msg"
   >
     Nothing here yet.
   </span>
@@ -1397,38 +1079,21 @@ exports[`Storyshots Components/NotesList Empty 1`] = `
 
 exports[`Storyshots Components/TextInput Bigger Multiline 1`] = `
 <div
-  style={
-    Object {
-      "border": "2px black solid",
-      "padding": "20px",
-      "width": "400px",
-    }
-  }
+  style="padding: 20px; border: 2px solid black; width: 400px;"
 >
   <textarea
-    className="tinput-md"
-    onChange={[Function]}
-    rows={6}
-    value=""
-  >
-    
-  </textarea>
+    class="tinput-md"
+    rows="6"
+  />
 </div>
 `;
 
 exports[`Storyshots Components/TextInput Default 1`] = `
 <div
-  style={
-    Object {
-      "border": "2px black solid",
-      "padding": "20px",
-      "width": "400px",
-    }
-  }
+  style="padding: 20px; border: 2px solid black; width: 400px;"
 >
   <input
-    className="tinput-md"
-    onChange={[Function]}
+    class="tinput-md"
     value=""
   />
 </div>
@@ -1436,17 +1101,10 @@ exports[`Storyshots Components/TextInput Default 1`] = `
 
 exports[`Storyshots Components/TextInput In A Tight Container 1`] = `
 <div
-  style={
-    Object {
-      "border": "2px black solid",
-      "padding": "10px",
-      "width": "100px",
-    }
-  }
+  style="border: 2px solid black; width: 100px; padding: 10px;"
 >
   <input
-    className="tinput-md"
-    onChange={[Function]}
+    class="tinput-md"
     value=""
   />
 </div>
@@ -1454,17 +1112,10 @@ exports[`Storyshots Components/TextInput In A Tight Container 1`] = `
 
 exports[`Storyshots Components/TextInput Large Font 1`] = `
 <div
-  style={
-    Object {
-      "border": "2px black solid",
-      "padding": "20px",
-      "width": "400px",
-    }
-  }
+  style="padding: 20px; border: 2px solid black; width: 400px;"
 >
   <input
-    className="tinput-lg"
-    onChange={[Function]}
+    class="tinput-lg"
     value=""
   />
 </div>
@@ -1472,59 +1123,32 @@ exports[`Storyshots Components/TextInput Large Font 1`] = `
 
 exports[`Storyshots Components/TextInput Multiline 1`] = `
 <div
-  style={
-    Object {
-      "border": "2px black solid",
-      "padding": "20px",
-      "width": "400px",
-    }
-  }
+  style="padding: 20px; border: 2px solid black; width: 400px;"
 >
   <textarea
-    className="tinput-md"
-    onChange={[Function]}
-    value=""
-  >
-    
-  </textarea>
+    class="tinput-md"
+  />
 </div>
 `;
 
 exports[`Storyshots Components/TextInput Multiline With Placeholder 1`] = `
 <div
-  style={
-    Object {
-      "border": "2px black solid",
-      "padding": "20px",
-      "width": "400px",
-    }
-  }
+  style="padding: 20px; border: 2px solid black; width: 400px;"
 >
   <textarea
-    className="tinput-md"
-    onChange={[Function]}
+    class="tinput-md"
     placeholder="Type something long here..."
-    value=""
-  >
-    
-  </textarea>
+  />
 </div>
 `;
 
 exports[`Storyshots Components/TextInput Single Line With Rows Specified 1`] = `
 <div
-  style={
-    Object {
-      "border": "2px black solid",
-      "padding": "20px",
-      "width": "400px",
-    }
-  }
+  style="padding: 20px; border: 2px solid black; width: 400px;"
 >
   <input
-    className="tinput-md"
-    onChange={[Function]}
-    rows={5}
+    class="tinput-md"
+    rows="5"
     value=""
   />
 </div>
@@ -1532,17 +1156,10 @@ exports[`Storyshots Components/TextInput Single Line With Rows Specified 1`] = `
 
 exports[`Storyshots Components/TextInput With Placeholder 1`] = `
 <div
-  style={
-    Object {
-      "border": "2px black solid",
-      "padding": "20px",
-      "width": "400px",
-    }
-  }
+  style="padding: 20px; border: 2px solid black; width: 400px;"
 >
   <input
-    className="tinput-md"
-    onChange={[Function]}
+    class="tinput-md"
     placeholder="Enter something..."
     value=""
   />
@@ -1551,17 +1168,12 @@ exports[`Storyshots Components/TextInput With Placeholder 1`] = `
 
 exports[`Storyshots Components/WarningFab Always Display 1`] = `
 <div
-  className="warningFab"
-  style={
-    Object {
-      "display": "block",
-    }
-  }
+  class="warningFab"
+  style="display: block;"
 >
   <img
     alt="warning icon"
-    className="icon"
-    onClick={[Function]}
+    class="icon"
     src="warning.svg"
   />
 </div>
@@ -1569,17 +1181,12 @@ exports[`Storyshots Components/WarningFab Always Display 1`] = `
 
 exports[`Storyshots Components/WarningFab Default 1`] = `
 <div
-  className="warningFab"
-  style={
-    Object {
-      "display": "none",
-    }
-  }
+  class="warningFab"
+  style="display: none;"
 >
   <img
     alt="warning icon"
-    className="icon"
-    onClick={[Function]}
+    class="icon"
     src="warning.svg"
   />
 </div>
@@ -1587,17 +1194,12 @@ exports[`Storyshots Components/WarningFab Default 1`] = `
 
 exports[`Storyshots Components/WarningFab Display On Message 1`] = `
 <div
-  className="warningFab"
-  style={
-    Object {
-      "display": "block",
-    }
-  }
+  class="warningFab"
+  style="display: block;"
 >
   <img
     alt="warning icon"
-    className="icon"
-    onClick={[Function]}
+    class="icon"
     src="warning.svg"
   />
 </div>
@@ -1605,17 +1207,12 @@ exports[`Storyshots Components/WarningFab Display On Message 1`] = `
 
 exports[`Storyshots Components/WarningFab Display On Message No Message 1`] = `
 <div
-  className="warningFab"
-  style={
-    Object {
-      "display": "none",
-    }
-  }
+  class="warningFab"
+  style="display: none;"
 >
   <img
     alt="warning icon"
-    className="icon"
-    onClick={[Function]}
+    class="icon"
     src="warning.svg"
   />
 </div>
@@ -1623,17 +1220,12 @@ exports[`Storyshots Components/WarningFab Display On Message No Message 1`] = `
 
 exports[`Storyshots Components/WarningFab With Custom Action 1`] = `
 <div
-  className="warningFab"
-  style={
-    Object {
-      "display": "block",
-    }
-  }
+  class="warningFab"
+  style="display: block;"
 >
   <img
     alt="warning icon"
-    className="icon"
-    onClick={[Function]}
+    class="icon"
     src="warning.svg"
   />
 </div>
