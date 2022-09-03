@@ -1,3 +1,4 @@
+import { DraggableProvided } from 'react-beautiful-dnd';
 import './Card.scss';
 import CardContents, { ICardContentsProps } from './CardContents';
 import CardCover, { ICardCoverProps } from './CardCover';
@@ -12,6 +13,8 @@ export interface ICardProps extends React.ComponentPropsWithoutRef<'div'> {
 	isImageDisabled?: boolean;
 	title?: ICardContentsProps['title'];
 	content?: ICardContentsProps['content'];
+	provided?: DraggableProvided;
+	innerRef?: DraggableProvided['innerRef'];
 	//FIXME: make size names in component props consistent
 	// Button: small, medium, large
 	// Card: sm, md, lg
@@ -30,6 +33,8 @@ const Card: React.FC<ICardProps> = (props) => {
 		content,
 		size = 'md',
 		className,
+		innerRef,
+		provided,
 		...otherProps
 	} = props;
 
@@ -42,6 +47,9 @@ const Card: React.FC<ICardProps> = (props) => {
 			}${className ? ` ${className}` : ''}`}
 			onClick={isActive ? onClick : undefined}
 			{...otherProps}
+			ref={innerRef}
+			{...provided?.draggableProps}
+			{...provided?.dragHandleProps}
 		>
 			{!isImageDisabled && (
 				<>
