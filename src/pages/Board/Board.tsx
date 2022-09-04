@@ -1,4 +1,11 @@
-import { FC, Reducer, useEffect, useReducer, useState } from 'react';
+import {
+	FC,
+	Reducer,
+	useEffect,
+	useReducer,
+	useState,
+	useCallback,
+} from 'react';
 import { useParams } from 'react-router-dom';
 import WarningFab from '../../components/WarningFab';
 import useTrellzoAPI from '../../hooks/useTrellzoAPI';
@@ -52,16 +59,53 @@ const Board: FC = () => {
 	const { id } = useParams();
 
 	const [lists, dispatch] = useReducer(listsReducer, initialLists);
+	const [error, setError] = useState<string | undefined>('');
 	const [boardData, boardError, reload, setParams] = useTrellzoAPI<{
 		board: BoardType;
 	}>(new APIRequestParams('get'));
+	const [, updateError, updateList, setListUpdateParams] = useTrellzoAPI<{
+		list: ListType;
+	}>(new APIRequestParams('get'));
 	const [listsOrder, setListsOrder] = useState<BoardType['listsOrder']>([]);
 
-	const onDragEnd: OnDragEndResponder = (result) => {
-		const { source, destination } = result;
+	const onDragEnd: OnDragEndResponder = useCallback(
+		(result) => {
+			const { source, destination } = result;
 
-		//TODO: compare and change state
-	};
+			if (!destination) return;
+
+			const { droppableId: sourceListId, index: sourceIndex } = source;
+			const { droppableId: destinationListId, index: destinationIndex } =
+				destination;
+
+			if (sourceListId === destinationListId) {
+				if (sourceIndex === destinationIndex) return;
+
+				const params = new APIRequestParams('post');
+				params.setRoute(`/list/${id}/${sourceListId}`);
+				let newNotesOrder = [
+					...(lists.find((l) => l._id === sourceListId)?.notesOrder ||
+						[]),
+				];
+
+				// Swap two array elements in place
+				[newNotesOrder[sourceIndex], newNotesOrder[destinationIndex]] =
+					[
+						newNotesOrder[destinationIndex],
+						newNotesOrder[sourceIndex],
+					];
+
+				params.setBodyParam('notesOrder', newNotesOrder);
+
+				setListUpdateParams(params);
+				updateList();
+				reload();
+			} else {
+				//TODO: Implement note movement between the lists after API is updated
+			}
+		},
+		[id, lists, setListUpdateParams, updateList, reload]
+	);
 
 	useEffect(() => {
 		const apiParams = new APIRequestParams('get');
@@ -102,6 +146,21 @@ const Board: FC = () => {
 		}
 	}, [boardData?.board.lists, lists]);
 
+	useEffect(() => {
+		if (!boardError && !updateError) {
+			if (error) setError(undefined);
+		}
+
+		let newError = boardError ? `Board: ${boardError.message}` : '';
+		newError = updateError
+			? `${newError === '' ? newError + '\n' : newError}Update: ${
+					updateError.message
+			  }`
+			: newError;
+
+		setError(newError);
+	}, [boardError, updateError, error]);
+
 	return (
 		<div className="board">
 			<DragDropContext onDragEnd={onDragEnd}>
@@ -114,7 +173,7 @@ const Board: FC = () => {
 					.map((l) => {
 						return <NotesList key={l._id} list={l} />;
 					})}
-				<WarningFab displayOnMessage message={boardError?.message} />
+				<WarningFab displayOnMessage message={error} />
 			</DragDropContext>
 		</div>
 	);
