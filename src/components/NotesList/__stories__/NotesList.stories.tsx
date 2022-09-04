@@ -1,4 +1,4 @@
-import { DragDropContext } from 'react-beautiful-dnd';
+import { DragDropContext } from '@hello-pangea/dnd';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import NotesList from '../NotesList';
 

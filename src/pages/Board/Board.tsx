@@ -8,7 +8,7 @@ import './Board.scss';
 import BoardType from '../../types/Board';
 import diffObjectArrays from '../../util/diffObjectArrays';
 import NotesList from '../../components/NotesList';
-import { DragDropContext, OnDragEndResponder } from 'react-beautiful-dnd';
+import { DragDropContext, OnDragEndResponder } from '@hello-pangea/dnd';
 
 const initialLists: ListType[] = [];
 

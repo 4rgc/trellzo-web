@@ -1,4 +1,4 @@
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable } from '@hello-pangea/dnd';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { DateTime, Duration } from 'luxon';
 import NoteCard from '../NoteCard';

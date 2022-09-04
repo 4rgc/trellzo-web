@@ -1,4 +1,4 @@
-import { Droppable } from 'react-beautiful-dnd';
+import { Droppable } from '@hello-pangea/dnd';
 import { FC } from 'react';
 import List from '../../types/List';
 import NoteCard from '../NoteCard';

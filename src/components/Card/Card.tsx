@@ -1,4 +1,4 @@
-import { DraggableProvided } from 'react-beautiful-dnd';
+import { DraggableProvided } from '@hello-pangea/dnd';
 import './Card.scss';
 import CardContents, { ICardContentsProps } from './CardContents';
 import CardCover, { ICardCoverProps } from './CardCover';

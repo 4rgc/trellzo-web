@@ -3,7 +3,7 @@ import PartialNote from '../../types/PartialNote';
 import './NoteCard.scss';
 import { DateTime, Duration } from 'luxon';
 import humanizeDuration from 'humanize-duration';
-import { Draggable } from 'react-beautiful-dnd';
+import { Draggable } from '@hello-pangea/dnd';
 
 export type NoteCardProps = {
 	note: PartialNote;
