@@ -19,37 +19,55 @@ import { DragDropContext, OnDragEndResponder } from '@hello-pangea/dnd';
 
 const initialLists: ListType[] = [];
 
-enum ActionTypes {
+enum ActionType {
 	LIST_UPDATE,
 	LIST_CREATE,
 	LIST_DELETE,
+	REMOTE_UPDATE,
 }
 
-type Action =
-	| { type: ActionTypes.LIST_UPDATE; data: ListType[] }
-	| { type: ActionTypes.LIST_CREATE; data: ListType[] }
-	| { type: ActionTypes.LIST_DELETE; data: ListType[] };
+type Action = { type: ActionType; data: ListType[] };
 
-const listsReducer: Reducer<ListType[], Action> = (
-	state: ListType[],
-	action
-) => {
+const listsUpdateHandler = (state: ListType[], data: ListType[]) =>
+	state.map((stateList) => {
+		const updatedList = data.find((b) => b._id === stateList._id);
+		if (updatedList) return updatedList;
+		else return stateList;
+	});
+
+const listsCreateHandler = (state: ListType[], data: ListType[]) => [
+	...state,
+	...data,
+];
+
+const listsDeleteHandler = (state: ListType[], data: ListType[]) =>
+	state.filter(
+		(stateList) => !data.find((list) => stateList._id === list._id)
+	);
+
+const listsAutoHandler = (state: ListType[], data: ListType[]) => {
+	const { added, removed, changed } = diffObjectArrays(state, data);
+
+	let newLists = state;
+	if (added.length > 0) newLists = listsCreateHandler(newLists, added);
+	if (removed.length > 0) newLists = listsDeleteHandler(newLists, removed);
+	if (changed.length > 0) newLists = listsUpdateHandler(newLists, changed);
+
+	// Bails out of reducer with current state
+	// in case when remote data is same as state
+	return newLists;
+};
+
+const listsReducer: Reducer<ListType[], Action> = (state, action) => {
 	switch (action.type) {
-		case ActionTypes.LIST_UPDATE:
-			return state.map((stateList) => {
-				const updatedList = action.data.find(
-					(b) => b._id === stateList._id
-				);
-				if (updatedList) return updatedList;
-				else return stateList;
-			});
-		case ActionTypes.LIST_CREATE:
-			return [...state, ...action.data];
-		case ActionTypes.LIST_DELETE:
-			return state.filter(
-				(stateList) =>
-					!action.data.find((list) => stateList._id === list._id)
-			);
+		case ActionType.LIST_UPDATE:
+			return listsUpdateHandler(state, action.data);
+		case ActionType.LIST_CREATE:
+			return listsCreateHandler(state, action.data);
+		case ActionType.LIST_DELETE:
+			return listsDeleteHandler(state, action.data);
+		case ActionType.REMOTE_UPDATE:
+			return listsAutoHandler(state, action.data);
 		default:
 			throw new Error();
 	}
@@ -126,25 +144,11 @@ const Board: FC = () => {
 			return;
 		}
 
-		const { added, removed, changed } = diffObjectArrays(
-			lists,
-			boardData.board.lists
-		);
-
-		if (added.length > 0)
-			dispatch({
-				type: ActionTypes.LIST_CREATE,
-				data: added,
-			});
-		if (removed.length > 0)
-			dispatch({
-				type: ActionTypes.LIST_DELETE,
-				data: removed,
-			});
-		if (changed.length > 0) {
-			dispatch({ type: ActionTypes.LIST_UPDATE, data: changed });
-		}
-	}, [boardData?.board.lists, lists]);
+		dispatch({
+			type: ActionType.REMOTE_UPDATE,
+			data: boardData.board.lists,
+		});
+	}, [boardData?.board.lists]);
 
 	useEffect(() => {
 		if (!boardError && !updateError) {
