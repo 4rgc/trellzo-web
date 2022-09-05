@@ -87,7 +87,7 @@ const Board: FC = () => {
 	const [listsOrder, setListsOrder] = useState<BoardType['listsOrder']>([]);
 
 	const onDragEnd: OnDragEndResponder = useCallback(
-		(result) => {
+		async (result) => {
 			const { source, destination } = result;
 
 			if (!destination) return;
@@ -116,13 +116,25 @@ const Board: FC = () => {
 				params.setBodyParam('notesOrder', newNotesOrder);
 
 				setListUpdateParams(params);
-				updateList();
-				reload();
+
+				const predictedUpdatedList = structuredClone(
+					lists.find((l) => l._id === sourceListId)
+				);
+				if (predictedUpdatedList)
+					predictedUpdatedList.notesOrder = newNotesOrder;
+
+				predictedUpdatedList &&
+					dispatch({
+						type: ActionType.LIST_UPDATE,
+						data: [predictedUpdatedList],
+					});
+
+				await updateList();
 			} else {
 				//TODO: Implement note movement between the lists after API is updated
 			}
 		},
-		[id, lists, setListUpdateParams, updateList, reload]
+		[id, lists, setListUpdateParams, updateList]
 	);
 
 	useEffect(() => {
