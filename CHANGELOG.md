@@ -1,3 +1,9 @@
+## v0.5.0 (2022-11-27)
+
+### Feat
+
+- **Board**: allow moving of cards between and within lists (#56)
+
 ## v0.4.0 (2022-08-24)
 
 ### Feat
