@@ -3,17 +3,11 @@ import PartialNote from '../../types/PartialNote';
 import './NoteCard.scss';
 import { DateTime, Duration } from 'luxon';
 import humanizeDuration from 'humanize-duration';
+import { Draggable } from '@hello-pangea/dnd';
 
 export type NoteCardProps = {
 	note: PartialNote;
-};
-
-const stripTime = (d: DateTime) => {
-	return Duration.fromDurationLike({
-		year: d.year,
-		month: d.month,
-		day: d.day,
-	});
+	index: number;
 };
 
 const NoteCardContent: React.FC<{
@@ -24,9 +18,10 @@ const NoteCardContent: React.FC<{
 	let dueComponent;
 
 	if (dueDate) {
-		const daysUntilDue =
-			stripTime(DateTime.fromISO(dueDate)).days -
-			stripTime(DateTime.now()).days;
+		const daysUntilDue = DateTime.fromISO(dueDate)
+			.startOf('day')
+			.diff(DateTime.now().startOf('day'))
+			.as('days');
 		const msecUntilDue = Duration.fromDurationLike({
 			days: daysUntilDue,
 		}).toMillis();
@@ -78,20 +73,28 @@ const NoteCardContent: React.FC<{
 	);
 };
 
-const NoteCard: React.FC<NoteCardProps> = ({ note }) => (
-	<Card
-		title={note.name}
-		content={
-			<NoteCardContent
-				description={note.description}
-				startDate={note.startDate}
-				dueDate={note.dueDate}
-			/>
-		}
-		isImageDisabled
-		size={'sm'}
-		className="note"
-	/>
+const NoteCard: React.FC<NoteCardProps> = ({ note, index }) => (
+	<Draggable draggableId={note._id} index={index}>
+		{(provided) => {
+			return (
+				<Card
+					title={note.name}
+					content={
+						<NoteCardContent
+							description={note.description}
+							startDate={note.startDate}
+							dueDate={note.dueDate}
+						/>
+					}
+					isImageDisabled
+					size={'sm'}
+					className="note"
+					provided={provided}
+					innerRef={provided.innerRef}
+				/>
+			);
+		}}
+	</Draggable>
 );
 
 export default NoteCard;

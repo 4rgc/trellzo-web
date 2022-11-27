@@ -1,3 +1,4 @@
+import { DragDropContext } from '@hello-pangea/dnd';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import NotesList from '../NotesList';
 
@@ -31,7 +32,9 @@ export default {
 } as ComponentMeta<typeof NotesList>;
 
 const Template: ComponentStory<typeof NotesList> = (args) => (
-	<NotesList {...args} />
+	<DragDropContext onDragEnd={() => {}}>
+		<NotesList {...args} />
+	</DragDropContext>
 );
 
 export const Default = Template.bind({});
