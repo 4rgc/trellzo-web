@@ -81,9 +81,16 @@ const Board: FC = () => {
 	const [boardData, boardError, reload, setParams] = useTrellzoAPI<{
 		board: BoardType;
 	}>(new APIRequestParams('get'));
-	const [, updateError, updateList, setListUpdateParams] = useTrellzoAPI<{
-		list: ListType;
-	}>(new APIRequestParams('get'));
+	const [listResults, updateError, updateList, setListUpdateParams] =
+		useTrellzoAPI<
+			| {
+					list: ListType;
+			  }
+			| {
+					sourceList: ListType;
+					destinationList: ListType;
+			  }
+		>(new APIRequestParams('get'));
 	const [listsOrder, setListsOrder] = useState<BoardType['listsOrder']>([]);
 
 	const onDragEnd: OnDragEndResponder = useCallback(
@@ -96,15 +103,24 @@ const Board: FC = () => {
 			const { droppableId: destinationListId, index: destinationIndex } =
 				destination;
 
+			const sourceList = lists.find((l) => l._id === sourceListId);
+			if (!sourceList)
+				throw new Error(`list with id ${sourceListId} not found`);
+			const destinationList = lists.find(
+				(l) => l._id === destinationListId
+			);
+			if (!destinationList)
+				throw new Error(`list with id ${destinationListId} not found`);
+
+			const noteId = sourceList?.notesOrder[sourceIndex];
+			if (!noteId) throw new Error(`noteId was not found in notesOrder`);
+
 			if (sourceListId === destinationListId) {
 				if (sourceIndex === destinationIndex) return;
 
 				const params = new APIRequestParams('post');
 				params.setRoute(`/list/${id}/${sourceListId}`);
-				let newNotesOrder = [
-					...(lists.find((l) => l._id === sourceListId)?.notesOrder ||
-						[]),
-				];
+				let newNotesOrder = [...(sourceList.notesOrder || [])];
 
 				// Swap two array elements in place
 				[newNotesOrder[sourceIndex], newNotesOrder[destinationIndex]] =
@@ -117,9 +133,7 @@ const Board: FC = () => {
 
 				setListUpdateParams(params);
 
-				const predictedUpdatedList = structuredClone(
-					lists.find((l) => l._id === sourceListId)
-				);
+				const predictedUpdatedList = structuredClone(sourceList);
 				if (predictedUpdatedList)
 					predictedUpdatedList.notesOrder = newNotesOrder;
 
@@ -131,11 +145,76 @@ const Board: FC = () => {
 
 				await updateList();
 			} else {
-				//TODO: Implement note movement between the lists after API is updated
+				const params = new APIRequestParams('post');
+				params.setRoute(
+					`/list/${id}/${sourceListId}/moveNoteTo/${destinationListId}`
+				);
+
+				params.setBodyParams([
+					['noteId', sourceList.notesOrder[sourceIndex]],
+					['otherListIndex', destinationIndex],
+				]);
+
+				setListUpdateParams(params);
+
+				let newSourceListNotes = [...sourceList.notes];
+				let newSourceListNotesOrder = [...sourceList.notesOrder];
+
+				let newDestinationListNotes = [...destinationList.notes];
+				let newDestinationListNotesOrder = [
+					...destinationList.notesOrder,
+				];
+
+				const note = sourceList.notes[sourceIndex];
+
+				newSourceListNotes = newSourceListNotes.filter(
+					(n) => n._id !== noteId
+				);
+				note &&
+					newDestinationListNotes?.splice(destinationIndex, 0, note);
+
+				newSourceListNotesOrder = newSourceListNotesOrder?.filter(
+					(id) => id !== noteId
+				);
+
+				newDestinationListNotesOrder?.splice(
+					destinationIndex,
+					0,
+					noteId
+				);
+
+				const predictedUpdatedSourceList = structuredClone(sourceList);
+
+				const predictedUpdatedDestinationList =
+					structuredClone(destinationList);
+
+				predictedUpdatedSourceList.notes = newSourceListNotes;
+				predictedUpdatedSourceList.notesOrder = newSourceListNotesOrder;
+
+				predictedUpdatedDestinationList.notes = newDestinationListNotes;
+				predictedUpdatedDestinationList.notesOrder =
+					newDestinationListNotesOrder;
+
+				predictedUpdatedSourceList &&
+					predictedUpdatedDestinationList &&
+					dispatch({
+						type: ActionType.LIST_UPDATE,
+						data: [
+							predictedUpdatedSourceList,
+							predictedUpdatedDestinationList,
+						],
+					});
+
+				await updateList();
 			}
 		},
 		[id, lists, setListUpdateParams, updateList]
 	);
+
+	useEffect(() => {
+		if (!listResults) return;
+		reload();
+	}, [reload, listResults]);
 
 	useEffect(() => {
 		const apiParams = new APIRequestParams('get');
