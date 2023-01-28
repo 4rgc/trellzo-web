@@ -4,12 +4,15 @@
 name: Node.js CI
 
 on:
+    workflow_call:
+
     push:
-        branches: ["**"]
         tags: ["v*.*.*"]
+    pull_request:
+        branches: ["**"]
 
 jobs:
-    build:
+    build-and-test:
         runs-on: ubuntu-latest
 
         strategy:
