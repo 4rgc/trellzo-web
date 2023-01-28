@@ -38,6 +38,7 @@ const NotesList: FC<NotesListProps> = ({ list }) => {
 							</>
 						) : (
 							<span className="notes-list-empty-msg">
+								{provided.placeholder}
 								Nothing here yet.
 							</span>
 						)}
