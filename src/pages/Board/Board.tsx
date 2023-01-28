@@ -1,4 +1,4 @@
-import { FC, useEffect, useState, useCallback } from 'react';
+import { FC, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import WarningFab from '../../components/WarningFab';
 import './Board.scss';
@@ -10,11 +10,10 @@ import {
 } from '@hello-pangea/dnd';
 import { useQueryClient } from '@tanstack/react-query';
 import useBoardModel from './useBoardModel';
+import formatErrors, { NamedError } from '../../util/formatErrors';
 
 const Board: FC = () => {
 	const { id } = useParams();
-
-	const [error, setError] = useState<string | undefined>('');
 
 	const queryClient = useQueryClient();
 
@@ -106,38 +105,12 @@ const Board: FC = () => {
 		};
 	}, [id, refetchBoard, queryClient]);
 
-	useEffect(() => {
-		if (!boardError && !updateListError && !moveNoteToListError) {
-			if (error) setError(undefined);
-		}
-
-		let newError = boardError
-			? `Board: ${
-					boardError instanceof Error
-						? boardError.message
-						: boardError
-			  }`
-			: '';
-		newError = updateListError
-			? `${newError === '' ? newError + '\n' : newError}Update: ${
-					updateListError instanceof Error
-						? updateListError.message
-						: updateListError
-			  }`
-			: newError;
-
-		newError = moveNoteToListError
-			? `${
-					newError === '' ? newError + '\n' : newError
-			  }Move Note To List: ${
-					updateListError instanceof Error
-						? updateListError.message
-						: updateListError
-			  }`
-			: newError;
-
-		setError(newError);
-	}, [boardError, updateListError, moveNoteToListError, error]);
+	const namedErrors: NamedError[] = [
+		['Board', boardError],
+		['Update', updateListError],
+		['Move Note to List', moveNoteToListError],
+	];
+	const error = formatErrors(namedErrors);
 
 	return (
 		<div className="board">
@@ -151,7 +124,10 @@ const Board: FC = () => {
 					.map((l) => {
 						return <NotesList key={l._id} list={l} />;
 					})}
-				<WarningFab displayOnMessage message={error} />
+				<WarningFab
+					displayOnMessage
+					message={!error ? undefined : error}
+				/>
 			</DragDropContext>
 		</div>
 	);
