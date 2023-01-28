@@ -25,7 +25,7 @@ jobs:
         id: package-version
         uses: martinbeentjes/npm-get-version-action@main
       - name: Bump package.json version
-        if: ${{ steps.package-version.outputs.current-version }} != ${{ env.REVISION }}
+        if: ${{ steps.package-version.outputs.current-version != env.REVISION }}
         run: npm --no-git-tag-version version ${{ env.REVISION }}
       - name: Create bump and changelog
         uses: commitizen-tools/commitizen-action@master
