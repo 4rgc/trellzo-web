@@ -1,44 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './Login.scss';
 import Button from '../../components/Button/Button';
-import useTrellzoAPI from '../../hooks/useTrellzoAPI/useTrellzoAPI';
-import APIRequestParams from '../../util/APIParams';
 import { useNavigate } from 'react-router-dom';
-
-const defaultRequestParams = new APIRequestParams('post');
-defaultRequestParams.setRoute('/login');
+import { useMutation } from '@tanstack/react-query';
+import login from '../../api/login';
+import WarningFab from '../../components/WarningFab';
+import formatErrors, { NamedError } from '../../util/formatErrors';
 
 const Login: React.FC = () => {
-	const [loginData, loginError, login, changeParams] = useTrellzoAPI(
-		new APIRequestParams()
-	);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
 
+	const { mutate: sendLogin, error: loginError } = useMutation({
+		mutationFn: login,
+		onSuccess: () => {
+			navigate('/boards');
+		},
+	});
+
 	const onLoginClick = () => {
-		const newParams = new APIRequestParams('post');
-		newParams.setBodyParams([
-			['email', email],
-			['password', password],
-		]);
-		newParams.setRoute('/auth/login');
-		changeParams(newParams);
-		login();
+		sendLogin({ email, password });
 	};
 
-	useEffect(() => {
-		if (loginData) {
-			navigate('/boards');
-		}
-	}, [loginData, navigate]);
-
-	useEffect(() => {
-		if (loginError) {
-			console.error(loginError);
-			console.error(loginError.message);
-		}
-	}, [loginError]);
+	const namedErrors: NamedError[] = [['Login', loginError]];
+	const error = formatErrors(namedErrors);
 
 	return (
 		<div className="login-container">
@@ -72,6 +58,7 @@ const Login: React.FC = () => {
 					Login
 				</Button>
 			</form>
+			<WarningFab displayOnMessage message={!error ? undefined : error} />
 		</div>
 	);
 };

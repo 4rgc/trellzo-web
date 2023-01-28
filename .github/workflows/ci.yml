@@ -4,17 +4,20 @@
 name: Node.js CI
 
 on:
+    workflow_call:
+
     push:
-        branches: '**'
-        tags: 'v*.*.*'
+        tags: ["v*.*.*"]
+    pull_request:
+        branches: ["**"]
 
 jobs:
-    build:
+    build-and-test:
         runs-on: ubuntu-latest
 
         strategy:
             matrix:
-                node-version: [14.x, 16.x, 18.x]
+                node-version: [16.x, 18.x, 19.x]
                 # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
         steps:
@@ -23,7 +26,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node-version }}
-                  cache: 'npm'
+                  cache: "npm"
             - run: npm ci
             - run: npm run build --if-present
             - run: npm audit --production

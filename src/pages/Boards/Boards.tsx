@@ -1,36 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import Card from '../../components/Card';
 import EditableCard from '../../components/EditableCard';
 import GhostCard from '../../components/GhostCard';
 import WarningFab from '../../components/WarningFab';
-import useTrellzoAPI from '../../hooks/useTrellzoAPI';
-import PartialBoard from '../../types/PartialBoard';
 import APIRequestParams from '../../util/APIParams';
 import './Boards.scss';
+import useBoardsModel from './useBoardsModel';
+import formatErrors, { NamedError } from '../../util/formatErrors';
 
 const getBoardParams = new APIRequestParams('get');
 getBoardParams.setRoute('/board');
 
 const Boards = () => {
-	const [response, error, reload] =
-		useTrellzoAPI<{ boards: PartialBoard[] | undefined }>(getBoardParams);
-	const [boards, setBoards] = useState<PartialBoard[]>([]);
+	const { boardsData, boardsQuery, createBoardMutation } = useBoardsModel();
+
+	const { mutate: createBoard } = createBoardMutation;
 	const [isBoardBeingAdded, setIsBoardBeingAdded] = useState<boolean>(false);
 	const [newBoardName, setNewBoardName] = useState<string>('');
-	const [, createError, createBoard, changeCreateParams] = useTrellzoAPI<{
-		boards: PartialBoard | undefined;
-	}>(new APIRequestParams('post'));
 	const navigate = useNavigate();
-
-	useEffect(() => {
-		reload();
-	}, [reload]);
-
-	useEffect(() => {
-		setBoards((response && response.boards) || []);
-	}, [response]);
 
 	const onBoardCreationCancel = () => {
 		setIsBoardBeingAdded(false);
@@ -38,22 +27,21 @@ const Boards = () => {
 	};
 
 	const onBoardCreate = () => {
-		const params = new APIRequestParams('post');
-		params.setRoute('/board');
-		params.setBodyParam('name', newBoardName);
-
-		changeCreateParams(params);
-		createBoard().then(() => {
-			setIsBoardBeingAdded(false);
-			setNewBoardName('');
-			reload();
-		});
+		createBoard({ name: newBoardName });
+		setIsBoardBeingAdded(false);
+		setNewBoardName('');
 	};
+
+	const namedErrors: NamedError[] = [
+		['Boards', boardsQuery.error],
+		['Create board', createBoardMutation.error],
+	];
+	const error = formatErrors(namedErrors);
 
 	return (
 		<div className="boards">
 			<div className="boards-container">
-				{boards.map((b) => (
+				{boardsData?.boards.map((b) => (
 					<Card
 						key={b._id}
 						title={b.name}
@@ -96,8 +84,7 @@ const Boards = () => {
 				)}
 			</div>
 
-			<WarningFab displayOnMessage message={error?.message} />
-			<WarningFab displayOnMessage message={createError?.message} />
+			<WarningFab displayOnMessage message={!error ? undefined : error} />
 		</div>
 	);
 };

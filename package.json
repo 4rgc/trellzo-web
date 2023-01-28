@@ -1,9 +1,10 @@
 {
   "name": "trellzo-web",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "private": true,
   "dependencies": {
     "@hello-pangea/dnd": "^16.0.0",
+    "@tanstack/react-query": "^4.23.0",
     "humanize-duration": "^3.27.2",
     "lodash": "^4.17.21",
     "luxon": "^3.1.0",
@@ -21,7 +22,9 @@
     "test:dev": "npm run test -- --watchAll --coverage",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build-do": "docker build --platform=linux/amd64 -t registry.digitalocean.com/trellzo/trellzo-web:$npm_package_version .",
+    "push-do": "docker push registry.digitalocean.com/trellzo/trellzo-web:$npm_package_version"
   },
   "eslintConfig": {
     "extends": [
