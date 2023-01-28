@@ -12,7 +12,7 @@ jobs:
     name: "Bump version and create changelog with commitizen"
     steps:
       - name: Check out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"
           fetch-depth: 0
@@ -21,7 +21,11 @@ jobs:
         with:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           commit: false
+      - name: Get current package version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
       - name: Bump package.json version
+        if: ${{ steps.package-version.outputs.current-version }} != ${{ env.REVISION }}
         run: npm --no-git-tag-version version ${{ env.REVISION }}
       - name: Create bump and changelog
         uses: commitizen-tools/commitizen-action@master
