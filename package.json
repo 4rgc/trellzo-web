@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-do": "docker build --platform=linux/amd64 -t registry.digitalocean.com/trellzo/trellzo-web:$npm_package_version .",
+    "build-do": "docker build --platform=linux/amd64 -t registry.digitalocean.com/trellzo/trellzo-web:$npm_package_version --build-arg COMMIT_SHA=$(git rev-parse --short HEAD) --build-arg APP_VERSION=$npm_package_version .",
     "push-do": "docker push registry.digitalocean.com/trellzo/trellzo-web:$npm_package_version"
   },
   "eslintConfig": {
