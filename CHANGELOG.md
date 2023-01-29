@@ -1,3 +1,11 @@
+## v0.6.0 (2023-01-29)
+
+### Feat
+
+- **nav**: show current app version (#71)
+- **nav**: show current app version
+- **nav**: display version in nav
+
 ## v0.5.0 (2022-11-27)
 
 ### Feat
