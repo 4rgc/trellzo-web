@@ -19,6 +19,14 @@ const App: React.FC = () => {
 					<>
 						<nav>
 							<Logo />
+							<span
+								style={{
+									margin: 'auto 0 auto auto',
+									color: 'gray',
+								}}
+							>
+								{process.env.REACT_APP_VERSION}
+							</span>
 						</nav>
 						<div style={{ border: '0.5px solid black' }} />
 					</>
