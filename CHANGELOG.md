@@ -1,3 +1,9 @@
+## v0.6.1 (2023-01-29)
+
+### Fix
+
+- **nginx**: add a config to handle over control over the routes to the app
+
 ## v0.6.0 (2023-01-29)
 
 ### Feat
