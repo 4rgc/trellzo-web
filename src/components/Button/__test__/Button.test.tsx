@@ -3,14 +3,14 @@ import { render, screen } from '@testing-library/react';
 import Button from '../Button';
 
 describe('Button', () => {
-	it('calls onClick when button is clicked', () => {
+	it('calls onClick when button is clicked', async () => {
 		const handler = jest.fn();
 
 		render(<Button onClick={handler}>Button</Button>);
 
 		const button = screen.getByText(/button/i);
 
-		userEvent.click(button);
+		await userEvent.click(button);
 
 		expect(handler).toHaveBeenCalledTimes(1);
 	});
