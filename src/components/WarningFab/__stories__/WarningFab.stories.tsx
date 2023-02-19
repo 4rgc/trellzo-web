@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import WarningFab from '../WarningFab';
 
 export default {
@@ -14,11 +14,9 @@ export default {
 			type: 'string',
 		},
 	},
-} as ComponentMeta<typeof WarningFab>;
+} as Meta<typeof WarningFab>;
 
-const Template: ComponentStory<typeof WarningFab> = (args) => (
-	<WarningFab {...args} />
-);
+const Template: StoryFn<typeof WarningFab> = (args) => <WarningFab {...args} />;
 
 export const Default = Template.bind({});
 

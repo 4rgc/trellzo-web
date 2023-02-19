@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 import Card from '../Card';
 
@@ -12,9 +12,9 @@ export default {
 	argTypes: {
 		onClick: { action: 'clicked' },
 	},
-} as ComponentMeta<typeof Card>;
+} as Meta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Card> = ({ children, ...args }) => (
 	<Card {...args} style={{ width: '200px' }}>
 		{children}
 	</Card>
@@ -34,7 +34,7 @@ WithHorizontalCover.args = { imageUrl: '/horizontal-cover.png' };
 export const WithLongTitle = Template.bind({});
 WithLongTitle.args = { title: 'Hello this is long title' };
 
-export const WithCustomChildren: ComponentStory<typeof Card> = (args) => (
+export const WithCustomChildren: StoryFn<typeof Card> = (args) => (
 	<Card {...args} style={{ width: '200px' }}>
 		<div
 			style={{
@@ -49,7 +49,7 @@ export const WithCustomChildren: ComponentStory<typeof Card> = (args) => (
 	</Card>
 );
 
-export const WithCustomContent: ComponentStory<typeof Card> = (args) => (
+export const WithCustomContent: StoryFn<typeof Card> = (args) => (
 	<Card
 		{...args}
 		style={{ width: '200px' }}

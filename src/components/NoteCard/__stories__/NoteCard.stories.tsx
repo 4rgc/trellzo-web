@@ -1,5 +1,5 @@
 import { DragDropContext, Droppable } from '@hello-pangea/dnd';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { DateTime, Duration } from 'luxon';
 import NoteCard from '../NoteCard';
 
@@ -12,9 +12,9 @@ export default {
 			description: 'eggs, chicken, tomatoes, green onion',
 		},
 	},
-} as ComponentMeta<typeof NoteCard>;
+} as Meta<typeof NoteCard>;
 
-const Template: ComponentStory<typeof NoteCard> = (args) => (
+const Template: StoryFn<typeof NoteCard> = (args) => (
 	<DragDropContext onDragEnd={() => {}}>
 		<Droppable droppableId="1">
 			{(provided) => {

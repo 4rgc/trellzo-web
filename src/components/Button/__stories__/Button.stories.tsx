@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 import Button from '../Button';
 
@@ -6,9 +6,9 @@ export default {
 	title: 'Components/Button',
 	component: Button,
 	argTypes: { onClick: { action: 'clicked' } },
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = ({ children, ...args }) => (
+const Template: StoryFn<typeof Button> = ({ children, ...args }) => (
 	<Button {...args}>{children}</Button>
 );
 

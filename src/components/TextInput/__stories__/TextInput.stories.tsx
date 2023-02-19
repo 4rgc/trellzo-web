@@ -1,5 +1,5 @@
 import TextInput from '../TextInput';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { useState } from 'react';
 
 export default {
@@ -11,9 +11,9 @@ export default {
 	argTypes: {
 		onChanged: { action: 'clicked' },
 	},
-} as ComponentMeta<typeof TextInput>;
+} as Meta<typeof TextInput>;
 
-const Template: ComponentStory<typeof TextInput> = (args) => {
+const Template: StoryFn<typeof TextInput> = (args) => {
 	const [value, setValue] = useState('');
 
 	return (
@@ -52,7 +52,7 @@ MultilineWithPlaceholder.args = {
 export const LargeFont = Template.bind({});
 LargeFont.args = { fontSize: 'lg' };
 
-export const InATightContainer: ComponentStory<typeof TextInput> = (args) => {
+export const InATightContainer: StoryFn<typeof TextInput> = (args) => {
 	const [value, setValue] = useState('');
 
 	return (
