@@ -5,6 +5,8 @@ type PartialNote = {
 	description: string;
 	startDate?: string;
 	dueDate?: string;
+	// TODO: Add the type when implemented on the backend
+	tags?: string[];
 } & MongoObject;
 
 export default PartialNote;
