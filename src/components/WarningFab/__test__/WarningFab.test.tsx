@@ -10,7 +10,7 @@ describe('WarningFab', () => {
 
 		const icon = await screen.findByAltText(/warning/i);
 
-		user.click(icon);
+		await user.click(icon);
 
 		expect(mockHandler).toHaveBeenCalledTimes(1);
 	});
@@ -36,7 +36,7 @@ describe('WarningFab', () => {
 
 		const icon = await screen.findByAltText(/warning/i);
 
-		user.click(icon);
+		await user.click(icon);
 
 		const message = screen.queryByText(/hello world/i);
 

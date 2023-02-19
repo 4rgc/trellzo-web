@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { useState } from 'react';
 import EditableCard from '..';
@@ -24,9 +24,9 @@ export default {
 			options: ['sm', 'md', 'lg'],
 		},
 	},
-} as ComponentMeta<typeof EditableCard>;
+} as Meta<typeof EditableCard>;
 
-const Template: ComponentStory<typeof EditableCard> = (args) => {
+const Template: StoryFn<typeof EditableCard> = (args) => {
 	const [bodyValue, setBodyValue] = useState('');
 	const [titleValue, setTitleValue] = useState('');
 

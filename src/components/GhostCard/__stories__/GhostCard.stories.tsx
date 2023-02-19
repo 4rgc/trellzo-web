@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 import GhostCard from '../GhostCard';
 
@@ -11,9 +11,9 @@ export default {
 	argTypes: {
 		onClick: { action: 'clicked' },
 	},
-} as ComponentMeta<typeof GhostCard>;
+} as Meta<typeof GhostCard>;
 
-const Template: ComponentStory<typeof GhostCard> = ({ children, ...args }) => (
+const Template: StoryFn<typeof GhostCard> = ({ children, ...args }) => (
 	<GhostCard {...args} style={{ width: '200px' }}>
 		{children}
 	</GhostCard>

@@ -1,5 +1,5 @@
 import { DragDropContext } from '@hello-pangea/dnd';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import NotesList from '../NotesList';
 
 export default {
@@ -29,9 +29,9 @@ export default {
 			boardId: '60c9cdae9c9ae6133cdcd03b',
 		},
 	},
-} as ComponentMeta<typeof NotesList>;
+} as Meta<typeof NotesList>;
 
-const Template: ComponentStory<typeof NotesList> = (args) => (
+const Template: StoryFn<typeof NotesList> = (args) => (
 	<DragDropContext onDragEnd={() => {}}>
 		<NotesList {...args} />
 	</DragDropContext>

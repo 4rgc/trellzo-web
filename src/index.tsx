@@ -1,17 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './global.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container!); // assertion required as per documentation https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis
+root.render(
 	<React.StrictMode>
 		<Router>
 			<App />
 		</Router>
-	</React.StrictMode>,
-	document.getElementById('root')
+	</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
