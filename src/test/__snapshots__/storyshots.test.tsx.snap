@@ -622,16 +622,16 @@ exports[`Storyshots Components/GhostCard Small 1`] = `
 
 exports[`Storyshots Components/NoteCard Default 1`] = `
 <div
-  data-rfd-droppable-context-id="0"
+  data-rfd-droppable-context-id=":r0:"
   data-rfd-droppable-id="1"
   style="width: 200px;"
 >
   <div
-    aria-describedby="rfd-hidden-text-0-hidden-text-0"
+    aria-describedby="rfd-hidden-text-:r0:-hidden-text-:r1:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="0"
+    data-rfd-drag-handle-context-id=":r0:"
     data-rfd-drag-handle-draggable-id="1"
-    data-rfd-draggable-context-id="0"
+    data-rfd-draggable-context-id=":r0:"
     data-rfd-draggable-id="1"
     draggable="false"
     role="button"
@@ -661,16 +661,16 @@ exports[`Storyshots Components/NoteCard Default 1`] = `
 
 exports[`Storyshots Components/NoteCard Due In 3 Days 1`] = `
 <div
-  data-rfd-droppable-context-id="1"
+  data-rfd-droppable-context-id=":r4:"
   data-rfd-droppable-id="1"
   style="width: 200px;"
 >
   <div
-    aria-describedby="rfd-hidden-text-1-hidden-text-3"
+    aria-describedby="rfd-hidden-text-:r4:-hidden-text-:r5:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="1"
+    data-rfd-drag-handle-context-id=":r4:"
     data-rfd-drag-handle-draggable-id="1"
-    data-rfd-draggable-context-id="1"
+    data-rfd-draggable-context-id=":r4:"
     data-rfd-draggable-id="1"
     draggable="false"
     role="button"
@@ -711,16 +711,16 @@ exports[`Storyshots Components/NoteCard Due In 3 Days 1`] = `
 
 exports[`Storyshots Components/NoteCard Due In 5 Days 1`] = `
 <div
-  data-rfd-droppable-context-id="2"
+  data-rfd-droppable-context-id=":r8:"
   data-rfd-droppable-id="1"
   style="width: 200px;"
 >
   <div
-    aria-describedby="rfd-hidden-text-2-hidden-text-6"
+    aria-describedby="rfd-hidden-text-:r8:-hidden-text-:r9:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="2"
+    data-rfd-drag-handle-context-id=":r8:"
     data-rfd-drag-handle-draggable-id="1"
-    data-rfd-draggable-context-id="2"
+    data-rfd-draggable-context-id=":r8:"
     data-rfd-draggable-id="1"
     draggable="false"
     role="button"
@@ -761,16 +761,16 @@ exports[`Storyshots Components/NoteCard Due In 5 Days 1`] = `
 
 exports[`Storyshots Components/NoteCard Due Today 1`] = `
 <div
-  data-rfd-droppable-context-id="3"
+  data-rfd-droppable-context-id=":rc:"
   data-rfd-droppable-id="1"
   style="width: 200px;"
 >
   <div
-    aria-describedby="rfd-hidden-text-3-hidden-text-9"
+    aria-describedby="rfd-hidden-text-:rc:-hidden-text-:rd:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="3"
+    data-rfd-drag-handle-context-id=":rc:"
     data-rfd-drag-handle-draggable-id="1"
-    data-rfd-draggable-context-id="3"
+    data-rfd-draggable-context-id=":rc:"
     data-rfd-draggable-id="1"
     draggable="false"
     role="button"
@@ -811,16 +811,16 @@ exports[`Storyshots Components/NoteCard Due Today 1`] = `
 
 exports[`Storyshots Components/NoteCard Due Tomorrow 1`] = `
 <div
-  data-rfd-droppable-context-id="4"
+  data-rfd-droppable-context-id=":rg:"
   data-rfd-droppable-id="1"
   style="width: 200px;"
 >
   <div
-    aria-describedby="rfd-hidden-text-4-hidden-text-12"
+    aria-describedby="rfd-hidden-text-:rg:-hidden-text-:rh:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="4"
+    data-rfd-drag-handle-context-id=":rg:"
     data-rfd-drag-handle-draggable-id="1"
-    data-rfd-draggable-context-id="4"
+    data-rfd-draggable-context-id=":rg:"
     data-rfd-draggable-id="1"
     draggable="false"
     role="button"
@@ -861,16 +861,16 @@ exports[`Storyshots Components/NoteCard Due Tomorrow 1`] = `
 
 exports[`Storyshots Components/NoteCard Long Desctription 1`] = `
 <div
-  data-rfd-droppable-context-id="5"
+  data-rfd-droppable-context-id=":rk:"
   data-rfd-droppable-id="1"
   style="width: 200px;"
 >
   <div
-    aria-describedby="rfd-hidden-text-5-hidden-text-15"
+    aria-describedby="rfd-hidden-text-:rk:-hidden-text-:rl:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="5"
+    data-rfd-drag-handle-context-id=":rk:"
     data-rfd-drag-handle-draggable-id="1"
-    data-rfd-draggable-context-id="5"
+    data-rfd-draggable-context-id=":rk:"
     data-rfd-draggable-id="1"
     draggable="false"
     role="button"
@@ -900,16 +900,16 @@ exports[`Storyshots Components/NoteCard Long Desctription 1`] = `
 
 exports[`Storyshots Components/NoteCard Long Name 1`] = `
 <div
-  data-rfd-droppable-context-id="6"
+  data-rfd-droppable-context-id=":ro:"
   data-rfd-droppable-id="1"
   style="width: 200px;"
 >
   <div
-    aria-describedby="rfd-hidden-text-6-hidden-text-18"
+    aria-describedby="rfd-hidden-text-:ro:-hidden-text-:rp:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="6"
+    data-rfd-drag-handle-context-id=":ro:"
     data-rfd-drag-handle-draggable-id="1"
-    data-rfd-draggable-context-id="6"
+    data-rfd-draggable-context-id=":ro:"
     data-rfd-draggable-id="1"
     draggable="false"
     role="button"
@@ -939,16 +939,16 @@ exports[`Storyshots Components/NoteCard Long Name 1`] = `
 
 exports[`Storyshots Components/NoteCard One Day Past Due 1`] = `
 <div
-  data-rfd-droppable-context-id="7"
+  data-rfd-droppable-context-id=":rs:"
   data-rfd-droppable-id="1"
   style="width: 200px;"
 >
   <div
-    aria-describedby="rfd-hidden-text-7-hidden-text-21"
+    aria-describedby="rfd-hidden-text-:rs:-hidden-text-:rt:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="7"
+    data-rfd-drag-handle-context-id=":rs:"
     data-rfd-drag-handle-draggable-id="1"
-    data-rfd-draggable-context-id="7"
+    data-rfd-draggable-context-id=":rs:"
     data-rfd-draggable-id="1"
     draggable="false"
     role="button"
@@ -989,7 +989,7 @@ exports[`Storyshots Components/NoteCard One Day Past Due 1`] = `
 exports[`Storyshots Components/NotesList Default 1`] = `
 <div
   class="notes-list"
-  data-rfd-droppable-context-id="8"
+  data-rfd-droppable-context-id=":r10:"
   data-rfd-droppable-id="60c5d161a6c781e43c11a5a3"
 >
   <span
@@ -998,11 +998,11 @@ exports[`Storyshots Components/NotesList Default 1`] = `
     List 1
   </span>
   <div
-    aria-describedby="rfd-hidden-text-8-hidden-text-24"
+    aria-describedby="rfd-hidden-text-:r10:-hidden-text-:r11:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="8"
+    data-rfd-drag-handle-context-id=":r10:"
     data-rfd-drag-handle-draggable-id="60c5d167a6c781e43c11a5a4"
-    data-rfd-draggable-context-id="8"
+    data-rfd-draggable-context-id=":r10:"
     data-rfd-draggable-id="60c5d167a6c781e43c11a5a4"
     draggable="false"
     role="button"
@@ -1028,11 +1028,11 @@ exports[`Storyshots Components/NotesList Default 1`] = `
     </div>
   </div>
   <div
-    aria-describedby="rfd-hidden-text-8-hidden-text-24"
+    aria-describedby="rfd-hidden-text-:r10:-hidden-text-:r11:"
     class="card card-sm card-noimage note"
-    data-rfd-drag-handle-context-id="8"
+    data-rfd-drag-handle-context-id=":r10:"
     data-rfd-drag-handle-draggable-id="6106f35927d5f4001d197e65"
-    data-rfd-draggable-context-id="8"
+    data-rfd-draggable-context-id=":r10:"
     data-rfd-draggable-id="6106f35927d5f4001d197e65"
     draggable="false"
     role="button"
@@ -1061,7 +1061,7 @@ exports[`Storyshots Components/NotesList Default 1`] = `
 exports[`Storyshots Components/NotesList Empty 1`] = `
 <div
   class="notes-list"
-  data-rfd-droppable-context-id="9"
+  data-rfd-droppable-context-id=":r15:"
   data-rfd-droppable-id="1"
 >
   <span
