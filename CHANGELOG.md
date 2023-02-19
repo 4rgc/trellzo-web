@@ -1,3 +1,9 @@
+## v0.6.2 (2023-02-19)
+
+### Refactor
+
+- **hooks**: remove unused hooks
+
 ## v0.6.1 (2023-01-29)
 
 ### Fix
