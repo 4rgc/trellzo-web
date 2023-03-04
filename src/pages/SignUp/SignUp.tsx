@@ -4,19 +4,32 @@ import Button from '../../components/Button';
 import WarningFab from '../../components/WarningFab';
 import './SignUp.scss';
 import LoadingBar from '../../components/LoadingBar';
+import { useMutation } from '@tanstack/react-query';
+import register from '../../api/register';
+import formatErrors from '../../util/formatErrors';
 
 const passwordStrengthColors = ['red', 'darkorange', 'orange', 'green'];
 
 const SignUp = () => {
+	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
+	const registerQuery = useMutation({
+		mutationKey: ['register'],
+		mutationFn: register,
+		onSuccess: () => {
+			navigate('/boards');
+		},
+	});
 
-	const error = '';
+	const error =
+		registerQuery.isError &&
+		formatErrors([['Register', registerQuery.error]]);
 
-	const onSignUpClick = useCallback(() => {
-		console.log('clicked');
-	}, []);
+	const emailIsValid = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
+		email
+	);
 
 	const passwordMinimalReqs: Record<string, [boolean, string]> = {
 		min8Chars: [
@@ -43,6 +56,18 @@ const SignUp = () => {
 		(req) => req[0] === false
 	) || ['', 'Strong password'])[1];
 
+	const onSignUpClick = useCallback(() => {
+		if (name && emailIsValid && passwordStrengthScore === 4)
+			registerQuery.mutate({ name, email, password });
+	}, [
+		name,
+		email,
+		password,
+		registerQuery,
+		emailIsValid,
+		passwordStrengthScore,
+	]);
+
 	return (
 		<div className="signUp-container">
 			<h1>Sign up for trellzo</h1>
@@ -52,27 +77,42 @@ const SignUp = () => {
 				}}
 			>
 				<input
+					autoComplete="name"
+					type="name"
+					name="name"
+					placeholder="Name"
+					onChange={(e) => setName(e.target.value)}
+					value={name}
+					tabIndex={1}
+				/>
+				<input
 					autoComplete="email"
 					type="email"
 					name="email"
-					className="email-input"
 					placeholder="E-mail"
 					onChange={(e) => setEmail(e.target.value)}
 					value={email}
-					tabIndex={1}
+					tabIndex={2}
 				/>
+				{!!email && !emailIsValid && (
+					<div
+						className="password-suggestion-message"
+						style={{ color: 'red' }}
+					>
+						Please enter a valid email
+					</div>
+				)}
 				<input
 					autoComplete="new-password"
 					type="password"
 					name="password"
-					className="password-input"
 					placeholder="Password"
 					onChange={(e) => setPassword(e.target.value)}
 					onFocus={useCallback(() => {
 						if (password === undefined) setPassword('');
 					}, [password])}
 					value={password}
-					tabIndex={2}
+					tabIndex={3}
 				/>
 				{password && (
 					<>

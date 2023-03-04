@@ -2,18 +2,10 @@
 	margin: 30vh 40vw;
 }
 
-.email-input,
-.password-input {
+input {
+	margin-bottom: 5px;
 	border: none;
 	border-bottom: 3px solid grey;
-}
-
-.email-input {
-	margin-bottom: 5px;
-}
-
-.password-input {
-	margin-bottom: 5px;
 }
 
 .password-strength-bar {
