@@ -2,7 +2,7 @@ import APIRequestParams from '../util/APIParams';
 import fetcher, { FetcherError } from '../util/throwingFetcher';
 
 const baseUrl = process.env.REACT_APP_LOCAL
-	? 'http://localhost:3000'
+	? 'https://localhost'
 	: 'https://api.trellzo.tech';
 
 export const unprotectedRouteRequest = async (params: APIRequestParams) => {
