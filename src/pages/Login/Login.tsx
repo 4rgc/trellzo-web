@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './Login.scss';
 import Button from '../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
@@ -6,21 +6,29 @@ import { useMutation } from '@tanstack/react-query';
 import login from '../../api/login';
 import WarningFab from '../../components/WarningFab';
 import formatErrors, { NamedError } from '../../util/formatErrors';
+import LoginContext from '../../contexts/LoginContext';
+import getLoginData from '../../util/getLoginData';
 
 const Login: React.FC = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
+	const { setLoginData } = useContext(LoginContext);
 
 	const { mutate: sendLogin, error: loginError } = useMutation({
 		mutationFn: login,
 		onSuccess: () => {
+			setLoginData(getLoginData());
 			navigate('/boards');
 		},
 	});
 
 	const onLoginClick = () => {
 		sendLogin({ email, password });
+	};
+
+	const onSignUpClick = () => {
+		navigate('/signUp');
 	};
 
 	const namedErrors: NamedError[] = [['Login', loginError]];
@@ -56,6 +64,9 @@ const Login: React.FC = () => {
 				/>
 				<Button kind="primary" onClick={onLoginClick}>
 					Login
+				</Button>
+				<Button kind="secondary" onClick={onSignUpClick}>
+					Sign Up
 				</Button>
 			</form>
 			<WarningFab displayOnMessage message={!error ? undefined : error} />

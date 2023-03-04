@@ -1,0 +1,25 @@
+.signUp-container {
+	margin: 30vh 40vw;
+}
+
+input {
+	margin-bottom: 5px;
+	border: none;
+	border-bottom: 3px solid grey;
+}
+
+.password-strength-bar {
+	margin-bottom: 5px;
+}
+
+.signUp-button {
+	margin-top: 15px;
+}
+
+.password-suggestion-message, .missing-field-message {
+	font-size: small;
+}
+
+.missing-field-message {
+	color: red
+}
