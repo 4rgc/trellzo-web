@@ -12,7 +12,7 @@ import Board from './pages/Board';
 import Boards from './pages/Boards';
 import Login from './pages/Login';
 import { useQuery } from '@tanstack/react-query';
-import Register from './pages/Register';
+import SignUp from './pages/SignUp';
 import LoginContext from './contexts/LoginContext';
 import { useMemo, useState } from 'react';
 import refresh from './api/refresh';
@@ -50,7 +50,7 @@ const App: React.FC = () => {
 	return (
 		<LoginContext.Provider value={currentLoginContext}>
 			<div className="App">
-				{location.pathname !== '/login' && (
+				{!['/login', '/signUp'].includes(location.pathname) && (
 					<>
 						<nav>
 							<Logo />
@@ -90,7 +90,7 @@ const App: React.FC = () => {
 						}
 					/>
 					<Route element={<Login />} path="login" />
-					<Route element={<Register />} path="register" />
+					<Route element={<SignUp />} path="signUp" />
 					<Route element={<Boards />} path="boards" />
 					<Route element={<Board />} path="b/:id" />
 				</Routes>

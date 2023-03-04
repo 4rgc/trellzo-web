@@ -27,6 +27,10 @@ const Login: React.FC = () => {
 		sendLogin({ email, password });
 	};
 
+	const onSignUpClick = () => {
+		navigate('/signUp');
+	};
+
 	const namedErrors: NamedError[] = [['Login', loginError]];
 	const error = formatErrors(namedErrors);
 
@@ -60,6 +64,9 @@ const Login: React.FC = () => {
 				/>
 				<Button kind="primary" onClick={onLoginClick}>
 					Login
+				</Button>
+				<Button kind="secondary" onClick={onSignUpClick}>
+					Sign Up
 				</Button>
 			</form>
 			<WarningFab displayOnMessage message={!error ? undefined : error} />
