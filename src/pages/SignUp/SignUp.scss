@@ -16,6 +16,10 @@ input {
 	margin-top: 15px;
 }
 
-.password-suggestion-message {
+.password-suggestion-message, .missing-field-message {
 	font-size: small;
+}
+
+.missing-field-message {
+	color: red
 }

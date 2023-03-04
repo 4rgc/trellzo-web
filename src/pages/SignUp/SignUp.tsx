@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import WarningFab from '../../components/WarningFab';
@@ -7,6 +7,8 @@ import LoadingBar from '../../components/LoadingBar';
 import { useMutation } from '@tanstack/react-query';
 import register from '../../api/register';
 import formatErrors from '../../util/formatErrors';
+import LoginContext from '../../contexts/LoginContext';
+import getLoginData from '../../util/getLoginData';
 
 const passwordStrengthColors = ['red', 'darkorange', 'orange', 'green'];
 
@@ -14,12 +16,17 @@ const SignUp = () => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [showMissingName, setShowMissingName] = useState(false);
+	const [showMissingEmail, setShowMissingEmail] = useState(false);
+	const [showMissingPassword, setShowMissingPassword] = useState(false);
 	const navigate = useNavigate();
+	const loginContext = useContext(LoginContext);
 	const registerQuery = useMutation({
 		mutationKey: ['register'],
 		mutationFn: register,
 		onSuccess: () => {
 			navigate('/boards');
+			loginContext.setLoginData(getLoginData());
 		},
 	});
 
@@ -57,6 +64,9 @@ const SignUp = () => {
 	) || ['', 'Strong password'])[1];
 
 	const onSignUpClick = useCallback(() => {
+		if (!name) setShowMissingName(true);
+		if (!emailIsValid) setShowMissingEmail(true);
+		if (passwordStrengthScore !== 4) setShowMissingPassword(true);
 		if (name && emailIsValid && passwordStrengthScore === 4)
 			registerQuery.mutate({ name, email, password });
 	}, [
@@ -81,24 +91,34 @@ const SignUp = () => {
 					type="name"
 					name="name"
 					placeholder="Name"
-					onChange={(e) => setName(e.target.value)}
+					onChange={(e) => {
+						setName(e.target.value);
+						if (e.target.value === '') setShowMissingName(true);
+						else setShowMissingName(false);
+					}}
 					value={name}
 					tabIndex={1}
 				/>
+				{showMissingName && (
+					<div className="missing-field-message">
+						Please enter your name
+					</div>
+				)}
 				<input
 					autoComplete="email"
 					type="email"
 					name="email"
 					placeholder="E-mail"
-					onChange={(e) => setEmail(e.target.value)}
+					onChange={(e) => {
+						setEmail(e.target.value);
+						if (e.target.value === '') setShowMissingEmail(true);
+						else setShowMissingEmail(false);
+					}}
 					value={email}
 					tabIndex={2}
 				/>
-				{!!email && !emailIsValid && (
-					<div
-						className="password-suggestion-message"
-						style={{ color: 'red' }}
-					>
+				{(showMissingEmail || (!!email && !emailIsValid)) && (
+					<div className="missing-field-message">
 						Please enter a valid email
 					</div>
 				)}
@@ -107,13 +127,19 @@ const SignUp = () => {
 					type="password"
 					name="password"
 					placeholder="Password"
-					onChange={(e) => setPassword(e.target.value)}
-					onFocus={useCallback(() => {
-						if (password === undefined) setPassword('');
-					}, [password])}
+					onChange={(e) => {
+						setPassword(e.target.value);
+						if (e.target.value === '') setShowMissingPassword(true);
+						else setShowMissingPassword(false);
+					}}
 					value={password}
 					tabIndex={3}
 				/>
+				{showMissingPassword && (
+					<div className="missing-field-message">
+						Please enter a password
+					</div>
+				)}
 				{password && (
 					<>
 						<LoadingBar
