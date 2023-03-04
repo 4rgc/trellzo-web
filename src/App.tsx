@@ -14,9 +14,11 @@ import Login from './pages/Login';
 import { useQuery } from '@tanstack/react-query';
 import SignUp from './pages/SignUp';
 import LoginContext from './contexts/LoginContext';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import refresh from './api/refresh';
 import getLoginData from './util/getLoginData';
+
+let didInit = false;
 
 const App: React.FC = () => {
 	const navigate = useNavigate();
@@ -35,9 +37,7 @@ const App: React.FC = () => {
 	const [loginData, setLoginData] = useState(() => {
 		const loginData = getLoginData();
 
-		if (loginData.isEmpty()) {
-			navigate('/login');
-		} else if (loginData.isExpired()) {
+		if (!loginData.isEmpty() && loginData.isExpired()) {
 			refreshQuery.refetch();
 		}
 		return loginData;
@@ -46,6 +46,17 @@ const App: React.FC = () => {
 		() => ({ loginData, setLoginData }),
 		[loginData]
 	);
+
+	useEffect(() => {
+		if (!didInit) {
+			didInit = true;
+			if (loginData.isEmpty()) navigate('/login');
+		}
+		// Only need to run on mount.
+		// Running from inside loginData state initializer function does not work,
+		// since navigate wants to be run from inside a useEffect.
+		/* eslint-disable-next-line react-hooks/exhaustive-deps */
+	}, []);
 
 	return (
 		<LoginContext.Provider value={currentLoginContext}>
