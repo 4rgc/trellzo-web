@@ -1,3 +1,29 @@
+## v0.7.0 (2023-03-04)
+
+### Feat
+
+- **SignUp**: improve validation on the sign up page
+- **SignUp**: wire the SignUp page up to make the api call
+- **SignUp**: show password strength and suggestions
+- **savedLogin**: update LoginContext value when you login
+- **savedLogin**: use the LoginContext in the App component
+- **Register**: add a skeleton for the register page
+- **loadingBar**: implement a LoadingBar component
+- **savedLogin**: add an API method for refreshing the credentials
+- **savedLogin**: add a util function for parsing the auth cookie
+- **savedLogin**: implement login context for storing logged in user data
+
+### Fix
+
+- **App**: fix warning about using navigate outside useEffect
+- **LoadingBar**: pass custom classes to the LoadingBar component
+- **getLoginData**: return a valid Login object if the token is expired
+- **apiRequest**: address for local api server
+
+### Refactor
+
+- **SignUp**: rename Register page to SignUp page
+
 ## v0.6.2 (2023-02-19)
 
 ### Refactor
