@@ -5,6 +5,8 @@ import WarningFab from '../../components/WarningFab';
 import './SignUp.scss';
 import LoadingBar from '../../components/LoadingBar';
 
+const passwordStrengthColors = ['red', 'darkorange', 'orange', 'green'];
+
 const SignUp = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -16,16 +18,30 @@ const SignUp = () => {
 		console.log('clicked');
 	}, []);
 
-	const passwordMinimalReqs = {
-		min8Chars: /(?=.{8,})./.test(password),
-		upperCase: /(?=.*[A-Z])/.test(password),
-		lowerCase: /(?=.*[a-z])/.test(password),
-		digit: /(?=.*[0-9])/.test(password),
+	const passwordMinimalReqs: Record<string, [boolean, string]> = {
+		min8Chars: [
+			/(?=.{8,})./.test(password),
+			'Password needs to be at least 8 characters long',
+		],
+		upperCase: [
+			/(?=.*[A-Z])/.test(password),
+			'Password needs to contain at least one uppercase letter',
+		],
+		lowerCase: [
+			/(?=.*[a-z])/.test(password),
+			'Password needs to contain at least one lowercase letter',
+		],
+		digit: [
+			/(?=.*[0-9])/.test(password),
+			'Password needs to contain at least one digit',
+		],
 	};
 	const passwordStrengthScore = Object.values(passwordMinimalReqs).filter(
-		(req) => req === true
+		(req) => req[0] === true
 	).length;
-	const passwordStrengthColors = ['red', 'darkorange', 'orange', 'green'];
+	const passwordSuggestionMessage = (Object.values(passwordMinimalReqs).find(
+		(req) => req[0] === false
+	) || ['', 'Strong password'])[1];
 
 	return (
 		<div className="signUp-container">
@@ -59,13 +75,27 @@ const SignUp = () => {
 					tabIndex={2}
 				/>
 				{password && (
-					<LoadingBar
-						state={passwordStrengthScore * 25}
-						className="password-strength-bar"
-						color={
-							passwordStrengthColors[passwordStrengthScore - 1]
-						}
-					/>
+					<>
+						<LoadingBar
+							state={passwordStrengthScore * 25}
+							className="password-strength-bar"
+							color={
+								passwordStrengthColors[
+									passwordStrengthScore - 1
+								]
+							}
+						/>
+						<div
+							className="password-suggestion-message"
+							style={{
+								color: passwordStrengthColors[
+									passwordStrengthScore - 1
+								],
+							}}
+						>
+							{passwordSuggestionMessage}
+						</div>
+					</>
 				)}
 				<Button
 					className="signUp-button"
