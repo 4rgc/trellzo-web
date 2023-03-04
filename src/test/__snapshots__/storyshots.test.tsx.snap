@@ -620,6 +620,156 @@ exports[`Storyshots Components/GhostCard Small 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/LoadingBar Blue 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-small"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 100%; background-color: blue;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LoadingBar Default 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-small"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 0%; background-color: green;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LoadingBar Green 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-small"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 100%; background-color: green;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LoadingBar Half Full 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-small"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 50%; background-color: green;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LoadingBar Large 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-large"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 0%; background-color: green;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LoadingBar Blue 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-small"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 100%; background-color: blue;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LoadingBar Default 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-small"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 0%; background-color: green;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LoadingBar Green 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-small"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 100%; background-color: green;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LoadingBar Half Full 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-small"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 50%; background-color: green;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LoadingBar Large 1`] = `
+<div
+  style="width: 120px;"
+>
+  <div
+    class="loadbar-container loadbar-large"
+  >
+    <div
+      class="loadbar-inner"
+      style="width: 0%; background-color: green;"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/NoteCard Default 1`] = `
 <div
   data-rfd-droppable-context-id=":r0:"

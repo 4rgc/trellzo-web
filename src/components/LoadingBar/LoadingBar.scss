@@ -1,0 +1,27 @@
+.loadbar-container {
+    border: solid 1px #1e1e1e;
+    border-radius: 10px;
+    background-color: #5f5f5f;
+    overflow: hidden;
+}
+
+.loadbar-inner {
+    transition: width ease 0.4s;
+    height: 100%;
+}
+
+.loadbar-small {
+    height: 10px;
+}
+
+.loadbar-large {
+    height: 15px;
+}
+
+.loadbar-green {
+    background-color: #66dd66;
+}
+
+.loadbar-blue {
+    background-color: #5577ff;
+}
