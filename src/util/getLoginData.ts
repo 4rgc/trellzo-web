@@ -9,7 +9,7 @@ const getLoginData = () => {
 		const jwtObject = jwtDecode<JwtPayload & { userId?: string }>(
 			authToken
 		);
-		if (jwtObject.exp && jwtObject.exp * 1000 > Date.now()) {
+		if (jwtObject.exp) {
 			return new Login(jwtObject.userId, new Date(jwtObject.exp * 1000));
 		}
 	}
