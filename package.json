@@ -1,6 +1,6 @@
 {
   "name": "trellzo-web",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "dependencies": {
     "@hello-pangea/dnd": "^16.2.0",

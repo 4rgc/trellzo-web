@@ -1,3 +1,11 @@
+## v0.8.0 (2023-03-05)
+
+### Feat
+
+- **App**: use saved user name to greet logged in user
+- **savedLogin**: retrieve userName from the jwt token in getLoginData
+- **savedLogin**: add a user name property to the login object
+
 ## v0.7.0 (2023-03-04)
 
 ### Feat
