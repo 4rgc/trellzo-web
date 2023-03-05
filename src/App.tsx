@@ -71,7 +71,7 @@ const App: React.FC = () => {
 										margin: 'auto 0 auto auto',
 									}}
 								>
-									Welcome, user!
+									Welcome, {loginData.userName}!
 								</span>
 							)}
 							<span
