@@ -19,6 +19,8 @@ describe('getLoginData', () => {
 		// Act
 		const login = getLoginData();
 		// Assert
+		expect(login.userId).toStrictEqual('');
+		expect(login.userName).toStrictEqual('');
 		expect(login.isEmpty()).toStrictEqual(true);
 		expect(login.isExpired()).toStrictEqual(true);
 	});
@@ -26,12 +28,15 @@ describe('getLoginData', () => {
 	it('returns an expired login object if the auth token is expired', () => {
 		// Arrange
 		mockCookieGet?.mockReturnValueOnce(
-			jwt.sign({ userId: 'userId' }, 'secretkey', { expiresIn: '-10s' })
+			jwt.sign({ userId: 'userId', userName: 'name' }, 'secretkey', {
+				expiresIn: '-10s',
+			})
 		);
 		// Act
 		const login = getLoginData();
 		// Assert
 		expect(login.userId).toStrictEqual('userId');
+		expect(login.userName).toStrictEqual('name');
 		expect(login.isEmpty()).toStrictEqual(false);
 		expect(login.isExpired()).toStrictEqual(true);
 	});
@@ -39,12 +44,15 @@ describe('getLoginData', () => {
 	it('returns a valid login object if the auth token is valid', () => {
 		// Arrange
 		mockCookieGet?.mockReturnValueOnce(
-			jwt.sign({ userId: 'userId' }, 'secretkey', { expiresIn: '10s' })
+			jwt.sign({ userId: 'userId', userName: 'name' }, 'secretkey', {
+				expiresIn: '10s',
+			})
 		);
 		// Act
 		const login = getLoginData();
 		// Assert
 		expect(login.userId).toStrictEqual('userId');
+		expect(login.userName).toStrictEqual('name');
 		expect(login.isEmpty()).toStrictEqual(false);
 		expect(login.isExpired()).toStrictEqual(false);
 	});
@@ -52,12 +60,13 @@ describe('getLoginData', () => {
 	it("returns an empty login object if the auth token doesn't have an expiration time", () => {
 		// Arrange
 		mockCookieGet?.mockReturnValueOnce(
-			jwt.sign({ userId: 'userId' }, 'secretkey')
+			jwt.sign({ userId: 'userId', userName: 'name' }, 'secretkey')
 		);
 		// Act
 		const login = getLoginData();
 		// Assert
 		expect(login.userId).toStrictEqual('');
+		expect(login.userName).toStrictEqual('');
 		expect(login.isEmpty()).toStrictEqual(true);
 		expect(login.isExpired()).toStrictEqual(true);
 	});
