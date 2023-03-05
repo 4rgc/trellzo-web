@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, createContext } from 'react';
 export class Login {
 	constructor(
 		public userId: string = '',
+		public userName: string = '',
 		public expiresAt: Date = new Date(0)
 	) {}
 

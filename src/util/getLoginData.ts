@@ -6,11 +6,15 @@ const getLoginData = () => {
 	const authToken = Cookie.get('auth');
 
 	if (authToken) {
-		const jwtObject = jwtDecode<JwtPayload & { userId?: string }>(
-			authToken
-		);
+		const jwtObject = jwtDecode<
+			JwtPayload & { userId?: string; userName?: string }
+		>(authToken);
 		if (jwtObject.exp) {
-			return new Login(jwtObject.userId, new Date(jwtObject.exp * 1000));
+			return new Login(
+				jwtObject.userId,
+				jwtObject.userName,
+				new Date(jwtObject.exp * 1000)
+			);
 		}
 	}
 	return new Login();
