@@ -1,3 +1,9 @@
+## v0.8.1 (2023-03-05)
+
+### Fix
+
+- **dev-server**: always run in HTTPS, otherwise cookies are recognized as cross-site
+
 ## v0.8.0 (2023-03-05)
 
 ### Feat
