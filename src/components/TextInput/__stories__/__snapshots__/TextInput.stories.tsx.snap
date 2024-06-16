@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/TextInput BiggerMultiline smoke-test 1`] = `
+<div style="padding: 20px; border: 2px solid black; width: 400px;">
+  <textarea class="tinput-md"
+            rows="6"
+  >
+  </textarea>
+</div>
+`;
+
+exports[`Components/TextInput Default smoke-test 1`] = `
+<div style="padding: 20px; border: 2px solid black; width: 400px;">
+  <input class="tinput-md"
+         value
+  >
+</div>
+`;
+
+exports[`Components/TextInput InATightContainer smoke-test 1`] = `
+<div style="border: 2px solid black; width: 100px; padding: 10px;">
+  <input class="tinput-md"
+         value
+  >
+</div>
+`;
+
+exports[`Components/TextInput LargeFont smoke-test 1`] = `
+<div style="padding: 20px; border: 2px solid black; width: 400px;">
+  <input class="tinput-lg"
+         value
+  >
+</div>
+`;
+
+exports[`Components/TextInput Multiline smoke-test 1`] = `
+<div style="padding: 20px; border: 2px solid black; width: 400px;">
+  <textarea class="tinput-md">
+  </textarea>
+</div>
+`;
+
+exports[`Components/TextInput MultilineWithPlaceholder smoke-test 1`] = `
+<div style="padding: 20px; border: 2px solid black; width: 400px;">
+  <textarea class="tinput-md"
+            placeholder="Type something long here..."
+  >
+  </textarea>
+</div>
+`;
+
+exports[`Components/TextInput SingleLineWithRowsSpecified smoke-test 1`] = `
+<div style="padding: 20px; border: 2px solid black; width: 400px;">
+  <input class="tinput-md"
+         rows="5"
+         value
+  >
+</div>
+`;
+
+exports[`Components/TextInput WithPlaceholder smoke-test 1`] = `
+<div style="padding: 20px; border: 2px solid black; width: 400px;">
+  <input class="tinput-md"
+         placeholder="Enter something..."
+         value
+  >
+</div>
+`;

@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/EditableCard Default smoke-test 1`] = `
+<div class="card card-md card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <textarea class="tinput-md"
+              placeholder
+              rows="14"
+    >
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Components/EditableCard Large smoke-test 1`] = `
+<div class="card card-lg card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <textarea class="tinput-md"
+              placeholder
+              rows="26"
+    >
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Components/EditableCard LargeWithTitle smoke-test 1`] = `
+<div class="card card-lg card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <input class="tinput-md title"
+           value
+    >
+    <textarea class="tinput-md"
+              placeholder
+              rows="24"
+    >
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Components/EditableCard Medium smoke-test 1`] = `
+<div class="card card-md card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <textarea class="tinput-md"
+              placeholder
+              rows="14"
+    >
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Components/EditableCard Small smoke-test 1`] = `
+<div class="card card-sm card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <textarea class="tinput-md"
+              placeholder
+              rows="3"
+    >
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Components/EditableCard SmallWithAButton smoke-test 1`] = `
+<div class="card card-sm card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <textarea class="tinput-md"
+              placeholder
+              rows="1"
+    >
+    </textarea>
+    <div class="btn-container">
+      <button class="btn-prm-md-thn ">
+        click me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/EditableCard SmallWithTitle smoke-test 1`] = `
+<div class="card card-sm card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <textarea class="tinput-md"
+              placeholder
+              rows="3"
+    >
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Components/EditableCard WithAButton smoke-test 1`] = `
+<div class="card card-md card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <textarea class="tinput-md"
+              placeholder
+              rows="12"
+    >
+    </textarea>
+    <div class="btn-container">
+      <button class="btn-prm-md-thn ">
+        click me
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/EditableCard WithTitle smoke-test 1`] = `
+<div class="card card-md card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <input class="tinput-md title"
+           value
+    >
+    <textarea class="tinput-md"
+              placeholder
+              rows="12"
+    >
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`Components/EditableCard WithTwoButtons smoke-test 1`] = `
+<div class="card card-md card-noimage editable-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <textarea class="tinput-md"
+              placeholder
+              rows="12"
+    >
+    </textarea>
+    <div class="btn-container">
+      <button class="btn-sec-sm-thn ">
+        cancel
+      </button>
+      <button class="btn-prm-sm-thn ">
+        ok
+      </button>
+    </div>
+  </div>
+</div>
+`;

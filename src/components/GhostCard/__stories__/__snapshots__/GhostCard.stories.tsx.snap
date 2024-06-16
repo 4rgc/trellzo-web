@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/GhostCard Default smoke-test 1`] = `
+<div class="card card-md card-clickable ghost-card"
+     style="width: 200px;"
+>
+  <svg viewbox="0 0 500 500"
+       xmlns="http://www.w3.org/2000/svg"
+       fill="black"
+       stroke="black"
+       class="card-cover"
+       preserveaspectratio="xMinYMin slice"
+  >
+    <g transform="matrix(1, 0, 0, 1, 146.358994, 113.460999)"
+       paint-order="fill markers stroke"
+    >
+      <path d="m118.507 133.514-34.249 34.249-15.968-15.968-41.938 41.937H178.726z"
+            opacity="0.675"
+            fill="#fff"
+      >
+      </path>
+      <circle cx="58.217"
+              cy="108.555"
+              r="11.773"
+              opacity="0.675"
+              fill="#fff"
+      >
+      </circle>
+      <path fill="none"
+            d="M26.111 77.634h152.614v116.099H26.111z"
+      >
+      </path>
+    </g>
+  </svg>
+  <div class="card-divider">
+  </div>
+  <div class="card-container-no-text">
+    <div class="ghost-card-text-container">
+      <b class="ghost-card-text">
+        Add a new asdf...
+      </b>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/GhostCard Large smoke-test 1`] = `
+<div class="card card-lg card-clickable ghost-card"
+     style="width: 200px;"
+>
+  <svg viewbox="0 0 500 500"
+       xmlns="http://www.w3.org/2000/svg"
+       fill="black"
+       stroke="black"
+       class="card-cover"
+       preserveaspectratio="xMinYMin slice"
+  >
+    <g transform="matrix(1, 0, 0, 1, 146.358994, 113.460999)"
+       paint-order="fill markers stroke"
+    >
+      <path d="m118.507 133.514-34.249 34.249-15.968-15.968-41.938 41.937H178.726z"
+            opacity="0.675"
+            fill="#fff"
+      >
+      </path>
+      <circle cx="58.217"
+              cy="108.555"
+              r="11.773"
+              opacity="0.675"
+              fill="#fff"
+      >
+      </circle>
+      <path fill="none"
+            d="M26.111 77.634h152.614v116.099H26.111z"
+      >
+      </path>
+    </g>
+  </svg>
+  <div class="card-divider">
+  </div>
+  <div class="card-container-no-text">
+    <div class="ghost-card-text-container">
+      <b class="ghost-card-text">
+        Add a new asdf...
+      </b>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/GhostCard NoImage smoke-test 1`] = `
+<div class="card card-md card-clickable card-noimage ghost-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <div class="ghost-card-text-container">
+      <b class="ghost-card-text">
+        Add a new asdf...
+      </b>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/GhostCard Small smoke-test 1`] = `
+<div class="card card-sm card-clickable card-noimage ghost-card"
+     style="width: 200px;"
+>
+  <div class="card-container-no-text">
+    <div class="ghost-card-text-container">
+      <b class="ghost-card-text">
+        Add a new asdf...
+      </b>
+    </div>
+  </div>
+</div>
+`;

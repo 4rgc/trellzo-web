@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/WarningFab AlwaysDisplay smoke-test 1`] = `
+<div class="warningFab"
+     style="display: block;"
+>
+  <img class="icon"
+       src="static/media/warning.4bd46afe88062a02011b3f369983264a.svg"
+       alt="warning icon"
+  >
+</div>
+`;
+
+exports[`Components/WarningFab Default smoke-test 1`] = `
+<div class="warningFab"
+     style="display: none;"
+>
+  <img class="icon"
+       src="static/media/warning.4bd46afe88062a02011b3f369983264a.svg"
+       alt="warning icon"
+  >
+</div>
+`;
+
+exports[`Components/WarningFab DisplayOnMessage smoke-test 1`] = `
+<div class="warningFab"
+     style="display: block;"
+>
+  <img class="icon"
+       src="static/media/warning.4bd46afe88062a02011b3f369983264a.svg"
+       alt="warning icon"
+  >
+</div>
+`;
+
+exports[`Components/WarningFab DisplayOnMessageNoMessage smoke-test 1`] = `
+<div class="warningFab"
+     style="display: none;"
+>
+  <img class="icon"
+       src="static/media/warning.4bd46afe88062a02011b3f369983264a.svg"
+       alt="warning icon"
+  >
+</div>
+`;
+
+exports[`Components/WarningFab WithCustomAction smoke-test 1`] = `
+<div class="warningFab"
+     style="display: block;"
+>
+  <img class="icon"
+       src="static/media/warning.4bd46afe88062a02011b3f369983264a.svg"
+       alt="warning icon"
+  >
+</div>
+`;
