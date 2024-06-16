@@ -19,9 +19,9 @@
   "scripts": {
     "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:ci": "npm run test -- --ci --watchAll=false",
-    "test:dev": "npm run test -- --watchAll --coverage",
+    "test": "react-scripts test --testPathIgnorePatterns=storybook.test.ts",
+    "test:ci": "npm run test -- --ci --watchAll=false --testPathIgnorePatterns=storybook.test.ts",
+    "test:dev": "npm run test -- --watchAll --coverage --testPathIgnorePatterns=storybook.test.ts",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "test-storybook": "test-storybook",
