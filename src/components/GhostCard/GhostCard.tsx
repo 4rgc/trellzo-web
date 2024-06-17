@@ -16,9 +16,9 @@ const GhostCard: React.FC<IGhostCardProps> = (props) => {
 
 	return (
 		<Card
-			{...otherProps}
 			isImageDisabled={forceDisableImage}
 			className="ghost-card"
+			{...otherProps}
 		>
 			<div className="ghost-card-text-container">
 				<b className="ghost-card-text">{innerText}</b>

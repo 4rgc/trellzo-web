@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/LoadingBar Blue smoke-test 1`] = `
+<div style="width: 120px;">
+  <div class="loadbar-container loadbar-small undefined">
+    <div class="loadbar-inner"
+         style="width: 100%; background-color: blue;"
+    >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/LoadingBar Default smoke-test 1`] = `
+<div style="width: 120px;">
+  <div class="loadbar-container loadbar-small undefined">
+    <div class="loadbar-inner"
+         style="width: 0%; background-color: green;"
+    >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/LoadingBar Green smoke-test 1`] = `
+<div style="width: 120px;">
+  <div class="loadbar-container loadbar-small undefined">
+    <div class="loadbar-inner"
+         style="width: 100%; background-color: green;"
+    >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/LoadingBar HalfFull smoke-test 1`] = `
+<div style="width: 120px;">
+  <div class="loadbar-container loadbar-small undefined">
+    <div class="loadbar-inner"
+         style="width: 50%; background-color: green;"
+    >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/LoadingBar Large smoke-test 1`] = `
+<div style="width: 120px;">
+  <div class="loadbar-container loadbar-large undefined">
+    <div class="loadbar-inner"
+         style="width: 0%; background-color: green;"
+    >
+    </div>
+  </div>
+</div>
+`;

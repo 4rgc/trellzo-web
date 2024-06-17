@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/NotesList Default smoke-test 1`] = `
+<div class="notes-list"
+     data-rfd-droppable-id="60c5d161a6c781e43c11a5a3"
+     data-rfd-droppable-context-id=":r0:"
+>
+  <span class="notes-list-name">
+    List 1
+  </span>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":r0:"
+       data-rfd-draggable-id="60c5d167a6c781e43c11a5a4"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:r0:-hidden-text-:r1:"
+       data-rfd-drag-handle-draggable-id="60c5d167a6c781e43c11a5a4"
+       data-rfd-drag-handle-context-id=":r0:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        Note Something
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+          Buy something
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":r0:"
+       data-rfd-draggable-id="6106f35927d5f4001d197e65"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:r0:-hidden-text-:r1:"
+       data-rfd-drag-handle-draggable-id="6106f35927d5f4001d197e65"
+       data-rfd-drag-handle-context-id=":r0:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        Delete me
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/NotesList Empty smoke-test 1`] = `
+<div class="notes-list"
+     data-rfd-droppable-id="1"
+     data-rfd-droppable-context-id=":r5:"
+>
+  <span class="notes-list-name">
+    List aa
+  </span>
+  <span class="notes-list-empty-msg">
+    Nothing here yet.
+  </span>
+</div>
+`;

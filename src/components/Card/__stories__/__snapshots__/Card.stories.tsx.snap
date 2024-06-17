@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Card Default smoke-test 1`] = `
+<div class="card card-md card-clickable"
+     style="width: 200px;"
+>
+  <svg viewbox="0 0 500 500"
+       xmlns="http://www.w3.org/2000/svg"
+       fill="black"
+       stroke="black"
+       class="card-cover"
+       preserveaspectratio="xMinYMin slice"
+  >
+    <g transform="matrix(1, 0, 0, 1, 146.358994, 113.460999)"
+       paint-order="fill markers stroke"
+    >
+      <path d="m118.507 133.514-34.249 34.249-15.968-15.968-41.938 41.937H178.726z"
+            opacity="0.675"
+            fill="#fff"
+      >
+      </path>
+      <circle cx="58.217"
+              cy="108.555"
+              r="11.773"
+              opacity="0.675"
+              fill="#fff"
+      >
+      </circle>
+      <path fill="none"
+            d="M26.111 77.634h152.614v116.099H26.111z"
+      >
+      </path>
+    </g>
+  </svg>
+  <div class="card-divider">
+  </div>
+  <div class="card-container">
+    <h3 class="card-title">
+      Title
+    </h3>
+    <div class="card-content-text">
+      Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/Card WithCover smoke-test 1`] = `
+<div class="card card-md card-clickable"
+     style="width: 200px;"
+>
+  <img class="card-cover"
+       src="/regular-cover.png"
+       alt="card img"
+  >
+  <div class="card-divider">
+  </div>
+  <div class="card-container">
+    <h3 class="card-title">
+      Title
+    </h3>
+    <div class="card-content-text">
+      Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/Card WithCustomChildren smoke-test 1`] = `
+<div class="card card-md card-clickable"
+     style="width: 200px;"
+>
+  <svg viewbox="0 0 500 500"
+       xmlns="http://www.w3.org/2000/svg"
+       fill="black"
+       stroke="black"
+       class="card-cover"
+       preserveaspectratio="xMinYMin slice"
+  >
+    <g transform="matrix(1, 0, 0, 1, 146.358994, 113.460999)"
+       paint-order="fill markers stroke"
+    >
+      <path d="m118.507 133.514-34.249 34.249-15.968-15.968-41.938 41.937H178.726z"
+            opacity="0.675"
+            fill="#fff"
+      >
+      </path>
+      <circle cx="58.217"
+              cy="108.555"
+              r="11.773"
+              opacity="0.675"
+              fill="#fff"
+      >
+      </circle>
+      <path fill="none"
+            d="M26.111 77.634h152.614v116.099H26.111z"
+      >
+      </path>
+    </g>
+  </svg>
+  <div class="card-divider">
+  </div>
+  <div class="card-container">
+    <div style="background-color: blue; color: white; border-radius: 10px; text-align: center;">
+      Custom stuff
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/Card WithCustomContent smoke-test 1`] = `
+<div class="card card-md card-clickable"
+     style="width: 200px;"
+>
+  <svg viewbox="0 0 500 500"
+       xmlns="http://www.w3.org/2000/svg"
+       fill="black"
+       stroke="black"
+       class="card-cover"
+       preserveaspectratio="xMinYMin slice"
+  >
+    <g transform="matrix(1, 0, 0, 1, 146.358994, 113.460999)"
+       paint-order="fill markers stroke"
+    >
+      <path d="m118.507 133.514-34.249 34.249-15.968-15.968-41.938 41.937H178.726z"
+            opacity="0.675"
+            fill="#fff"
+      >
+      </path>
+      <circle cx="58.217"
+              cy="108.555"
+              r="11.773"
+              opacity="0.675"
+              fill="#fff"
+      >
+      </circle>
+      <path fill="none"
+            d="M26.111 77.634h152.614v116.099H26.111z"
+      >
+      </path>
+    </g>
+  </svg>
+  <div class="card-divider">
+  </div>
+  <div class="card-container-no-text">
+    <h3 class="card-title">
+      Title
+    </h3>
+    <div style="background-color: blue; color: white; border-radius: 10px; text-align: center;">
+      Custom content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/Card WithHorizontalCover smoke-test 1`] = `
+<div class="card card-md card-clickable"
+     style="width: 200px;"
+>
+  <img class="card-cover"
+       src="/horizontal-cover.png"
+       alt="card img"
+  >
+  <div class="card-divider">
+  </div>
+  <div class="card-container">
+    <h3 class="card-title">
+      Title
+    </h3>
+    <div class="card-content-text">
+      Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/Card WithLongTitle smoke-test 1`] = `
+<div class="card card-md card-clickable"
+     style="width: 200px;"
+>
+  <svg viewbox="0 0 500 500"
+       xmlns="http://www.w3.org/2000/svg"
+       fill="black"
+       stroke="black"
+       class="card-cover"
+       preserveaspectratio="xMinYMin slice"
+  >
+    <g transform="matrix(1, 0, 0, 1, 146.358994, 113.460999)"
+       paint-order="fill markers stroke"
+    >
+      <path d="m118.507 133.514-34.249 34.249-15.968-15.968-41.938 41.937H178.726z"
+            opacity="0.675"
+            fill="#fff"
+      >
+      </path>
+      <circle cx="58.217"
+              cy="108.555"
+              r="11.773"
+              opacity="0.675"
+              fill="#fff"
+      >
+      </circle>
+      <path fill="none"
+            d="M26.111 77.634h152.614v116.099H26.111z"
+      >
+      </path>
+    </g>
+  </svg>
+  <div class="card-divider">
+  </div>
+  <div class="card-container">
+    <h3 class="card-title">
+      Hello this is long title
+    </h3>
+    <div class="card-content-text">
+      Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/Card WithVerticalCover smoke-test 1`] = `
+<div class="card card-md card-clickable"
+     style="width: 200px;"
+>
+  <img class="card-cover"
+       src="/vertical-cover.png"
+       alt="card img"
+  >
+  <div class="card-divider">
+  </div>
+  <div class="card-container">
+    <h3 class="card-title">
+      Title
+    </h3>
+    <div class="card-content-text">
+      Labore odio voluptas voluptas vel qui vel. Aut est quo. Eveniet non tempore incidunt eum vero. Quia tempore error neque nam et numquam quidem. Amet voluptas delectus quisquam architecto numquam quia et impedit eos. Excepturi aliquid eum.
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Button CustomClass smoke-test 1`] = `
+<button class="btn-prm-md-reg btn-dis">
+  fake disabled
+</button>
+`;
+
+exports[`Components/Button Default smoke-test 1`] = `
+<button class="btn-prm-md-reg ">
+</button>
+`;
+
+exports[`Components/Button Disabled smoke-test 1`] = `
+<button class="btn-prm-dis-md-reg ">
+  disabled
+</button>
+`;
+
+exports[`Components/Button Large smoke-test 1`] = `
+<button class="btn-prm-lg-reg ">
+  Large Button !!!
+</button>
+`;
+
+exports[`Components/Button Medium smoke-test 1`] = `
+<button class="btn-prm-md-reg ">
+  Medium Btn
+</button>
+`;
+
+exports[`Components/Button Primary smoke-test 1`] = `
+<button class="btn-prm-md-reg ">
+  Primary
+</button>
+`;
+
+exports[`Components/Button Secondary smoke-test 1`] = `
+<button class="btn-sec-md-reg ">
+  Secondary
+</button>
+`;
+
+exports[`Components/Button Small smoke-test 1`] = `
+<button class="btn-prm-sm-reg ">
+  Small
+</button>
+`;
+
+exports[`Components/Button Square smoke-test 1`] = `
+<button class="btn-prm-sq-reg ">
+  OK
+</button>
+`;
+
+exports[`Components/Button Thin smoke-test 1`] = `
+<button class="btn-prm-md-thn ">
+</button>
+`;

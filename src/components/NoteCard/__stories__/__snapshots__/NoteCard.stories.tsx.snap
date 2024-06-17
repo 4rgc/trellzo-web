@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/NoteCard Default smoke-test 1`] = `
+<div data-rfd-droppable-id="1"
+     data-rfd-droppable-context-id=":r0:"
+     style="width: 200px;"
+>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":r0:"
+       data-rfd-draggable-id="1"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:r0:-hidden-text-:r1:"
+       data-rfd-drag-handle-draggable-id="1"
+       data-rfd-drag-handle-context-id=":r0:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        Buy Groceries
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+          eggs, chicken, tomatoes, green onion
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/NoteCard DueIn3Days smoke-test 1`] = `
+<div data-rfd-droppable-id="1"
+     data-rfd-droppable-context-id=":rg:"
+     style="width: 200px;"
+>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":rg:"
+       data-rfd-draggable-id="1"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:rg:-hidden-text-:rh:"
+       data-rfd-drag-handle-draggable-id="1"
+       data-rfd-drag-handle-context-id=":rg:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        Name
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+          Description
+        </div>
+        <div class="due">
+          due in
+          <span class="due-soon">
+            3 days
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/NoteCard DueIn5Days smoke-test 1`] = `
+<div data-rfd-droppable-id="1"
+     data-rfd-droppable-context-id=":rc:"
+     style="width: 200px;"
+>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":rc:"
+       data-rfd-draggable-id="1"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:rc:-hidden-text-:rd:"
+       data-rfd-drag-handle-draggable-id="1"
+       data-rfd-drag-handle-context-id=":rc:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        Name
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+          Description
+        </div>
+        <div class="due">
+          due in
+          <span class="due-far">
+            5 days
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/NoteCard DueToday smoke-test 1`] = `
+<div data-rfd-droppable-id="1"
+     data-rfd-droppable-context-id=":ro:"
+     style="width: 200px;"
+>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":ro:"
+       data-rfd-draggable-id="1"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:ro:-hidden-text-:rp:"
+       data-rfd-drag-handle-draggable-id="1"
+       data-rfd-drag-handle-context-id=":ro:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        Name
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+          Description
+        </div>
+        <div class="due">
+          due
+          <span class="due-very-soon">
+            today
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/NoteCard DueTomorrow smoke-test 1`] = `
+<div data-rfd-droppable-id="1"
+     data-rfd-droppable-context-id=":rk:"
+     style="width: 200px;"
+>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":rk:"
+       data-rfd-draggable-id="1"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:rk:-hidden-text-:rl:"
+       data-rfd-drag-handle-draggable-id="1"
+       data-rfd-drag-handle-context-id=":rk:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        Name
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+          Description
+        </div>
+        <div class="due">
+          due
+          <span class="due-very-soon">
+            tomorrow
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/NoteCard LongDesctription smoke-test 1`] = `
+<div data-rfd-droppable-id="1"
+     data-rfd-droppable-context-id=":r8:"
+     style="width: 200px;"
+>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":r8:"
+       data-rfd-draggable-id="1"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:r8:-hidden-text-:r9:"
+       data-rfd-drag-handle-draggable-id="1"
+       data-rfd-drag-handle-context-id=":r8:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        Name is short
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+          description is very very very very very very very very very very very very long
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/NoteCard LongName smoke-test 1`] = `
+<div data-rfd-droppable-id="1"
+     data-rfd-droppable-context-id=":r4:"
+     style="width: 200px;"
+>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":r4:"
+       data-rfd-draggable-id="1"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:r4:-hidden-text-:r5:"
+       data-rfd-drag-handle-draggable-id="1"
+       data-rfd-drag-handle-context-id=":r4:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        hello my name is asdf nice to meet you
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+          description
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Components/NoteCard OneDayPastDue smoke-test 1`] = `
+<div data-rfd-droppable-id="1"
+     data-rfd-droppable-context-id=":rs:"
+     style="width: 200px;"
+>
+  <div class="card card-sm card-noimage note"
+       data-rfd-draggable-context-id=":rs:"
+       data-rfd-draggable-id="1"
+       tabindex="0"
+       role="button"
+       aria-describedby="rfd-hidden-text-:rs:-hidden-text-:rt:"
+       data-rfd-drag-handle-draggable-id="1"
+       data-rfd-drag-handle-context-id=":rs:"
+       draggable="false"
+  >
+    <div class="card-container-no-text">
+      <h3 class="card-title">
+        Name
+      </h3>
+      <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="note-card-description card-content-text">
+          Description
+        </div>
+        <div class="due">
+          <span class="due-past">
+            1 day past due
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
