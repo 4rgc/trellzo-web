@@ -87,7 +87,7 @@
     "react-table": "^7.8.0",
     "storybook": "^7.6.19",
     "typescript": "^4.9.5",
-    "webpack": "^5.75.0"
+    "webpack": "^5.92.0"
   },
   "jest": {
     "coveragePathIgnorePatterns": [
