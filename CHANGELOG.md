@@ -1,3 +1,11 @@
+## v0.8.2 (2025-04-09)
+
+### Fix
+
+- **deps**: update package to remove security vulnerability
+- **ci**: use older ubuntu version
+- **api**: update default api url
+
 ## v0.8.1 (2023-03-05)
 
 ### Fix
