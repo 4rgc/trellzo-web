@@ -3,7 +3,7 @@ import fetcher, { FetcherError } from '../util/throwingFetcher';
 
 const baseUrl = process.env.REACT_APP_LOCAL
 	? 'https://localhost'
-	: 'https://api.trellzo.tech';
+	: 'https://api.trellzo.space';
 
 export const unprotectedRouteRequest = async (params: APIRequestParams) => {
 	try {
